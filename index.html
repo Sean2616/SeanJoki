@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dolphin Joki - Joki Rank, Joki Gendong, Testimoni & Panel Admin</title>
+    <title>Sean Joki - Joki Rank &amp; Joki Gendong</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,8 +13,6 @@
         .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); }
         .payment-card.active { border-color: #f59e0b; background: rgba(245, 158, 11, 0.12); }
         .tab-btn.active { background: linear-gradient(to right, #f59e0b, #ea580c); color: #020617; border-color: transparent; }
-        .worker-subtab.active { background: rgba(16, 185, 129, 0.2); border-color: #10b981; color: #34d399; }
-        .testi-filter.active { background: rgba(245, 158, 11, 0.2); border-color: #f59e0b; color: #fbbf24; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #0b0f19; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
@@ -29,7 +27,7 @@
             <div class="flex items-center gap-2.5 cursor-pointer" onclick="switchServicePage('regular')">
                 <i class="fa-solid fa-dragon text-amber-500 text-2xl"></i>
                 <span class="font-gaming text-xl font-extrabold tracking-wider bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
-                    DOLPHIN <span class="text-white">JOKI</span>
+                    SEAN <span class="text-white">JOKI</span>
                 </span>
             </div>
             <div class="hidden md:flex items-center space-x-5 text-sm font-medium">
@@ -37,23 +35,6 @@
                 <button onclick="switchServicePage('gendong')" id="navGendong" class="text-slate-300 hover:text-amber-400 transition flex items-center gap-1.5">
                     <span>Joki Gendong</span>
                     <span class="text-[10px] bg-red-500 text-white px-1.5 py-0.5 rounded font-bold">HOT</span>
-                </button>
-                <button onclick="switchServicePage('testi')" id="navTesti" class="text-slate-300 hover:text-amber-400 transition flex items-center gap-1.5">
-                    <i class="fa-solid fa-star text-amber-400"></i>
-                    <span>Testi Jokian</span>
-                </button>
-                <button onclick="switchServicePage('worker')" id="navWorker" class="text-slate-300 hover:text-emerald-400 transition flex items-center gap-1.5">
-                    <i class="fa-solid fa-calculator text-emerald-400"></i>
-                    <span>Upah Worker</span>
-                </button>
-                <button onclick="switchServicePage('admin')" id="navAdmin" class="text-slate-300 hover:text-purple-400 transition flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-slate-700 bg-slate-900/80">
-                    <i class="fa-solid fa-user-shield text-purple-400"></i>
-                    <span>Admin</span>
-                </button>
-            </div>
-            <div class="flex md:hidden items-center gap-2">
-                <button onclick="switchServicePage('admin')" class="text-xs bg-slate-800 border border-slate-700 text-purple-300 px-3 py-1.5 rounded-lg font-bold flex items-center gap-1.5">
-                    <i class="fa-solid fa-user-shield"></i> Admin
                 </button>
             </div>
         </div>
@@ -65,10 +46,10 @@
             <div class="rounded-2xl bg-gradient-to-r from-indigo-950 via-slate-900 to-amber-950/40 p-6 md:p-10 border border-slate-800 relative overflow-hidden">
                 <div class="relative z-10 max-w-2xl">
                     <span id="heroBadge" class="px-3 py-1 text-xs font-semibold bg-amber-500/20 text-amber-400 rounded-full border border-amber-500/30">
-                        ⚡ DOLPHIN JOKI PROSES CEPAT 1x24 JAM
+                        ⚡ SEAN JOKI PROSES CEPAT 1x24 JAM
                     </span>
                     <h1 id="heroTitle" class="font-gaming text-2xl md:text-4xl font-extrabold text-white mt-3">
-                        PUSH RANK TANPA PUSING BERSAMA TIM <span class="text-amber-400">DOLPHIN JOKI</span>
+                        PUSH RANK TANPA PUSING BERSAMA TIM <span class="text-amber-400">SEAN JOKI</span>
                     </h1>
                     <p id="heroDesc" class="text-slate-400 text-sm md:text-base mt-2">
                         Melayani dari tier Master hingga Mythical Immortal! 100% Amanah, Privasi Terjaga, Bonus Savage & Maniac, dan Winrate dijamin naik drastis.
@@ -77,8 +58,8 @@
                 <i class="fa-solid fa-trophy text-amber-500/10 text-9xl absolute -right-4 -bottom-4 transform -rotate-12"></i>
             </div>
 
-            <!-- TOMBOL PILIH HALAMAN LAYANAN (4 MENU UTAMA) -->
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-6">
+            <!-- TOMBOL PILIH HALAMAN LAYANAN (2 MENU UTAMA) -->
+            <div class="grid grid-cols-2 gap-3 mt-6">
                 <button onclick="switchServicePage('regular')" id="tabBtnRegular" class="tab-btn active py-3.5 px-3 rounded-xl border border-slate-700 bg-slate-900 font-bold text-xs sm:text-sm md:text-base flex items-center justify-center gap-2 transition shadow-lg">
                     <i class="fa-solid fa-bolt"></i>
                     <span>Joki Rank <span class="hidden xl:inline text-xs font-normal opacity-80">(Login)</span></span>
@@ -86,14 +67,6 @@
                 <button onclick="switchServicePage('gendong')" id="tabBtnGendong" class="tab-btn py-3.5 px-3 rounded-xl border border-slate-700 bg-slate-900 text-slate-200 font-bold text-xs sm:text-sm md:text-base flex items-center justify-center gap-2 transition shadow-lg">
                     <i class="fa-solid fa-users"></i>
                     <span>Joki Gendong <span class="hidden xl:inline text-xs font-normal opacity-80">(Mabar)</span></span>
-                </button>
-                <button onclick="switchServicePage('testi')" id="tabBtnTesti" class="tab-btn py-3.5 px-3 rounded-xl border border-slate-700 bg-slate-900 text-slate-200 font-bold text-xs sm:text-sm md:text-base flex items-center justify-center gap-2 transition shadow-lg">
-                    <i class="fa-solid fa-medal"></i>
-                    <span>Testi Jokian <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">REAL</span></span>
-                </button>
-                <button onclick="switchServicePage('worker')" id="tabBtnWorker" class="tab-btn py-3.5 px-3 rounded-xl border border-slate-700 bg-slate-900 text-slate-200 font-bold text-xs sm:text-sm md:text-base flex items-center justify-center gap-2 transition shadow-lg">
-                    <i class="fa-solid fa-sack-dollar"></i>
-                    <span>Upah Worker <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">80:20</span></span>
                 </button>
             </div>
         </div>
@@ -195,7 +168,7 @@
                             </div>
                         </div>
                         <p class="text-[11px] text-amber-400/90 mt-4 bg-amber-500/10 p-2.5 rounded-lg border border-amber-500/20">
-                            <i class="fa-solid fa-circle-info mr-1"></i> Pastikan <strong>Verifikasi Sekunder (Perangkat Baru)</strong> dimatikan sementara, atau standby di WhatsApp untuk memberikan kode OTP kepada Admin Dolphin Joki.
+                            <i class="fa-solid fa-circle-info mr-1"></i> Pastikan <strong>Verifikasi Sekunder (Perangkat Baru)</strong> dimatikan sementara, atau standby di WhatsApp untuk memberikan kode OTP kepada Admin Sean Joki.
                         </p>
                     </div>
                 </div>
@@ -295,328 +268,6 @@
                     </div>
                 </div>
 
-                <!-- HALAMAN 3: TESTI JOKIAN (FILTER HANYA JOKI RANK & JOKI GENDONG) -->
-                <div id="sectionTesti" class="hidden space-y-6">
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
-                        <div class="glass-card rounded-2xl p-4 border border-amber-500/30 text-center">
-                            <div class="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center mx-auto mb-2"><i class="fa-solid fa-check-double"></i></div>
-                            <p class="font-gaming text-xl font-extrabold text-white">100+</p>
-                            <span class="text-[11px] text-slate-400">Orderan Selesai</span>
-                        </div>
-                        <div class="glass-card rounded-2xl p-4 border border-emerald-500/30 text-center">
-                            <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-2"><i class="fa-solid fa-fire-flame-curved"></i></div>
-                            <p class="font-gaming text-xl font-extrabold text-emerald-400">70%</p>
-                            <span class="text-[11px] text-slate-400">Rata-Rata Winrate</span>
-                        </div>
-                        <div class="glass-card rounded-2xl p-4 border border-yellow-500/30 text-center">
-                            <div class="w-9 h-9 rounded-xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center mx-auto mb-2"><i class="fa-solid fa-star"></i></div>
-                            <p class="font-gaming text-xl font-extrabold text-yellow-400">4.99 / 5</p>
-                            <span class="text-[11px] text-slate-400">Rating Kepuasan</span>
-                        </div>
-                        <div class="glass-card rounded-2xl p-4 border border-sky-500/30 text-center">
-                            <div class="w-9 h-9 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center mx-auto mb-2"><i class="fa-solid fa-shield-halved"></i></div>
-                            <p class="font-gaming text-xl font-extrabold text-sky-400">100%</p>
-                            <span class="text-[11px] text-slate-400">Aman & Anti-Banned</span>
-                        </div>
-                    </div>
-
-                    <div class="glass-card rounded-2xl p-6 border border-amber-500/20">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-700/70 pb-4 mb-6">
-                            <div>
-                                <h2 class="text-lg font-bold text-white flex items-center gap-2">
-                                    <i class="fa-solid fa-award text-amber-400"></i> Galeri Bukti & Testimoni Jokian
-                                </h2>
-                                <p class="text-xs text-slate-400 mt-0.5">Seluruh testimoni di bawah telah diverifikasi dan diunggah resmi oleh Admin Dolphin Joki.</p>
-                            </div>
-                            <!-- HANYA 2 FILTER: JOKI RANK & JOKI GENDONG -->
-                            <div class="flex flex-wrap gap-2">
-                                <button onclick="filterTestimonials('regular')" id="filterRegular" class="testi-filter active px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-900 text-xs font-bold flex items-center gap-1.5 transition">
-                                    <i class="fa-solid fa-bolt"></i> Joki Rank
-                                </button>
-                                <button onclick="filterTestimonials('gendong')" id="filterGendong" class="testi-filter px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-900 text-slate-300 text-xs font-bold flex items-center gap-1.5 transition">
-                                    <i class="fa-solid fa-users"></i> Joki Gendong
-                                </button>
-                            </div>
-                        </div>
-
-                        <div id="testiGridContainer" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
-                    </div>
-                </div>
-
-                <!-- HALAMAN 4: KALKULATOR UPAH WORKER (80% : 20%) -->
-                <div id="sectionWorker" class="hidden space-y-6">
-                    <div class="glass-card rounded-2xl p-6 border border-emerald-500/30">
-                        <div class="flex flex-wrap items-center justify-between gap-3 mb-6 border-b border-slate-700/70 pb-4">
-                            <div class="flex items-center gap-3">
-                                <span class="w-8 h-8 rounded-lg bg-emerald-500 text-slate-950 font-bold flex items-center justify-center"><i class="fa-solid fa-calculator"></i></span>
-                                <div>
-                                    <h2 class="text-lg font-bold text-white">Kalkulator Upah Worker & Bagi Hasil Store</h2>
-                                    <p class="text-xs text-slate-400">Perhitungan otomatis: <strong class="text-emerald-400">80% Worker Penjoki</strong> & <strong class="text-amber-400">20% Store Dolphin Joki</strong></p>
-                                </div>
-                            </div>
-                            <span class="text-xs bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-full border border-emerald-500/30 font-bold">Bagi Hasil 80 : 20</span>
-                        </div>
-
-                        <div class="mb-6">
-                            <label class="block text-xs text-slate-400 mb-2 font-medium">Pilih Jenis Orderan yang Dikerjakan:</label>
-                            <div class="grid grid-cols-2 gap-3">
-                                <button type="button" id="wSubTabRank" onclick="switchWorkerMode('rank')" class="worker-subtab active py-2.5 px-4 rounded-xl border border-slate-700 bg-slate-900 text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition">
-                                    <i class="fa-solid fa-bolt"></i> Orderan Joki Rank (Login)
-                                </button>
-                                <button type="button" id="wSubTabGendong" onclick="switchWorkerMode('gendong')" class="worker-subtab py-2.5 px-4 rounded-xl border border-slate-700 bg-slate-900 text-slate-300 text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition">
-                                    <i class="fa-solid fa-users"></i> Orderan Joki Gendong (Mabar)
-                                </button>
-                            </div>
-                        </div>
-
-                        <div id="workerRankInputs" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
-                                <label class="block text-xs font-semibold uppercase tracking-wider text-amber-400 mb-2"><i class="fa-solid fa-play mr-1"></i> Rank Awal Customer</label>
-                                <div class="space-y-3">
-                                    <div>
-                                        <span class="text-xs text-slate-400">Pilih Tier / Divisi Awal</span>
-                                        <select id="wStartRank" onchange="handleRankChange('wStart')" class="w-full mt-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500"></select>
-                                    </div>
-                                    <div>
-                                        <span class="text-xs text-slate-400" id="wStartStarLabel">Jumlah Bintang Awal (0 - 5)</span>
-                                        <input type="number" id="wStartStar" value="1" min="0" max="5" oninput="calculateAll()" onchange="clampStarInput('wStart')" class="w-full mt-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
-                                <label class="block text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-2"><i class="fa-solid fa-flag-checkered mr-1"></i> Rank Akhir / Target Selesai</label>
-                                <div class="space-y-3">
-                                    <div>
-                                        <span class="text-xs text-slate-400">Pilih Tier / Divisi Akhir</span>
-                                        <select id="wTargetRank" onchange="handleRankChange('wTarget')" class="w-full mt-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500"></select>
-                                    </div>
-                                    <div>
-                                        <span class="text-xs text-slate-400" id="wTargetStarLabel">Bintang Akhir (0 - 5)</span>
-                                        <input type="number" id="wTargetStar" value="5" min="0" max="5" oninput="calculateAll()" onchange="clampStarInput('wTarget')" class="w-full mt-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="calcAlertWorker" class="hidden mt-4 p-3 rounded-lg bg-red-500/20 border border-red-500/40 text-red-300 text-xs flex items-center gap-2">
-                            <i class="fa-solid fa-triangle-exclamation"></i>
-                            <span>Rank Akhir harus lebih tinggi dari Rank Awal!</span>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
-                            <div class="bg-slate-900/90 border border-slate-700 rounded-xl p-4">
-                                <div class="flex items-center justify-between"><span class="text-xs text-slate-400">Harga Order (100%)</span><span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-semibold" id="wCardStars">0 ⭐</span></div>
-                                <p id="wGrossDisplay" class="font-gaming text-lg font-bold text-white mt-1.5">Rp 0</p>
-                                <span class="text-[11px] text-slate-500 block mt-0.5">Total bayar customer</span>
-                            </div>
-                            <div class="bg-emerald-950/30 border-2 border-emerald-500/60 rounded-xl p-4 relative overflow-hidden">
-                                <div class="flex items-center justify-between"><span class="text-xs font-bold text-emerald-300">Upah Worker (80%)</span><i class="fa-solid fa-wallet text-emerald-400 text-sm"></i></div>
-                                <p id="wWorkerNetDisplay" class="font-gaming text-xl font-extrabold text-emerald-400 mt-1.5">Rp 0</p>
-                                <span class="text-[11px] text-emerald-300/80 block mt-0.5">Diterima bersih penjoki</span>
-                            </div>
-                            <div class="bg-amber-950/20 border border-amber-500/40 rounded-xl p-4">
-                                <div class="flex items-center justify-between"><span class="text-xs font-bold text-amber-300">Bagian Store (20%)</span><i class="fa-solid fa-store text-amber-400 text-sm"></i></div>
-                                <p id="wStoreCutDisplay" class="font-gaming text-lg font-bold text-amber-400 mt-1.5">Rp 0</p>
-                                <span class="text-[11px] text-amber-300/70 block mt-0.5">Kas Dolphin Joki</span>
-                            </div>
-                        </div>
-
-                        <div class="mt-5 bg-slate-900/90 rounded-xl p-4 border border-slate-800">
-                            <span class="text-xs font-bold text-slate-300 uppercase tracking-wider block mb-2.5"><i class="fa-solid fa-list-check text-emerald-400 mr-1"></i> Detail Perhitungan Per Tier:</span>
-                            <div id="wTierBreakdownList" class="space-y-2 text-xs"></div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card rounded-2xl p-6 border border-emerald-500/30">
-                        <div class="flex items-center justify-between mb-6 border-b border-slate-700/70 pb-4">
-                            <div class="flex items-center gap-3">
-                                <span class="w-8 h-8 rounded-lg bg-emerald-500 text-slate-950 font-bold flex items-center justify-center">2</span>
-                                <div>
-                                    <h2 class="text-lg font-bold text-white">Data Klaim Gaji / Laporan Order Done</h2>
-                                    <p class="text-xs text-slate-400">Isi data di bawah untuk mengirim rincian pencairan upah ke WhatsApp Admin.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="text-xs text-slate-300 font-medium">Nama / Kode Worker <span class="text-red-400">*</span></label>
-                                <input type="text" id="wWorkerName" placeholder="Cth: Worker Budi / WJ-04" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500">
-                            </div>
-                            <div>
-                                <label class="text-xs text-slate-300 font-medium">ID / Nickname Akun Customer <span class="text-red-400">*</span></label>
-                                <input type="text" id="wCustAccount" placeholder="Cth: 12345678 - Lemon (INV-DJ01)" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500">
-                            </div>
-                            <div>
-                                <label class="text-xs text-slate-300 font-medium">Pencairan Via (E-Wallet / Bank) <span class="text-red-400">*</span></label>
-                                <select id="wPayoutMethod" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500">
-                                    <option value="DANA">DANA</option>
-                                    <option value="GoPay">GoPay</option>
-                                    <option value="OVO">OVO</option>
-                                    <option value="ShopeePay">ShopeePay</option>
-                                    <option value="SeaBank">SeaBank</option>
-                                    <option value="BCA">Bank BCA</option>
-                                    <option value="BRI">Bank BRI</option>
-                                    <option value="Mandiri">Bank Mandiri</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="text-xs text-slate-300 font-medium">Nomor E-Wallet / Rekening Worker <span class="text-red-400">*</span></label>
-                                <input type="text" id="wPayoutNumber" placeholder="Cth: 08123456789 a/n Budi" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- HALAMAN 5: PANEL KHUSUS ADMIN (UPLOAD & SYNC SEMUA PERANGKAT) -->
-                <div id="sectionAdmin" class="hidden space-y-6">
-                    <!-- BOX LOGIN ADMIN -->
-                    <div id="adminLoginBox" class="glass-card rounded-2xl p-8 border border-purple-500/40 max-w-md mx-auto my-6 text-center">
-                        <div class="w-14 h-14 rounded-2xl bg-purple-500/20 border border-purple-500/40 text-purple-400 flex items-center justify-center mx-auto mb-4 text-2xl">
-                            <i class="fa-solid fa-user-lock"></i>
-                        </div>
-                        <h2 class="text-xl font-bold text-white">Login Panel Admin</h2>
-                        <p class="text-xs text-slate-400 mt-1 mb-6">Hanya Admin Dolphin Joki yang dapat mengunggah dan mengelola testimoni jokian.</p>
-
-                        <form onsubmit="handleAdminLogin(event)" class="space-y-4 text-left">
-                            <div>
-                                <label class="text-xs text-slate-300 font-medium">Password / PIN Admin <span class="text-red-400">*</span></label>
-                                <input type="password" id="adminPinInput" placeholder="Masukkan Password Admin" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-500">
-                            </div>
-                            <div id="adminLoginError" class="hidden p-2.5 rounded-lg bg-red-500/20 border border-red-500/40 text-red-300 text-xs text-center">
-                                <i class="fa-solid fa-circle-exclamation mr-1"></i> Password Admin salah! Silakan coba lagi.
-                            </div>
-                            <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-extrabold py-3 rounded-xl shadow-lg shadow-purple-500/20 transition text-sm flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-right-to-bracket"></i> MASUK KE PANEL ADMIN
-                            </button>
-                        </form>
-                    </div>
-
-                    <!-- DASHBOARD UPLOAD ADMIN -->
-                    <div id="adminDashboardBox" class="hidden space-y-6">
-
-                        <!-- PENGATURAN SINKRONISASI ANTAR PERANGKAT (CLOUD DATABASE & EXPORT HTML) -->
-                        <div class="glass-card rounded-2xl p-6 border border-emerald-500/40 bg-emerald-950/10">
-                            <div class="flex items-start justify-between gap-4 mb-3">
-                                <div>
-                                    <h3 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
-                                        <i class="fa-solid fa-globe"></i> Sinkronisasi Foto Testimoni ke Semua Perangkat
-                                    </h3>
-                                    <p class="text-xs text-slate-300 mt-1">
-                                        Agar foto yang diupload Admin langsung terlihat oleh pengunjung di HP/perangkat lain, gunakan <strong>Cloud Database (Otomatis Realtime)</strong> atau klik <strong>Download File HTML Terupdate</strong> untuk diunggah ke hosting Anda.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mt-3">
-                                <div class="sm:col-span-2">
-                                    <input type="text" id="admCloudUrlInput" placeholder="URL Firebase Realtime DB (Cth: https://dolphin-joki-rtdb.firebaseio.com)" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500">
-                                </div>
-                                <button type="button" onclick="saveCloudDbUrl()" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold py-2 px-3 rounded-lg text-xs flex items-center justify-center gap-1.5 transition">
-                                    <i class="fa-solid fa-cloud-bolt"></i> Hubungkan Cloud
-                                </button>
-                            </div>
-                            <div class="flex flex-wrap items-center justify-between gap-2 mt-3 pt-3 border-t border-slate-800/80 text-[11px]">
-                                <span id="cloudSyncStatusText" class="text-slate-400">Status Cloud: Menggunakan penyimpanan lokal & file HTML</span>
-                                <button type="button" onclick="downloadUpdatedHtmlFile()" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 px-3 py-1.5 rounded-lg font-bold flex items-center gap-1.5 transition">
-                                    <i class="fa-solid fa-file-arrow-down"></i> Download File HTML Terupdate (Berisi Foto Baru)
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- FORM UPLOAD TESTIMONI BARU -->
-                        <div class="glass-card rounded-2xl p-6 border border-purple-500/40">
-                            <div class="flex flex-wrap items-center justify-between gap-3 mb-6 border-b border-slate-700/70 pb-4">
-                                <div class="flex items-center gap-3">
-                                    <span class="w-9 h-9 rounded-xl bg-purple-500 text-white font-bold flex items-center justify-center"><i class="fa-solid fa-cloud-arrow-up"></i></span>
-                                    <div>
-                                        <h2 class="text-lg font-bold text-white">Upload Testimoni Jokian Baru</h2>
-                                        <p class="text-xs text-slate-400">Pilih kategori Joki Rank atau Joki Gendong dan unggah foto buktinya.</p>
-                                    </div>
-                                </div>
-                                <button onclick="handleAdminLogout()" class="text-xs bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/30 px-3 py-1.5 rounded-lg font-bold flex items-center gap-1.5 transition">
-                                    <i class="fa-solid fa-power-off"></i> Logout Admin
-                                </button>
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                                <div>
-                                    <label class="text-slate-300 font-medium">Nama / Nickname Customer <span class="text-red-400">*</span></label>
-                                    <input type="text" id="admCustName" placeholder="Cth: R***z (ID: 8291****)" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-                                </div>
-                                <div>
-                                    <label class="text-slate-300 font-medium">Jenis Layanan Joki <span class="text-red-400">*</span></label>
-                                    <select id="admService" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-                                        <option value="regular">Joki Rank (Login Akun)</option>
-                                        <option value="gendong">Joki Gendong (Mabar)</option>
-                                    </select>
-                                </div>
-
-                                <div>
-                                    <label class="text-slate-300 font-medium">Rank Awal <span class="text-red-400">*</span></label>
-                                    <input type="text" id="admStartRank" placeholder="Cth: Epic II (⭐2)" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-                                </div>
-                                <div>
-                                    <label class="text-slate-300 font-medium">Rank Selesai <span class="text-red-400">*</span></label>
-                                    <input type="text" id="admTargetRank" placeholder="Cth: Mythic (⭐15)" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-                                </div>
-
-                                <div>
-                                    <label class="text-slate-300 font-medium">Jumlah Bintang Dikerjakan</label>
-                                    <input type="text" id="admStarsEarned" placeholder="Cth: 25 ⭐" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-                                </div>
-                                <div>
-                                    <label class="text-slate-300 font-medium">Badge Pencapaian</label>
-                                    <select id="admBadge" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-                                        <option value="SAVAGE + MVP 🏆">SAVAGE + MVP 🏆</option>
-                                        <option value="WIN STREAK 🔥">WIN STREAK 🔥</option>
-                                        <option value="MANIAC + MVP ⭐">MANIAC + MVP ⭐</option>
-                                        <option value="FAST DONE 1x24 JAM ⚡">FAST DONE 1x24 JAM ⚡</option>
-                                    </select>
-                                </div>
-
-                                <div>
-                                    <label class="text-slate-300 font-medium">Dikerjakan Oleh (Kode Worker)</label>
-                                    <input type="text" id="admWorkerCode" placeholder="Cth: Worker WJ-01" value="Worker WJ-01" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-                                </div>
-                                <div>
-                                    <label class="text-slate-300 font-medium">Link Foto Eksternal (Opsional)</label>
-                                    <input type="text" id="admImageUrl" placeholder="Atau pilih file foto di bawah..." class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-                                </div>
-
-                                <div class="md:col-span-2">
-                                    <label class="text-slate-300 font-medium">Upload Screenshot Hasil Joki dari Galeri HP/PC (Otomatis Kompresi Ringan)</label>
-                                    <input type="file" id="admImageInput" accept="image/*" onchange="previewAdminImage(event)" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-slate-300 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-purple-500 file:text-white hover:file:bg-purple-400">
-                                    <div id="admImagePreviewBox" class="hidden mt-3 relative bg-slate-950 p-2 rounded-xl border border-slate-800 max-w-xs">
-                                        <img id="admImagePreview" src="" alt="Preview" class="w-full h-36 object-cover rounded-lg">
-                                        <button type="button" onclick="clearAdminImagePreview()" class="absolute top-3 right-3 bg-red-500 text-white text-[10px] px-2 py-1 rounded font-bold shadow">Hapus Foto</button>
-                                    </div>
-                                </div>
-
-                                <div class="md:col-span-2">
-                                    <label class="text-slate-300 font-medium">Ulasan / Testimoni Customer <span class="text-red-400">*</span></label>
-                                    <textarea id="admComment" rows="3" placeholder="Masukkan ulasan dari pembeli..." class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500"></textarea>
-                                </div>
-                            </div>
-
-                            <button type="button" onclick="adminPublishTestimonial()" id="btnPublishTesti" class="w-full mt-6 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-extrabold py-3.5 rounded-xl shadow-lg shadow-amber-500/20 transition flex items-center justify-center gap-2 text-sm">
-                                <i class="fa-solid fa-upload"></i> PUBLISH TESTIMONI KE GALERI WEB
-                            </button>
-                        </div>
-
-                        <!-- DAFTAR KELOLA & HAPUS TESTIMONI -->
-                        <div class="glass-card rounded-2xl p-6 border border-slate-800">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-base font-bold text-white flex items-center gap-2">
-                                    <i class="fa-solid fa-list-ul text-purple-400"></i> Kelola Daftar Testimoni Aktif
-                                </h3>
-                                <button onclick="resetDefaultTestimonials()" class="text-[11px] bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 px-3 py-1 rounded-lg">Reset ke Default</button>
-                            </div>
-                            <div id="adminTestiManageList" class="space-y-2.5 max-h-96 overflow-y-auto pr-1"></div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- STEP 3: METODE PEMBAYARAN MANUAL -->
                 <div id="customerPaymentSection" class="glass-card rounded-2xl p-6">
                     <div class="flex items-center justify-between mb-6 border-b border-slate-700/70 pb-4">
@@ -694,107 +345,9 @@
                     <button onclick="processOrder()" class="w-full mt-6 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-extrabold py-3.5 rounded-xl shadow-lg shadow-amber-500/20 transition transform active:scale-95 flex items-center justify-center gap-2">
                         <i class="fa-solid fa-bolt"></i> LANJUT PEMBAYARAN
                     </button>
-                    <p class="text-[11px] text-center text-slate-400 mt-3"><i class="fa-solid fa-shield-halved text-emerald-400 mr-1"></i> Garansi Amanah 100% Bersama Dolphin Joki</p>
+                    <p class="text-[11px] text-center text-slate-400 mt-3"><i class="fa-solid fa-shield-halved text-emerald-400 mr-1"></i> Garansi Amanah 100% Bersama Sean Joki</p>
                 </div>
 
-                <!-- BOX 2: SIDEBAR PUBLIK JAMINAN DOLPHIN JOKI -->
-                <div id="testiSummaryCard" class="hidden glass-card rounded-2xl p-6 sticky top-24 border border-amber-500/40">
-                    <div class="flex items-center justify-between mb-4 border-b border-slate-700/70 pb-3">
-                        <div class="flex items-center gap-2.5">
-                            <div class="w-8 h-8 rounded-lg bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400">
-                                <i class="fa-solid fa-dragon text-sm"></i>
-                            </div>
-                            <h2 class="text-base font-bold text-white">Jaminan Dolphin Joki</h2>
-                        </div>
-                        <span class="text-[10px] font-bold bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-500/30">100% Trusted</span>
-                    </div>
-
-                    <div class="space-y-3 text-xs text-slate-300">
-                        <div class="bg-slate-900/90 p-3.5 rounded-xl border border-slate-800 flex items-start gap-3">
-                            <div class="w-9 h-9 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-400 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-bolt text-sm"></i></div>
-                            <div>
-                                <h4 class="font-bold text-white">Pengerjaan Kilat 1x24 Jam</h4>
-                                <p class="text-slate-400 text-[11px] mt-0.5">Tim penjoki Ex-Immortal siap push akunmu begitu pembayaran terkonfirmasi.</p>
-                            </div>
-                        </div>
-                        <div class="bg-slate-900/90 p-3.5 rounded-xl border border-slate-800 flex items-start gap-3">
-                            <div class="w-9 h-9 rounded-lg bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-user-secret text-sm"></i></div>
-                            <div>
-                                <h4 class="font-bold text-white">Privasi & Keamanan 100%</h4>
-                                <p class="text-slate-400 text-[11px] mt-0.5">Tanpa cheat/script, murni skill tangan penjoki profesional dan amanah.</p>
-                            </div>
-                        </div>
-                        <div class="bg-slate-900/90 p-3.5 rounded-xl border border-slate-800 flex items-start gap-3">
-                            <div class="w-9 h-9 rounded-lg bg-yellow-500/15 border border-yellow-500/30 text-yellow-400 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-trophy text-sm"></i></div>
-                            <div>
-                                <h4 class="font-bold text-white">Bonus MVP, Maniac & Savage</h4>
-                                <p class="text-slate-400 text-[11px] mt-0.5">Statistik winrate akunmu dijamin makin wangi dan penuh MVP.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="space-y-2.5 mt-6">
-                        <button onclick="switchServicePage('regular')" class="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-extrabold py-3.5 rounded-xl shadow-lg shadow-amber-500/20 transition flex items-center justify-center gap-2 text-xs">
-                            <i class="fa-solid fa-rocket"></i> ORDER JOKI RANK SEKARANG
-                        </button>
-                        <button onclick="switchServicePage('gendong')" class="w-full bg-slate-800 hover:bg-slate-700 text-amber-400 border border-amber-500/30 font-bold py-3 rounded-xl transition flex items-center justify-center gap-2 text-xs">
-                            <i class="fa-solid fa-users"></i> ORDER JOKI GENDONG (MABAR)
-                        </button>
-                    </div>
-
-                    <div class="border-t border-slate-800 mt-5 pt-4 text-center">
-                        <button onclick="switchServicePage('admin')" class="text-[11px] text-slate-400 hover:text-purple-400 transition flex items-center justify-center gap-1.5 mx-auto">
-                            <i class="fa-solid fa-lock text-purple-400"></i> Login Panel Admin (Upload Testi)
-                        </button>
-                    </div>
-                </div>
-
-                <!-- BOX 3: RINGKASAN SLIP UPAH WORKER -->
-                <div id="workerSummaryCard" class="hidden glass-card rounded-2xl p-6 sticky top-24 border border-emerald-500/40">
-                    <div class="flex items-center justify-between mb-4">
-                        <h2 class="text-lg font-bold text-white flex items-center gap-2"><i class="fa-solid fa-file-invoice-dollar text-emerald-400"></i> Slip Upah Worker</h2>
-                        <span class="text-[11px] font-bold bg-emerald-500/20 text-emerald-300 px-2.5 py-0.5 rounded-full border border-emerald-500/30">80% : 20%</span>
-                    </div>
-
-                    <div class="bg-slate-900/90 rounded-xl p-4 space-y-3 text-sm border border-slate-800">
-                        <div class="flex justify-between"><span class="text-slate-400">Kategori Job:</span><span id="wSumType" class="font-semibold text-white text-right">Joki Rank (Login)</span></div>
-                        <div class="flex justify-between"><span class="text-slate-400">Detail Pengerjaan:</span><span id="wSumDetail" class="font-semibold text-amber-400 text-right">-</span></div>
-                        <div class="flex justify-between"><span class="text-slate-400">Total Bintang:</span><span id="wSumStars" class="font-semibold text-white">0 ⭐</span></div>
-                        <div class="border-t border-slate-800 pt-2.5 flex justify-between"><span class="text-slate-400">Harga Order (100%):</span><span id="wSumGross" class="font-semibold text-slate-200">Rp 0</span></div>
-                        <div class="flex justify-between"><span class="text-slate-400">Bagian Store (20%):</span><span id="wSumStore" class="font-semibold text-amber-400">- Rp 0</span></div>
-                        <div class="border-t border-slate-700 pt-3 flex justify-between items-center">
-                            <span class="font-bold text-emerald-300">Gaji Worker (80%):</span>
-                            <span id="wSumWorkerNet" class="font-gaming text-xl font-extrabold text-emerald-400">Rp 0</span>
-                        </div>
-                    </div>
-
-                    <div class="space-y-2.5 mt-6">
-                        <button onclick="sendWorkerClaimToWA()" class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-extrabold py-3.5 rounded-xl shadow-lg shadow-emerald-500/20 transition transform active:scale-95 flex items-center justify-center gap-2 text-sm">
-                            <i class="fa-brands fa-whatsapp text-base"></i> KLAIM GAJI KE WA ADMIN
-                        </button>
-                        <button onclick="copyWorkerSlip()" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold py-2.5 rounded-xl transition flex items-center justify-center gap-2 text-xs">
-                            <i class="fa-regular fa-copy"></i> Salin Teks Rincian Gaji
-                        </button>
-                    </div>
-                </div>
-
-                <!-- BOX 4: SIDEBAR PANEL ADMIN -->
-                <div id="adminSummaryCard" class="hidden glass-card rounded-2xl p-6 sticky top-24 border border-purple-500/40">
-                    <div class="flex items-center justify-between mb-4 border-b border-slate-700/70 pb-3">
-                        <h2 class="text-base font-bold text-white flex items-center gap-2"><i class="fa-solid fa-user-shield text-purple-400"></i> Info Panel Admin</h2>
-                        <span id="adminStatusBadge" class="text-[10px] font-bold bg-red-500/20 text-red-300 px-2.5 py-0.5 rounded-full border border-red-500/30">Terkunci</span>
-                    </div>
-
-                    <div class="bg-slate-900/90 rounded-xl p-4 border border-slate-800 space-y-2.5 text-xs">
-                        <div class="flex justify-between"><span class="text-slate-400">Total Testi Aktif:</span><span id="admTotalTestiCount" class="font-bold text-amber-400">4 Testimoni</span></div>
-                        <div class="flex justify-between"><span class="text-slate-400">Filter Aktif:</span><span class="font-semibold text-white">Joki Rank & Gendong</span></div>
-                        <div class="flex justify-between"><span class="text-slate-400">Lintas Perangkat:</span><span class="font-semibold text-emerald-400">Cloud DB / Export HTML</span></div>
-                    </div>
-
-                    <button onclick="switchServicePage('testi')" class="w-full mt-5 bg-slate-800 hover:bg-slate-700 text-amber-400 border border-amber-500/30 font-bold py-3 rounded-xl transition flex items-center justify-center gap-2 text-xs">
-                        <i class="fa-solid fa-eye"></i> Lihat Halaman Testi Publik
-                    </button>
-                </div>
             </div>
 
         </div>
@@ -806,12 +359,12 @@
             <div class="text-center border-b border-slate-800 pb-3">
                 <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30">MENUNGGU PEMBAYARAN</span>
                 <h3 class="text-lg font-bold text-white mt-2">Instruksi Transfer Manual</h3>
-                <p id="modalInvNumber" class="text-xs text-slate-400 font-mono mt-0.5">#INV-DJ0001</p>
+                <p id="modalInvNumber" class="text-xs text-slate-400 font-mono mt-0.5">#INV-SJ0001</p>
             </div>
             <div id="modalPaymentBox" class="my-4 bg-slate-950 p-4 rounded-xl border border-amber-500/40 text-center"></div>
             <div class="space-y-2 text-xs bg-slate-950/60 p-3.5 rounded-xl border border-slate-800" id="modalDetails"></div>
             <div class="mt-4 p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-[11px] text-emerald-300 leading-relaxed">
-                <i class="fa-solid fa-circle-check mr-1"></i> <strong>Langkah Terakhir:</strong> Silakan transfer sesuai nominal di atas, lalu klik tombol di bawah untuk mengirim <strong>Bukti Transfer (Screenshot)</strong> ke WhatsApp Admin Dolphin.
+                <i class="fa-solid fa-circle-check mr-1"></i> <strong>Langkah Terakhir:</strong> Silakan transfer sesuai nominal di atas, lalu klik tombol di bawah untuk mengirim <strong>Bukti Transfer (Screenshot)</strong> ke WhatsApp Admin Sean Joki.
             </div>
             <div class="flex gap-3 mt-5">
                 <button onclick="closeModal()" class="w-1/3 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300">Kembali</button>
@@ -819,16 +372,6 @@
                     <i class="fa-brands fa-whatsapp text-base"></i> Kirim Bukti Transfer
                 </button>
             </div>
-        </div>
-    </div>
-
-    <!-- MODAL PREVIEW DETAIL TESTIMONI JOKIAN -->
-    <div id="testiDetailModal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-slate-900 border border-amber-500/40 rounded-2xl max-w-lg w-full p-6 shadow-2xl my-8 relative">
-            <button onclick="closeTestiModal()" class="absolute top-4 right-4 w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div id="testiModalContent"></div>
         </div>
     </div>
 
@@ -845,13 +388,8 @@
     <!-- JAVASCRIPT LOGIC -->
     <script>
         const ADMIN_WA = "6283186389438";
-        const ADMIN_PASSWORD = "puputmasam"; // Password khusus Admin untuk upload testi
 
-        // Opsional: Isi URL Firebase Realtime Database Anda di bawah ini agar sinkron otomatis di semua perangkat tanpa setting ulang
-        const DEFAULT_CLOUD_DB_URL = "https://dolphinjoki-default-rtdb.asia-southeast1.firebasedatabase.app/"; 
 
-        const WORKER_SHARE_RATE = 0.80;
-        const STORE_SHARE_RATE  = 0.20;
 
         const MANUAL_PAYMENTS = [
             {
@@ -900,79 +438,13 @@
             { id: 'immortal', name: 'Mythical Immortal (100+ ⭐)', base: 91, minStar: 100, maxStar: 999, defStart: 100, defTarget: 110, label: 'Jumlah Bintang Immortal (100 - 999)' }
         ];
 
-        /* START_DEFAULT_TESTIMONIALS */
-        const DEFAULT_TESTIMONIALS = [
-            {
-                id: 'TST-01',
-                customer: 'K***n (ID: 8821****)',
-                service: 'regular',
-                startRank: 'Mythical Glory (⭐62)',
-                targetRank: 'Mythical Immortal (⭐102)',
-                starsEarned: '40 ⭐',
-                badge: 'SAVAGE + MVP 🏆',
-                worker: 'Worker WJ-01',
-                date: 'Hari ini',
-                comment: 'Gila sih penjokinya Dolphin Joki, dari Glory 62 ke Immortal 102 cuma 2 hari beres! History full coklat emas MVP terus + bonus 2 Savage.',
-                image: ''
-            },
-            {
-                id: 'TST-02',
-                customer: 'D***y (ID: 1045****)',
-                service: 'regular',
-                startRank: 'Epic V (⭐1)',
-                targetRank: 'Mythic (⭐15)',
-                starsEarned: '64 ⭐',
-                badge: 'SAVAGE + MVP 🏆',
-                worker: 'Worker WJ-02',
-                date: 'Kemarin',
-                comment: 'Awal season pusing ketemu dark system di Epic, langsung serahin ke Dolphin Joki. Besok sorenya cek akun udah nongkrong di Mythic bintang 15. Amanah pol!',
-                image: ''
-            },
-            {
-                id: 'TST-03',
-                customer: 'A***a (ID: 3190****)',
-                service: 'gendong',
-                startRank: 'Mythical Honor (⭐30)',
-                targetRank: 'Mythical Glory (⭐50)',
-                starsEarned: '20 ⭐',
-                badge: 'WIN STREAK 🔥',
-                worker: 'Worker WJ-03',
-                date: 'Kemarin',
-                comment: 'Order Joki Gendong 20 bintang dari Honor ke Glory. Aku tinggal pakai Angela/Floryn, abangnya yang bantai musuh 20x Win Streak tanpa kalah sekalipun!',
-                image: ''
-            },
-            {
-                id: 'TST-04',
-                customer: 'R***i (ID: 5542****)',
-                service: 'gendong',
-                startRank: 'Legend III (⭐2)',
-                targetRank: 'Mythic (⭐10)',
-                starsEarned: '23 ⭐',
-                badge: 'MANIAC + MVP ⭐',
-                worker: 'Worker WJ-05',
-                date: '2 Hari lalu',
-                comment: 'Enaknya Joki Gendong di sini nggak perlu kasih password akun. Penjokinya ramah banget di voice chat, diajarin rotasi juga sambil digendong sampai Mythic.',
-                image: ''
-            }
-        ];
-        /* END_DEFAULT_TESTIMONIALS */
-
         let activePage = 'regular';
-        let workerMode = 'rank';
-        let activeTestiFilter = 'regular'; // Hanya 'regular' (Joki Rank) atau 'gendong' (Joki Gendong)
-        let testimonialsList = [];
-        let isAdminAuthenticated = false;
-        let adminCompressedImageData = '';
 
         let selectedPaymentObj = MANUAL_PAYMENTS[0];
         let currentBasePrice = 0;
         let currentTotalStars = 0;
         let currentInvoice = "";
 
-        let workerGrossTotal = 0;
-        let workerNetTotal = 0;
-        let storeCutTotal = 0;
-        let workerStarsTotal = 0;
 
         function formatRupiah(num) {
             return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(num);
@@ -990,13 +462,8 @@
             showToast(`${label} berhasil disalin!`);
         }
 
-        function getCloudDbUrl() {
-            const savedUrl = localStorage.getItem('dolphin_cloud_db_url') || DEFAULT_CLOUD_DB_URL;
-            return savedUrl ? savedUrl.replace(/\/+$/, '') : '';
-        }
-
         window.onload = function() {
-            const selects = ['startRank', 'targetRank', 'gStartRank', 'gTargetRank', 'wStartRank', 'wTargetRank'];
+            const selects = ['startRank', 'targetRank', 'gStartRank', 'gTargetRank'];
             selects.forEach(selId => {
                 const el = document.getElementById(selId);
                 RANKS.forEach((rank, index) => el.add(new Option(rank.name, index)));
@@ -1006,420 +473,11 @@
             document.getElementById('targetRank').value = 14;
             document.getElementById('gStartRank').value = 9;
             document.getElementById('gTargetRank').value = 14;
-            document.getElementById('wStartRank').value = 9;
-            document.getElementById('wTargetRank').value = 14;
 
-            isAdminAuthenticated = sessionStorage.getItem('dolphin_admin_logged') === 'true';
-            const cloudUrl = getCloudDbUrl();
-            if (cloudUrl) document.getElementById('admCloudUrlInput').value = cloudUrl;
-
-            loadTestimonials();
             renderPaymentCards();
             selectPayment(0);
             calculateAll();
-            updateAdminUI();
         };
-
-        // =====================================================
-        // LOGIKA TESTIMONI LINTAS PERANGKAT (CLOUD + HTML EXPORT)
-        // =====================================================
-        async function loadTestimonials() {
-            const cloudUrl = getCloudDbUrl();
-            if (cloudUrl) {
-                try {
-                    const res = await fetch(`${cloudUrl}/dolphin_testimonials.json`);
-                    if (res.ok) {
-                        const cloudData = await res.json();
-                        if (Array.isArray(cloudData) && cloudData.length > 0) {
-                            testimonialsList = cloudData;
-                            localStorage.setItem('dolphin_joki_testi_v3', JSON.stringify(testimonialsList));
-                            document.getElementById('cloudSyncStatusText').innerHTML = `<span class="text-emerald-400 font-bold"><i class="fa-solid fa-circle-check"></i> Cloud Aktif (Semua perangkat tersinkronisasi)</span>`;
-                            renderTestimonials();
-                            renderAdminManageList();
-                            updateAdminUI();
-                            return;
-                        }
-                    }
-                } catch (err) {
-                    console.warn("Gagal memuat dari Cloud DB, menggunakan data lokal/default.");
-                }
-            }
-
-            const saved = localStorage.getItem('dolphin_joki_testi_v3');
-            if (saved) {
-                try {
-                    testimonialsList = JSON.parse(saved);
-                } catch (e) {
-                    testimonialsList = [...DEFAULT_TESTIMONIALS];
-                }
-            } else {
-                testimonialsList = [...DEFAULT_TESTIMONIALS];
-            }
-            renderTestimonials();
-            renderAdminManageList();
-        }
-
-        async function syncTestimonialsEverywhere() {
-            try {
-                localStorage.setItem('dolphin_joki_testi_v3', JSON.stringify(testimonialsList));
-            } catch (e) {
-                console.warn("Local storage penuh.");
-            }
-
-            const cloudUrl = getCloudDbUrl();
-            if (cloudUrl) {
-                try {
-                    await fetch(`${cloudUrl}/dolphin_testimonials.json`, {
-                        method: 'PUT',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(testimonialsList)
-                    });
-                    document.getElementById('cloudSyncStatusText').innerHTML = `<span class="text-emerald-400 font-bold"><i class="fa-solid fa-circle-check"></i> Tersimpan di Cloud (Semua perangkat bisa melihat)</span>`;
-                } catch (err) {
-                    alert("Gagal menyimpan ke Cloud Database. Pastikan URL Firebase Realtime DB benar dan Rules diset ke true.");
-                }
-            }
-
-            renderTestimonials();
-            renderAdminManageList();
-            updateAdminUI();
-        }
-
-        async function saveCloudDbUrl() {
-            const url = document.getElementById('admCloudUrlInput').value.trim().replace(/\/+$/, '');
-            localStorage.setItem('dolphin_cloud_db_url', url);
-            if (url) {
-                await syncTestimonialsEverywhere();
-                showToast("Cloud Database berhasil dihubungkan!");
-            } else {
-                document.getElementById('cloudSyncStatusText').innerText = "Status Cloud: Menggunakan penyimpanan lokal & file HTML";
-                showToast("Cloud Database dinonaktifkan.");
-            }
-        }
-
-        // Download File dolphin.html yang sudah tertanam foto testimoni terbaru (agar semua perangkat bisa melihat tanpa database)
-        function downloadUpdatedHtmlFile() {
-            let fullHtml = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
-            const replacementBlock = `/* START_DEFAULT_TESTIMONIALS */\n        const DEFAULT_TESTIMONIALS = ${JSON.stringify(testimonialsList, null, 4)};\n        /* END_DEFAULT_TESTIMONIALS */`;
-            fullHtml = fullHtml.replace(/\/\* START_DEFAULT_TESTIMONIALS \*\/[\s\S]*?\/\* END_DEFAULT_TESTIMONIALS \*\//, replacementBlock);
-
-            const blob = new Blob([fullHtml], { type: 'text/html' });
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = 'dolphin.html';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            showToast("File dolphin.html terbaru berhasil diunduh!");
-        }
-
-        function handleAdminLogin(e) {
-            e.preventDefault();
-            const pin = document.getElementById('adminPinInput').value.trim();
-            const errBox = document.getElementById('adminLoginError');
-
-            if (pin === ADMIN_PASSWORD) {
-                isAdminAuthenticated = true;
-                sessionStorage.setItem('dolphin_admin_logged', 'true');
-                document.getElementById('adminPinInput').value = '';
-                errBox.classList.add('hidden');
-                updateAdminUI();
-                showToast("Login Admin berhasil!");
-            } else {
-                errBox.classList.remove('hidden');
-            }
-        }
-
-        function handleAdminLogout() {
-            isAdminAuthenticated = false;
-            sessionStorage.removeItem('dolphin_admin_logged');
-            updateAdminUI();
-            showToast("Anda telah logout dari Panel Admin.");
-        }
-
-        function updateAdminUI() {
-            document.getElementById('adminLoginBox').classList.toggle('hidden', isAdminAuthenticated);
-            document.getElementById('adminDashboardBox').classList.toggle('hidden', !isAdminAuthenticated);
-            const badge = document.getElementById('adminStatusBadge');
-            if (isAdminAuthenticated) {
-                badge.className = "text-[10px] font-bold bg-emerald-500/20 text-emerald-300 px-2.5 py-0.5 rounded-full border border-emerald-500/30";
-                badge.innerText = "Admin Aktif";
-            } else {
-                badge.className = "text-[10px] font-bold bg-red-500/20 text-red-300 px-2.5 py-0.5 rounded-full border border-red-500/30";
-                badge.innerText = "Terkunci";
-            }
-            document.getElementById('admTotalTestiCount').innerText = `${testimonialsList.length} Testimoni`;
-        }
-
-        function previewAdminImage(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const img = new Image();
-                img.onload = function() {
-                    const canvas = document.createElement('canvas');
-                    const maxWidth = 720;
-                    let width = img.width;
-                    let height = img.height;
-
-                    if (width > maxWidth) {
-                        height = Math.round((height * maxWidth) / width);
-                        width = maxWidth;
-                    }
-
-                    canvas.width = width;
-                    canvas.height = height;
-                    const ctx = canvas.getContext('2d');
-                    ctx.drawImage(img, 0, 0, width, height);
-
-                    adminCompressedImageData = canvas.toDataURL('image/jpeg', 0.72);
-                    document.getElementById('admImagePreview').src = adminCompressedImageData;
-                    document.getElementById('admImagePreviewBox').classList.remove('hidden');
-                };
-                img.src = e.target.result;
-            };
-            reader.readAsDataURL(file);
-        }
-
-        function clearAdminImagePreview() {
-            adminCompressedImageData = '';
-            document.getElementById('admImageInput').value = '';
-            document.getElementById('admImagePreviewBox').classList.add('hidden');
-        }
-
-        async function adminPublishTestimonial() {
-            if (!isAdminAuthenticated) {
-                alert("Akses ditolak! Silakan login sebagai Admin terlebih dahulu.");
-                return;
-            }
-
-            const customer = document.getElementById('admCustName').value.trim();
-            const worker = document.getElementById('admWorkerCode').value.trim() || 'Tim Dolphin Joki';
-            const service = document.getElementById('admService').value;
-            const startRank = document.getElementById('admStartRank').value.trim();
-            const targetRank = document.getElementById('admTargetRank').value.trim();
-            const starsEarned = document.getElementById('admStarsEarned').value.trim() || 'DONE ⭐';
-            const badge = document.getElementById('admBadge').value;
-            const comment = document.getElementById('admComment').value.trim();
-            const externalImgUrl = document.getElementById('admImageUrl').value.trim();
-
-            if (!customer || !startRank || !targetRank || !comment) {
-                alert("Harap lengkapi Nama Customer, Rank Awal, Rank Selesai, dan Ulasan Customer!");
-                return;
-            }
-
-            const finalImage = externalImgUrl || adminCompressedImageData || '';
-
-            const newTesti = {
-                id: 'TST-' + Math.floor(100 + Math.random() * 900),
-                customer,
-                service,
-                startRank,
-                targetRank,
-                starsEarned,
-                badge,
-                worker,
-                date: 'Baru saja',
-                comment,
-                image: finalImage
-            };
-
-            testimonialsList.unshift(newTesti);
-            await syncTestimonialsEverywhere();
-
-            document.getElementById('admCustName').value = '';
-            document.getElementById('admStartRank').value = '';
-            document.getElementById('admTargetRank').value = '';
-            document.getElementById('admStarsEarned').value = '';
-            document.getElementById('admImageUrl').value = '';
-            document.getElementById('admComment').value = '';
-            clearAdminImagePreview();
-
-            filterTestimonials(service);
-            showToast("Testimoni berhasil dipublish!");
-        }
-
-        async function deleteTestimonialById(id) {
-            if (!isAdminAuthenticated) return;
-            if (!confirm("Yakin ingin menghapus testimoni ini dari galeri?")) return;
-            testimonialsList = testimonialsList.filter(item => item.id !== id);
-            await syncTestimonialsEverywhere();
-            showToast("Testimoni berhasil dihapus!");
-        }
-
-        async function resetDefaultTestimonials() {
-            if (!isAdminAuthenticated) return;
-            if (!confirm("Kembalikan daftar testimoni ke data awal bawaan?")) return;
-            testimonialsList = [...DEFAULT_TESTIMONIALS];
-            await syncTestimonialsEverywhere();
-            showToast("Daftar testimoni direset ke default!");
-        }
-
-        function renderAdminManageList() {
-            const container = document.getElementById('adminTestiManageList');
-            if (!container) return;
-            container.innerHTML = '';
-
-            if (testimonialsList.length === 0) {
-                container.innerHTML = `<p class="text-xs text-slate-500 text-center py-4">Belum ada testimoni.</p>`;
-                return;
-            }
-
-            testimonialsList.forEach(item => {
-                const row = document.createElement('div');
-                row.className = "flex items-center justify-between bg-slate-900/90 p-3 rounded-xl border border-slate-800 text-xs gap-3";
-                row.innerHTML = `
-                    <div class="flex items-center gap-3 min-w-0">
-                        ${item.image ? `<img src="${item.image}" class="w-10 h-10 rounded-lg object-cover border border-slate-700 flex-shrink-0">` : `<div class="w-10 h-10 rounded-lg bg-slate-800 text-amber-400 flex items-center justify-center font-bold flex-shrink-0"><i class="fa-solid fa-trophy"></i></div>`}
-                        <div class="truncate">
-                            <p class="font-bold text-white truncate">${item.customer} <span class="text-[10px] text-amber-400 font-normal">[${item.service === 'gendong' ? 'Joki Gendong' : 'Joki Rank'}] (${item.startRank} ➔ ${item.targetRank})</span></p>
-                            <p class="text-[11px] text-slate-400 truncate">"${item.comment}"</p>
-                        </div>
-                    </div>
-                    <button onclick="deleteTestimonialById('${item.id}')" class="bg-red-500/20 hover:bg-red-500/30 text-red-400 border border-red-500/30 px-2.5 py-1.5 rounded-lg font-bold flex-shrink-0 transition">
-                        <i class="fa-solid fa-trash-can"></i>
-                    </button>
-                `;
-                container.appendChild(row);
-            });
-        }
-
-        // Filter Hanya Joki Rank ('regular') dan Joki Gendong ('gendong')
-        function filterTestimonials(filterKey) {
-            activeTestiFilter = filterKey;
-            document.getElementById('filterRegular').classList.toggle('active', filterKey === 'regular');
-            document.getElementById('filterGendong').classList.toggle('active', filterKey === 'gendong');
-            renderTestimonials();
-        }
-
-        function renderTestimonials() {
-            const container = document.getElementById('testiGridContainer');
-            container.innerHTML = '';
-
-            const filtered = testimonialsList.filter(item => item.service === activeTestiFilter);
-
-            if (filtered.length === 0) {
-                container.innerHTML = `<p class="text-xs text-slate-400 col-span-2 text-center py-8">Belum ada testimoni pada kategori ini.</p>`;
-                return;
-            }
-
-            filtered.forEach(item => {
-                const isGendong = item.service === 'gendong';
-                const serviceBadge = isGendong
-                    ? `<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30"><i class="fa-solid fa-users mr-1"></i>Joki Gendong</span>`
-                    : `<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30"><i class="fa-solid fa-bolt mr-1"></i>Joki Rank</span>`;
-
-                const proofVisual = item.image
-                    ? `<div class="relative rounded-xl overflow-hidden border border-slate-700/80 mb-3 h-48 bg-slate-950">
-                            <img src="${item.image}" alt="Bukti Joki" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-                            <span class="absolute top-2.5 right-2.5 text-[10px] font-extrabold px-2 py-0.5 rounded bg-amber-500 text-slate-950 shadow">${item.badge}</span>
-                            <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-xs">
-                                <span class="font-bold text-white">${item.startRank} <i class="fa-solid fa-arrow-right text-amber-400 mx-1"></i> <span class="text-emerald-400">${item.targetRank}</span></span>
-                            </div>
-                       </div>`
-                    : `<div class="rounded-xl bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950/60 p-3.5 border border-slate-700/80 mb-3 relative overflow-hidden">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-[10px] font-mono text-emerald-400 font-bold flex items-center gap-1">
-                                    <i class="fa-solid fa-circle-check"></i> ORDER DONE 100%
-                                </span>
-                                <span class="text-[10px] font-extrabold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">${item.badge}</span>
-                            </div>
-                            <div class="flex items-center justify-between bg-slate-950/80 rounded-lg p-2.5 border border-slate-800">
-                                <div>
-                                    <span class="text-[10px] text-slate-400 block">Rank Awal</span>
-                                    <span class="text-xs font-bold text-slate-200">${item.startRank}</span>
-                                </div>
-                                <div class="text-center px-2">
-                                    <i class="fa-solid fa-angles-right text-amber-400 text-sm"></i>
-                                    <span class="text-[10px] font-bold text-amber-400 block">${item.starsEarned || 'DONE'}</span>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-[10px] text-slate-400 block">Rank Selesai</span>
-                                    <span class="text-xs font-extrabold text-emerald-400">${item.targetRank}</span>
-                                </div>
-                            </div>
-                       </div>`;
-
-                const card = document.createElement('div');
-                card.className = "bg-slate-900/90 border border-slate-800 hover:border-amber-500/50 rounded-2xl p-4 transition cursor-pointer flex flex-col justify-between shadow-lg";
-                card.onclick = () => openTestiModal(item);
-                card.innerHTML = `
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex items-center gap-2.5">
-                                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-500 to-orange-600 text-slate-950 font-extrabold text-xs flex items-center justify-center">
-                                    ${item.customer.charAt(0).toUpperCase()}
-                                </div>
-                                <div>
-                                    <h4 class="text-xs font-bold text-white">${item.customer}</h4>
-                                    <span class="text-[10px] text-slate-400">${item.date} • ${item.worker}</span>
-                                </div>
-                            </div>
-                            ${serviceBadge}
-                        </div>
-                        ${proofVisual}
-                        <p class="text-xs text-slate-300 leading-relaxed italic">"${item.comment}"</p>
-                    </div>
-                    <div class="flex items-center justify-between mt-3 pt-2.5 border-t border-slate-800/70">
-                        <div class="flex items-center text-yellow-400 text-xs gap-0.5">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            <span class="text-[11px] text-slate-400 ml-1.5 font-semibold">5.0</span>
-                        </div>
-                        <span class="text-[11px] text-amber-400 hover:underline font-semibold flex items-center gap-1">
-                            Lihat Bukti <i class="fa-solid fa-up-right-from-square text-[10px]"></i>
-                        </span>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        function openTestiModal(item) {
-            const content = document.getElementById('testiModalContent');
-            const isGendong = item.service === 'gendong';
-
-            content.innerHTML = `
-                <div class="flex items-center gap-2 mb-3">
-                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                        <i class="fa-solid fa-check-circle mr-1"></i> VERIFIED BY ADMIN DOLPHIN JOKI
-                    </span>
-                    <span class="text-xs text-slate-400 font-mono">#${item.id}</span>
-                </div>
-
-                <h3 class="text-lg font-bold text-white">${item.customer}</h3>
-                <p class="text-xs text-slate-400 mb-4">${isGendong ? 'Layanan Joki Gendong (Mabar)' : 'Layanan Joki Rank (Login Akun)'} • ${item.date}</p>
-
-                ${item.image ? `<img src="${item.image}" alt="Screenshot Bukti" class="w-full max-h-80 object-contain rounded-xl bg-slate-950 border border-slate-800 mb-4 p-1">` : ''}
-
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2.5 text-xs mb-4">
-                    <div class="flex justify-between"><span class="text-slate-400">Rank Awal:</span><span class="font-bold text-white">${item.startRank}</span></div>
-                    <div class="flex justify-between"><span class="text-slate-400">Rank Selesai:</span><span class="font-bold text-emerald-400">${item.targetRank}</span></div>
-                    <div class="flex justify-between"><span class="text-slate-400">Total Bintang:</span><span class="font-semibold text-amber-400">${item.starsEarned || 'DONE ⭐'}</span></div>
-                    <div class="flex justify-between"><span class="text-slate-400">Badge Pencapaian:</span><span class="font-semibold text-white">${item.badge}</span></div>
-                    <div class="flex justify-between"><span class="text-slate-400">Dikerjakan Oleh:</span><span class="font-semibold text-slate-300">${item.worker}</span></div>
-                </div>
-
-                <div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-3.5 mb-5">
-                    <div class="flex items-center text-yellow-400 text-xs gap-0.5 mb-1">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="text-amber-300 font-bold ml-1.5">Ulasan Pembeli:</span>
-                    </div>
-                    <p class="text-xs text-slate-200 italic">"${item.comment}"</p>
-                </div>
-
-                <button onclick="closeTestiModal(); switchServicePage('${item.service}');" class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-extrabold text-xs flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-bolt"></i> PESAN LAYANAN INI SEKARANG
-                </button>
-            `;
-            document.getElementById('testiDetailModal').classList.remove('hidden');
-        }
-
-        function closeTestiModal() {
-            document.getElementById('testiDetailModal').classList.add('hidden');
-        }
 
         // =====================================================
         // NAVIGASI HALAMAN & KALKULATOR JOKI
@@ -1429,63 +487,27 @@
 
             document.getElementById('sectionRegular').classList.toggle('hidden', page !== 'regular');
             document.getElementById('sectionGendong').classList.toggle('hidden', page !== 'gendong');
-            document.getElementById('sectionTesti').classList.toggle('hidden', page !== 'testi');
-            document.getElementById('sectionWorker').classList.toggle('hidden', page !== 'worker');
-            document.getElementById('sectionAdmin').classList.toggle('hidden', page !== 'admin');
-
-            const isCustomerOrderPage = (page === 'regular' || page === 'gendong');
-            document.getElementById('customerPaymentSection').classList.toggle('hidden', !isCustomerOrderPage);
-            document.getElementById('daftar-harga').classList.toggle('hidden', page === 'testi' || page === 'admin');
-
-            document.getElementById('customerSummaryCard').classList.toggle('hidden', !isCustomerOrderPage);
-            document.getElementById('testiSummaryCard').classList.toggle('hidden', page !== 'testi');
-            document.getElementById('workerSummaryCard').classList.toggle('hidden', page !== 'worker');
-            document.getElementById('adminSummaryCard').classList.toggle('hidden', page !== 'admin');
 
             document.getElementById('tabBtnRegular').classList.toggle('active', page === 'regular');
             document.getElementById('tabBtnGendong').classList.toggle('active', page === 'gendong');
-            document.getElementById('tabBtnTesti').classList.toggle('active', page === 'testi');
-            document.getElementById('tabBtnWorker').classList.toggle('active', page === 'worker');
 
             document.getElementById('navRegular').className = page === 'regular' ? "text-amber-400 font-bold transition" : "text-slate-300 hover:text-amber-400 transition";
             document.getElementById('navGendong').className = page === 'gendong' ? "text-amber-400 font-bold transition flex items-center gap-1.5" : "text-slate-300 hover:text-amber-400 transition flex items-center gap-1.5";
-            document.getElementById('navTesti').className = page === 'testi' ? "text-amber-400 font-bold transition flex items-center gap-1.5" : "text-slate-300 hover:text-amber-400 transition flex items-center gap-1.5";
-            document.getElementById('navWorker').className = page === 'worker' ? "text-emerald-400 font-bold transition flex items-center gap-1.5" : "text-slate-300 hover:text-emerald-400 transition flex items-center gap-1.5";
 
             if (page === 'gendong') {
                 document.getElementById('heroBadge').innerText = "🔥 MODE JOKI GENDONG — MABAR TANPA LOGIN AKUN";
-                document.getElementById('heroTitle').innerHTML = `MABAR PUSH RANK BARENG PENJOKI <span class="text-amber-400">DOLPHIN JOKI</span>`;
+                document.getElementById('heroTitle').innerHTML = `MABAR PUSH RANK BARENG PENJOKI <span class="text-amber-400">SEAN JOKI</span>`;
                 document.getElementById('heroDesc').innerText = "Tidak perlu kasih email & password! Pilih posisi rank awal hingga target rank tujuanmu dan main bareng penjoki Ex-Immortal kami.";
                 document.getElementById('summaryServiceBadge').innerText = "Joki Gendong";
                 document.getElementById('summaryServiceType').innerText = "Joki Gendong (Mabar)";
-            } else if (page === 'testi') {
-                document.getElementById('heroBadge').innerText = "⭐ 100+ ORDERAN SELESAI — 100% REAL TESTIMONI";
-                document.getElementById('heroTitle').innerHTML = `BUKTI HASIL & TESTIMONI <span class="text-amber-400">DOLPHIN JOKI</span>`;
-                document.getElementById('heroDesc').innerText = "Lihat bukti nyata pengerjaan Joki Rank & Joki Gendong dari pelanggan kami. Diunggah resmi oleh Admin Dolphin Joki.";
-            } else if (page === 'worker') {
-                document.getElementById('heroBadge').innerText = "💰 PANEL INTERNAL — KALKULATOR UPAH WORKER 80% & STORE 20%";
-                document.getElementById('heroTitle').innerHTML = `KALKULATOR GAJI PENJOKI <span class="text-emerald-400">80% WORKER</span> : <span class="text-amber-400">20% STORE</span>`;
-                document.getElementById('heroDesc').innerText = "Hitung otomatis pembagian hasil 80% untuk Worker Penjoki dan 20% untuk Store Dolphin Joki beserta laporan klaim pencairan gaji.";
-            } else if (page === 'admin') {
-                document.getElementById('heroBadge').innerText = "🔒 AREA TERBATAS — PANEL UPLOAD & KELOLA TESTIMONI ADMIN";
-                document.getElementById('heroTitle').innerHTML = `DASHBOARD ADMIN <span class="text-purple-400">DOLPHIN JOKI</span>`;
-                document.getElementById('heroDesc').innerText = "Halaman khusus Admin untuk mengunggah bukti jokian baru dan menyinkronkannya ke seluruh perangkat pengunjung.";
-                updateAdminUI();
             } else {
-                document.getElementById('heroBadge').innerText = "⚡ DOLPHIN JOKI PROSES CEPAT 1x24 JAM";
-                document.getElementById('heroTitle').innerHTML = `PUSH RANK TANPA PUSING BERSAMA TIM <span class="text-amber-400">DOLPHIN JOKI</span>`;
+                document.getElementById('heroBadge').innerText = "⚡ SEAN JOKI PROSES CEPAT 1x24 JAM";
+                document.getElementById('heroTitle').innerHTML = `PUSH RANK TANPA PUSING BERSAMA TIM <span class="text-amber-400">SEAN JOKI</span>`;
                 document.getElementById('heroDesc').innerText = "Melayani dari tier Master hingga Mythical Immortal! 100% Amanah, Privasi Terjaga, Bonus Savage & Maniac, dan Winrate dijamin naik drastis.";
                 document.getElementById('summaryServiceBadge').innerText = "Joki Rank";
                 document.getElementById('summaryServiceType').innerText = "Joki Rank (Login)";
             }
 
-            calculateAll();
-        }
-
-        function switchWorkerMode(mode) {
-            workerMode = mode;
-            document.getElementById('wSubTabRank').classList.toggle('active', mode === 'rank');
-            document.getElementById('wSubTabGendong').classList.toggle('active', mode === 'gendong');
             calculateAll();
         }
 
@@ -1613,141 +635,7 @@
                 document.getElementById('summaryPayment').innerText = selectedPaymentObj.name;
                 document.getElementById('summaryTotal').innerText = formatRupiah(currentBasePrice);
 
-            } else if (activePage === 'worker') {
-                calculateWorkerSplit();
             }
-        }
-
-        function calculateWorkerSplit() {
-            const breakdownContainer = document.getElementById('wTierBreakdownList');
-            breakdownContainer.innerHTML = '';
-
-            const startIdx = parseInt(document.getElementById('wStartRank').value);
-            const targetIdx = parseInt(document.getElementById('wTargetRank').value);
-            let startStar = parseInt(document.getElementById('wStartStar').value) || 0;
-            let targetStar = parseInt(document.getElementById('wTargetStar').value) || 0;
-
-            const activePriceTable = workerMode === 'rank' ? PRICE_REGULAR : PRICE_GENDONG;
-            const res = computeTierToTierCost(startIdx, startStar, targetIdx, targetStar, activePriceTable);
-
-            document.getElementById('calcAlertWorker').classList.toggle('hidden', res.valid);
-
-            workerStarsTotal = res.stars;
-            workerGrossTotal = res.cost;
-            workerNetTotal = Math.round(workerGrossTotal * WORKER_SHARE_RATE);
-            storeCutTotal = Math.round(workerGrossTotal * STORE_SHARE_RATE);
-
-            const startCleanName = RANKS[startIdx].name.split(' (')[0];
-            const targetCleanName = RANKS[targetIdx].name.split(' (')[0];
-
-            document.getElementById('wSumType').innerText = workerMode === 'rank' ? "Joki Rank (Login)" : "Joki Gendong (Mabar)";
-            document.getElementById('wSumDetail').innerText = `${startCleanName} (⭐${res.sStar}) ➔ ${targetCleanName} (⭐${res.tStar})`;
-
-            if (!res.valid || workerStarsTotal === 0) {
-                breakdownContainer.innerHTML = `<p class="text-slate-500">Pilih rank akhir yang lebih tinggi dari rank awal.</p>`;
-            } else {
-                const modeLabel = workerMode === 'rank' ? 'Rank' : 'Gendong';
-                Object.keys(res.breakdown).forEach(tKey => {
-                    const item = res.breakdown[tKey];
-                    const workerRatePerStar = Math.round(item.pricePerStar * WORKER_SHARE_RATE);
-                    const workerTierSubtotal = Math.round(item.subtotal * WORKER_SHARE_RATE);
-                    const storeTierSubtotal = Math.round(item.subtotal * STORE_SHARE_RATE);
-
-                    const row = document.createElement('div');
-                    row.className = "flex flex-wrap items-center justify-between bg-slate-950/70 p-2.5 rounded-lg border border-slate-800/80 gap-2";
-                    row.innerHTML = `
-                        <div>
-                            <span class="font-bold text-white">${modeLabel} ${TIER_LABELS[tKey]}</span>
-                            <span class="text-slate-400 ml-1">(${item.count} ⭐ × ${formatRupiah(workerRatePerStar)})</span>
-                        </div>
-                        <div class="text-right">
-                            <span class="font-bold text-emerald-400">Worker: ${formatRupiah(workerTierSubtotal)}</span>
-                            <span class="text-[11px] text-amber-400/80 block">Store (20%): ${formatRupiah(storeTierSubtotal)}</span>
-                        </div>
-                    `;
-                    breakdownContainer.appendChild(row);
-                });
-            }
-
-            document.getElementById('wCardStars').innerText = `${workerStarsTotal} ⭐`;
-            document.getElementById('wGrossDisplay').innerText = formatRupiah(workerGrossTotal);
-            document.getElementById('wWorkerNetDisplay').innerText = formatRupiah(workerNetTotal);
-            document.getElementById('wStoreCutDisplay').innerText = formatRupiah(storeCutTotal);
-
-            document.getElementById('wSumStars').innerText = `${workerStarsTotal} ⭐`;
-            document.getElementById('wSumGross').innerText = formatRupiah(workerGrossTotal);
-            document.getElementById('wSumStore').innerText = `- ${formatRupiah(storeCutTotal)}`;
-            document.getElementById('wSumWorkerNet').innerText = formatRupiah(workerNetTotal);
-        }
-
-        function copyWorkerSlip() {
-            if (workerStarsTotal <= 0) {
-                alert("Pastikan jumlah bintang pengerjaan sudah benar!");
-                return;
-            }
-            const workerName = document.getElementById('wWorkerName').value.trim() || "-";
-            const custAccount = document.getElementById('wCustAccount').value.trim() || "-";
-            const payoutMethod = document.getElementById('wPayoutMethod').value;
-            const payoutNumber = document.getElementById('wPayoutNumber').value.trim() || "-";
-            const jobType = document.getElementById('wSumType').innerText;
-            const jobDetail = document.getElementById('wSumDetail').innerText;
-
-            const slipText = `*SLIP UPAH WORKER - DOLPHIN JOKI (80:20)*
-----------------------------------------
-• Nama Worker : ${workerName}
-• Akun Customer : ${custAccount}
-• Jenis Job : ${jobType}
-• Detail Job : ${jobDetail}
-• Total Bintang : ${workerStarsTotal} ⭐
-----------------------------------------
-• Harga Order (100%) : ${formatRupiah(workerGrossTotal)}
-• Bagian Store (20%) : ${formatRupiah(storeCutTotal)}
-• *Upah Bersih Worker (80%) : ${formatRupiah(workerNetTotal)}*
-----------------------------------------
-• Pencairan Via : ${payoutMethod} - ${payoutNumber}`;
-
-            copyText(slipText, "Slip Gaji Worker");
-        }
-
-        function sendWorkerClaimToWA() {
-            if (workerStarsTotal <= 0) {
-                alert("Pastikan jumlah bintang pengerjaan sudah benar!");
-                return;
-            }
-            const workerName = document.getElementById('wWorkerName').value.trim();
-            const custAccount = document.getElementById('wCustAccount').value.trim();
-            const payoutMethod = document.getElementById('wPayoutMethod').value;
-            const payoutNumber = document.getElementById('wPayoutNumber').value.trim();
-
-            if (!workerName || !custAccount || !payoutNumber) {
-                alert("Harap lengkapi Nama Worker, ID/Nickname Customer, serta Nomor Rekening/E-Wallet pencairan!");
-                return;
-            }
-
-            const jobType = document.getElementById('wSumType').innerText;
-            const jobDetail = document.getElementById('wSumDetail').innerText;
-
-            const message = `*LAPORAN ORDER DONE & KLAIM UPAH WORKER* ✅💰
-----------------------------------------
-*DATA WORKER & ORDERAN:*
-• Nama Worker : *${workerName}*
-• Akun Customer : ${custAccount}
-• Kategori Job : ${jobType}
-• Pengerjaan : ${jobDetail}
-• Total Bintang : ${workerStarsTotal} Bintang ⭐
-----------------------------------------
-*RINCIAN BAGI HASIL (80% : 20%):*
-• Harga Order (100%) : ${formatRupiah(workerGrossTotal)}
-• Potongan Store (20%) : ${formatRupiah(storeCutTotal)}
-• *Upah Bersih Worker (80%) : ${formatRupiah(workerNetTotal)}*
-----------------------------------------
-*REKENING PENCAIRAN WORKER:*
-• Metode : ${payoutMethod}
-• No. Rek / E-Wallet : *${payoutNumber}*
-
-_Halo Admin Dolphin Joki, orderan di atas sudah selesai (DONE 100%). Berikut saya lampirkan screenshot bukti selesainya:_`;
-
-            window.open(`https://wa.me/${ADMIN_WA}?text=${encodeURIComponent(message)}`, '_blank');
         }
 
         // =====================================================
@@ -1832,7 +720,7 @@ _Halo Admin Dolphin Joki, orderan di atas sudah selesai (DONE 100%). Berikut say
             }
 
             const randomNum = Math.floor(100000 + Math.random() * 900000);
-            currentInvoice = activePage === 'regular' ? `INV-DJ${randomNum}` : `INV-GENDONG${randomNum}`;
+            currentInvoice = activePage === 'regular' ? `INV-SJ${randomNum}` : `INV-GENDONG${randomNum}`;
             document.getElementById('modalInvNumber').innerText = "#" + currentInvoice;
 
             const paymentBox = document.getElementById('modalPaymentBox');
@@ -1922,7 +810,7 @@ _Halo Admin Dolphin Joki, orderan di atas sudah selesai (DONE 100%). Berikut say
                 const userPass = document.getElementById('userPass').value.trim();
                 const userNote = document.getElementById('userNote').value.trim() || "-";
 
-                message = `*KONFIRMASI JOKI RANK - DOLPHIN JOKI* 🎮
+                message = `*KONFIRMASI JOKI RANK - SEAN JOKI* 🎮
 No. Invoice : *#${currentInvoice}*
 ----------------------------------------
 *DETAIL ORDERAN:*
@@ -1943,14 +831,14 @@ No. Invoice : *#${currentInvoice}*
 • Total Nominal : *${grandTotal}*
 • WA Pembeli : ${buyerWa}
 
-_Halo Admin Dolphin, saya sudah melakukan pembayaran untuk pesanan Joki Rank di atas. Berikut saya lampirkan bukti transfernya:_`;
+_Halo Admin Sean Joki, saya sudah melakukan pembayaran untuk pesanan Joki Rank di atas. Berikut saya lampirkan bukti transfernya:_`;
             } else {
                 const gUserNick = document.getElementById('gUserNick').value.trim();
                 const gUserRole = document.getElementById('gUserRole').value;
                 const gSchedule = document.getElementById('gSchedule').value.trim();
                 const gUserNote = document.getElementById('gUserNote').value.trim() || "-";
 
-                message = `*KONFIRMASI JOKI GENDONG - DOLPHIN JOKI* 🤝🔥
+                message = `*KONFIRMASI JOKI GENDONG - SEAN JOKI* 🤝🔥
 No. Invoice : *#${currentInvoice}*
 ----------------------------------------
 *DETAIL JOKI GENDONG (MABAR):*
@@ -1970,7 +858,7 @@ No. Invoice : *#${currentInvoice}*
 • Total Nominal : *${grandTotal}*
 • WA Pembeli : ${buyerWa}
 
-_Halo Admin DOLPHIN JOKI, saya sudah melakukan pembayaran untuk pesanan Joki Gendong di atas. Berikut saya lampirkan bukti transfernya:_`;
+_Halo Admin SEAN JOKI, saya sudah melakukan pembayaran untuk pesanan Joki Gendong di atas. Berikut saya lampirkan bukti transfernya:_`;
             }
 
             const encodedMessage = encodeURIComponent(message);
