@@ -8,63 +8,64 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; color: #e2e8f0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FFF9EC; color: #000000; }
         .font-gaming { font-family: 'Orbitron', sans-serif; }
-        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        .payment-card.active { border-color: #f59e0b; background: rgba(245, 158, 11, 0.12); }
-        .tab-btn.active { background: linear-gradient(to right, #f59e0b, #ea580c); color: #020617; border-color: transparent; }
+        .glass-card { background: #ffffff; border: 2px solid #000000; box-shadow: 5px 5px 0 #000000; }
+        nav.glass-card { box-shadow: 0 4px 0 #000000; }
+        .payment-card.active { border-color: #000000; background: #FFF3D1; box-shadow: 4px 4px 0 #000000; }
+        .tab-btn.active { background: #ffa500; color: #000000; border-color: #000000; box-shadow: 4px 4px 0 #000000; }
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0b0f19; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #f59e0b; }
+        ::-webkit-scrollbar-track { background: #FFF9EC; }
+        ::-webkit-scrollbar-thumb { background: #000000; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #e8890c; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
     <!-- NAVBAR -->
-    <nav class="sticky top-0 z-40 glass-card border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <nav class="sticky top-0 z-40 glass-card border-b-2 border-black">
+        <div class="max-w-xl mx-auto px-4 h-16 flex items-center justify-between">
             <div class="flex items-center gap-2.5 cursor-pointer" onclick="switchServicePage('regular')">
-                <i class="fa-solid fa-dragon text-amber-500 text-2xl"></i>
-                <span class="font-gaming text-xl font-extrabold tracking-wider bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
-                    SEAN <span class="text-white">JOKI</span>
+                <i class="fa-solid fa-dragon text-[#e8890c] text-2xl"></i>
+                <span class="font-gaming text-xl font-extrabold tracking-wider text-black">
+                    SEAN <span class="text-[#e8890c]">JOKI</span>
                 </span>
             </div>
             <div class="hidden md:flex items-center space-x-5 text-sm font-medium">
-                <button onclick="switchServicePage('regular')" id="navRegular" class="text-amber-400 font-bold transition">Joki Rank</button>
-                <button onclick="switchServicePage('gendong')" id="navGendong" class="text-slate-300 hover:text-amber-400 transition flex items-center gap-1.5">
+                <button onclick="switchServicePage('regular')" id="navRegular" class="text-[#e8890c] font-bold transition">Joki Rank</button>
+                <button onclick="switchServicePage('gendong')" id="navGendong" class="text-black hover:text-[#e8890c] transition flex items-center gap-1.5">
                     <span>Joki Gendong</span>
-                    <span class="text-[10px] bg-red-500 text-white px-1.5 py-0.5 rounded font-bold">HOT</span>
+                    <span class="text-[10px] bg-red-500 text-white px-1.5 py-0.5 rounded font-bold border-2 border-black">HOT</span>
                 </button>
             </div>
         </div>
     </nav>
 
     <!-- HERO BANNER & MENU SWITCHER -->
-    <div class="relative bg-gradient-to-b from-slate-900 to-[#0b0f19] pt-8 pb-4 border-b border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="rounded-2xl bg-gradient-to-r from-indigo-950 via-slate-900 to-amber-950/40 p-6 md:p-10 border border-slate-800 relative overflow-hidden">
+    <div class="relative bg-[#FFF9EC] pt-8 pb-4 border-b-2 border-black">
+        <div class="max-w-xl mx-auto px-4">
+            <div class="rounded-2xl bg-white p-5 sm:p-6 border-2 border-black relative overflow-hidden shadow-[6px_6px_0_#000]">
                 <div class="relative z-10 max-w-2xl">
-                    <span id="heroBadge" class="px-3 py-1 text-xs font-semibold bg-amber-500/20 text-amber-400 rounded-full border border-amber-500/30">
+                    <span id="heroBadge" class="px-3 py-1 text-xs font-semibold bg-[#FFF3D1] text-[#e8890c] rounded-full border-2 border-black">
                         ⚡ SEAN JOKI PROSES CEPAT 1x24 JAM
                     </span>
-                    <h1 id="heroTitle" class="font-gaming text-2xl md:text-4xl font-extrabold text-white mt-3">
-                        PUSH RANK TANPA PUSING BERSAMA TIM <span class="text-amber-400">SEAN JOKI</span>
+                    <h1 id="heroTitle" class="font-gaming text-2xl sm:text-3xl font-extrabold text-black mt-3">
+                        PUSH RANK TANPA PUSING BERSAMA TIM <span class="text-[#e8890c]">SEAN JOKI</span>
                     </h1>
-                    <p id="heroDesc" class="text-slate-400 text-sm md:text-base mt-2">
+                    <p id="heroDesc" class="text-[#555555] text-sm md:text-base mt-2">
                         Melayani dari tier Master hingga Mythical Immortal! 100% Amanah, Privasi Terjaga, Bonus Savage & Maniac, dan Winrate dijamin naik drastis.
                     </p>
                 </div>
-                <i class="fa-solid fa-trophy text-amber-500/10 text-9xl absolute -right-4 -bottom-4 transform -rotate-12"></i>
+                <i class="fa-solid fa-trophy text-orange-200 text-9xl absolute -right-4 -bottom-4 transform -rotate-12"></i>
             </div>
 
             <!-- TOMBOL PILIH HALAMAN LAYANAN (2 MENU UTAMA) -->
             <div class="grid grid-cols-2 gap-3 mt-6">
-                <button onclick="switchServicePage('regular')" id="tabBtnRegular" class="tab-btn active py-3.5 px-3 rounded-xl border border-slate-700 bg-slate-900 font-bold text-xs sm:text-sm md:text-base flex items-center justify-center gap-2 transition shadow-lg">
+                <button onclick="switchServicePage('regular')" id="tabBtnRegular" class="tab-btn active py-3.5 px-3 rounded-xl border-2 border-black bg-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-[5px_5px_0_#000]">
                     <i class="fa-solid fa-bolt"></i>
                     <span>Joki Rank <span class="hidden xl:inline text-xs font-normal opacity-80">(Login)</span></span>
                 </button>
-                <button onclick="switchServicePage('gendong')" id="tabBtnGendong" class="tab-btn py-3.5 px-3 rounded-xl border border-slate-700 bg-slate-900 text-slate-200 font-bold text-xs sm:text-sm md:text-base flex items-center justify-center gap-2 transition shadow-lg">
+                <button onclick="switchServicePage('gendong')" id="tabBtnGendong" class="tab-btn py-3.5 px-3 rounded-xl border-2 border-black bg-white text-black font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-[5px_5px_0_#000]">
                     <i class="fa-solid fa-users"></i>
                     <span>Joki Gendong <span class="hidden xl:inline text-xs font-normal opacity-80">(Mabar)</span></span>
                 </button>
@@ -73,101 +74,118 @@
     </div>
 
     <!-- MAIN CONTENT -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <main class="max-w-xl mx-auto px-4 py-8 flex-grow w-full">
+        <div class="grid grid-cols-1 gap-6">
 
             <!-- KOLOM KIRI -->
-            <div class="lg:col-span-2 space-y-6">
+            <div class="space-y-6">
 
                 <!-- HALAMAN 1: JOKI RANK REGULER (LOGIN AKUN) -->
                 <div id="sectionRegular" class="space-y-6">
-                    <div class="glass-card rounded-2xl p-6">
-                        <div class="flex items-center gap-3 mb-6 border-b border-slate-700/70 pb-4">
-                            <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-bold flex items-center justify-center">1</span>
+                    <div class="glass-card rounded-2xl p-5">
+                        <div class="flex items-center gap-3 mb-6 border-b-2 border-black pb-4">
+                            <span class="w-8 h-8 rounded-lg bg-[#ffa500] text-black font-bold flex items-center justify-center">1</span>
                             <div>
-                                <h2 class="text-lg font-bold text-white">Kalkulator Joki Rank (Master - Immortal)</h2>
-                                <p class="text-xs text-slate-400">Akun kamu dimainkan oleh penjoki kami sampai mencapai target.</p>
+                                <h2 class="text-lg font-bold text-black">Kalkulator Joki Rank (Master - Immortal)</h2>
+                                <p class="text-xs text-[#555555]">Akun kamu dimainkan oleh penjoki kami sampai mencapai target.</p>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
-                                <label class="block text-xs font-semibold uppercase tracking-wider text-amber-400 mb-2"><i class="fa-solid fa-play mr-1"></i> Posisi Rank Saat Ini</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="bg-[#FFF8E1] p-4 rounded-xl border-2 border-black">
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-[#e8890c] mb-2"><i class="fa-solid fa-play mr-1"></i> Posisi Rank Saat Ini</label>
                                 <div class="space-y-3">
                                     <div>
-                                        <span class="text-xs text-slate-400">Pilih Tier / Divisi</span>
-                                        <select id="startRank" onchange="handleRankChange('start')" class="w-full mt-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500"></select>
+                                        <span class="text-xs text-[#555555]">Pilih Tier / Divisi</span>
+                                        <select id="startRank" onchange="handleRankChange('start')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black"></select>
                                     </div>
                                     <div>
-                                        <span class="text-xs text-slate-400" id="startStarLabel">Jumlah Bintang Saat Ini (0 - 5)</span>
-                                        <input type="number" id="startStar" value="1" min="0" max="5" oninput="calculateAll()" onchange="clampStarInput('start')" class="w-full mt-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                                        <span class="text-xs text-[#555555]" id="startStarLabel">Jumlah Bintang Saat Ini (0 - 5)</span>
+                                        <input type="number" id="startStar" value="1" min="0" max="5" oninput="calculateAll()" onchange="clampStarInput('start')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
-                                <label class="block text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-2"><i class="fa-solid fa-flag-checkered mr-1"></i> Target Rank Tujuan</label>
+                            <div class="bg-[#FFF8E1] p-4 rounded-xl border-2 border-black">
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-emerald-600 mb-2"><i class="fa-solid fa-flag-checkered mr-1"></i> Target Rank Tujuan</label>
                                 <div class="space-y-3">
                                     <div>
-                                        <span class="text-xs text-slate-400">Pilih Tier / Divisi</span>
-                                        <select id="targetRank" onchange="handleRankChange('target')" class="w-full mt-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500"></select>
+                                        <span class="text-xs text-[#555555]">Pilih Tier / Divisi</span>
+                                        <select id="targetRank" onchange="handleRankChange('target')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black"></select>
                                     </div>
                                     <div>
-                                        <span class="text-xs text-slate-400" id="targetStarLabel">Target Bintang (0 - 5)</span>
-                                        <input type="number" id="targetStar" value="5" min="0" max="5" oninput="calculateAll()" onchange="clampStarInput('target')" class="w-full mt-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                                        <span class="text-xs text-[#555555]" id="targetStarLabel">Target Bintang (0 - 5)</span>
+                                        <input type="number" id="targetStar" value="5" min="0" max="5" oninput="calculateAll()" onchange="clampStarInput('target')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div id="calcAlertRegular" class="hidden mt-4 p-3 rounded-lg bg-red-500/20 border border-red-500/40 text-red-300 text-xs flex items-center gap-2">
+                        <div id="calcAlertRegular" class="hidden mt-4 p-3 rounded-lg bg-[#FEE2E2] border-2 border-black text-red-700 text-xs flex items-center gap-2">
                             <i class="fa-solid fa-triangle-exclamation"></i>
                             <span>Rank Tujuan harus lebih tinggi dari Rank Saat Ini!</span>
                         </div>
 
-                        <div class="mt-4 p-4 rounded-xl bg-gradient-to-r from-amber-500/10 to-transparent border border-amber-500/20 flex flex-wrap items-center justify-between gap-4">
+                        <div class="mt-4 p-4 rounded-xl bg-[#FFF3D1] border-2 border-black flex flex-wrap items-center justify-between gap-4">
                             <div>
-                                <span class="text-xs text-slate-400 block">Total Bintang Dikerjakan:</span>
-                                <span id="regTotalStarsDisplay" class="text-xl font-bold text-amber-400">0 Bintang</span>
+                                <span class="text-xs text-[#555555] block">Total Bintang Dikerjakan:</span>
+                                <span id="regTotalStarsDisplay" class="text-xl font-bold text-[#e8890c]">0 Bintang</span>
                             </div>
                             <div class="text-right">
-                                <span class="text-xs text-slate-400 block">Estimasi Pengerjaan:</span>
-                                <span id="regEstTimeDisplay" class="text-sm font-semibold text-white">1 - 2 Hari</span>
+                                <span class="text-xs text-[#555555] block">Estimasi Pengerjaan:</span>
+                                <span id="regEstTimeDisplay" class="text-sm font-semibold text-black">1 - 2 Hari</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="glass-card rounded-2xl p-6">
-                        <div class="flex items-center gap-3 mb-6 border-b border-slate-700/70 pb-4">
-                            <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-bold flex items-center justify-center">2</span>
-                            <h2 class="text-lg font-bold text-white">Lengkapi Data Login Akun</h2>
+                    <div class="glass-card rounded-2xl p-5">
+                        <div class="flex items-center gap-3 mb-6 border-b-2 border-black pb-4">
+                            <span class="w-8 h-8 rounded-lg bg-[#ffa500] text-black font-bold flex items-center justify-center">2</span>
+                            <h2 class="text-lg font-bold text-black">Lengkapi Data Login Akun</h2>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="text-xs text-slate-300 font-medium">Login Via <span class="text-red-400">*</span></label>
-                                <select id="loginVia" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+                                <label class="text-xs text-black font-medium">Login Via <span class="text-red-600">*</span></label>
+                                <select id="loginVia" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black">
                                     <option value="Moonton">Moonton (Rekomendasi)</option>
                                 </select>
                             </div>
-                            <div>
-                                <label class="text-xs text-slate-300 font-medium">User ID & Nickname <span class="text-red-400">*</span></label>
-                                <input type="text" id="userNick" placeholder="Cth: 12345678 - Lemon" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                            <div class="sm:col-span-2">
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="text-xs text-black font-medium">User ID <span class="text-red-600">*</span></label>
+                                        <input type="text" id="userId" inputmode="numeric" placeholder="Cth: 12345678" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
+                                    </div>
+                                    <div>
+                                        <label class="text-xs text-black font-medium">Server <span class="text-red-600">*</span></label>
+                                        <input type="text" id="userServer" inputmode="numeric" placeholder="Cth: 2123" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
+                                    </div>
+                                </div>
+                                <p class="text-[11px] text-[#555555] mt-1.5">Lihat di profil ML: angka sebelum kurung adalah User ID, angka di dalam kurung adalah Server.</p>
+                                <div class="flex items-center gap-3 mt-2">
+                                    <button type="button" id="btnCheckNick" onclick="checkNickname('')" class="bg-[#ffa500] hover:bg-[#ffb020] text-black font-bold px-4 py-2 rounded-lg border-2 border-black shadow-[3px_3px_0_#000] text-xs sm:text-sm flex-none">Cek Nickname</button>
+                                    <span id="nickStatus" class="text-xs font-semibold text-[#555555]"></span>
+                                </div>
+                                <div class="mt-3">
+                                    <label class="text-xs text-black font-medium">Nickname <span class="text-red-600">*</span></label>
+                                    <input type="text" id="userNick" readonly placeholder="Nickname otomatis terisi setelah Cek Nickname" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
+                                </div>
                             </div>
                             <div>
-                                <label class="text-xs text-slate-300 font-medium">Email / No. HP Akun <span class="text-red-400">*</span></label>
-                                <input type="text" id="userEmail" placeholder="Masukkan Email atau No. HP" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                                <label class="text-xs text-black font-medium">Email / No. HP Akun <span class="text-red-600">*</span></label>
+                                <input type="text" id="userEmail" placeholder="Masukkan Email atau No. HP" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
                             </div>
                             <div>
-                                <label class="text-xs text-slate-300 font-medium">Password Akun <span class="text-red-400">*</span></label>
-                                <input type="text" id="userPass" placeholder="Masukkan Password" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                                <label class="text-xs text-black font-medium">Password Akun <span class="text-red-600">*</span></label>
+                                <input type="text" id="userPass" placeholder="Masukkan Password" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
                             </div>
-                            <div class="md:col-span-2">
-                                <label class="text-xs text-slate-300 font-medium">Catatan Untuk Penjoki</label>
-                                <input type="text" id="userNote" placeholder="Cth: Jangan dimainkan jam 8 malam" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                            <div class="sm:col-span-2">
+                                <label class="text-xs text-black font-medium">Catatan Untuk Penjoki</label>
+                                <input type="text" id="userNote" placeholder="Cth: Jangan dimainkan jam 8 malam" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
                             </div>
                         </div>
-                        <p class="text-[11px] text-amber-400/90 mt-4 bg-amber-500/10 p-2.5 rounded-lg border border-amber-500/20">
+                        <p class="text-[11px] text-[#e8890c] mt-4 bg-[#FFF3D1] p-2.5 rounded-lg border-2 border-black">
                             <i class="fa-solid fa-circle-info mr-1"></i> Pastikan <strong>Verifikasi Sekunder (Perangkat Baru)</strong> dimatikan sementara, atau standby di WhatsApp untuk memberikan kode OTP kepada Admin Sean Joki.
                         </p>
                     </div>
@@ -175,79 +193,96 @@
 
                 <!-- HALAMAN 2: JOKI GENDONG (MABAR RANK KE RANK) -->
                 <div id="sectionGendong" class="hidden space-y-6">
-                    <div class="glass-card rounded-2xl p-6 border border-amber-500/30">
-                        <div class="flex items-center gap-3 mb-6 border-b border-slate-700/70 pb-4">
-                            <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-bold flex items-center justify-center">1</span>
+                    <div class="glass-card rounded-2xl p-5 border-2 border-black">
+                        <div class="flex items-center gap-3 mb-6 border-b-2 border-black pb-4">
+                            <span class="w-8 h-8 rounded-lg bg-[#ffa500] text-black font-bold flex items-center justify-center">1</span>
                             <div>
-                                <h2 class="text-lg font-bold text-white">Kalkulator Joki Gendong (Master - Immortal)</h2>
-                                <p class="text-xs text-slate-400">Main bareng penjoki dari rank saat ini sampai mencapai target rank tujuan tanpa memberikan password akun.</p>
+                                <h2 class="text-lg font-bold text-black">Kalkulator Joki Gendong (Master - Immortal)</h2>
+                                <p class="text-xs text-[#555555]">Main bareng penjoki dari rank saat ini sampai mencapai target rank tujuan tanpa memberikan password akun.</p>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
-                                <label class="block text-xs font-semibold uppercase tracking-wider text-amber-400 mb-2"><i class="fa-solid fa-play mr-1"></i> Posisi Rank Saat Ini</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="bg-[#FFF8E1] p-4 rounded-xl border-2 border-black">
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-[#e8890c] mb-2"><i class="fa-solid fa-play mr-1"></i> Posisi Rank Saat Ini</label>
                                 <div class="space-y-3">
                                     <div>
-                                        <span class="text-xs text-slate-400">Pilih Tier / Divisi</span>
-                                        <select id="gStartRank" onchange="handleRankChange('gStart')" class="w-full mt-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500"></select>
+                                        <span class="text-xs text-[#555555]">Pilih Tier / Divisi</span>
+                                        <select id="gStartRank" onchange="handleRankChange('gStart')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black"></select>
                                     </div>
                                     <div>
-                                        <span class="text-xs text-slate-400" id="gStartStarLabel">Jumlah Bintang Saat Ini (0 - 5)</span>
-                                        <input type="number" id="gStartStar" value="1" min="0" max="5" oninput="calculateAll()" onchange="clampStarInput('gStart')" class="w-full mt-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                                        <span class="text-xs text-[#555555]" id="gStartStarLabel">Jumlah Bintang Saat Ini (0 - 5)</span>
+                                        <input type="number" id="gStartStar" value="1" min="0" max="5" oninput="calculateAll()" onchange="clampStarInput('gStart')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
-                                <label class="block text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-2"><i class="fa-solid fa-flag-checkered mr-1"></i> Target Rank Tujuan</label>
+                            <div class="bg-[#FFF8E1] p-4 rounded-xl border-2 border-black">
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-emerald-600 mb-2"><i class="fa-solid fa-flag-checkered mr-1"></i> Target Rank Tujuan</label>
                                 <div class="space-y-3">
                                     <div>
-                                        <span class="text-xs text-slate-400">Pilih Tier / Divisi</span>
-                                        <select id="gTargetRank" onchange="handleRankChange('gTarget')" class="w-full mt-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500"></select>
+                                        <span class="text-xs text-[#555555]">Pilih Tier / Divisi</span>
+                                        <select id="gTargetRank" onchange="handleRankChange('gTarget')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black"></select>
                                     </div>
                                     <div>
-                                        <span class="text-xs text-slate-400" id="gTargetStarLabel">Target Bintang (0 - 5)</span>
-                                        <input type="number" id="gTargetStar" value="5" min="0" max="5" oninput="calculateAll()" onchange="clampStarInput('gTarget')" class="w-full mt-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                                        <span class="text-xs text-[#555555]" id="gTargetStarLabel">Target Bintang (0 - 5)</span>
+                                        <input type="number" id="gTargetStar" value="5" min="0" max="5" oninput="calculateAll()" onchange="clampStarInput('gTarget')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div id="calcAlertGendong" class="hidden mt-4 p-3 rounded-lg bg-red-500/20 border border-red-500/40 text-red-300 text-xs flex items-center gap-2">
+                        <div id="calcAlertGendong" class="hidden mt-4 p-3 rounded-lg bg-[#FEE2E2] border-2 border-black text-red-700 text-xs flex items-center gap-2">
                             <i class="fa-solid fa-triangle-exclamation"></i>
                             <span>Rank Tujuan harus lebih tinggi dari Rank Saat Ini!</span>
                         </div>
 
-                        <div class="mt-4 p-4 rounded-xl bg-gradient-to-r from-amber-500/10 to-transparent border border-amber-500/20 flex flex-wrap items-center justify-between gap-4">
+                        <div class="mt-4 p-4 rounded-xl bg-[#FFF3D1] border-2 border-black flex flex-wrap items-center justify-between gap-4">
                             <div>
-                                <span class="text-xs text-slate-400 block">Total Bintang Gendong:</span>
-                                <span id="genTotalStarsDisplay" class="text-xl font-bold text-amber-400">0 Bintang</span>
+                                <span class="text-xs text-[#555555] block">Total Bintang Gendong:</span>
+                                <span id="genTotalStarsDisplay" class="text-xl font-bold text-[#e8890c]">0 Bintang</span>
                             </div>
                             <div class="text-right">
-                                <span class="text-xs text-slate-400 block">Estimasi Durasi Mabar:</span>
-                                <span id="genEstTimeDisplay" class="text-sm font-semibold text-white">± 1 - 2 Jam</span>
+                                <span class="text-xs text-[#555555] block">Estimasi Durasi Mabar:</span>
+                                <span id="genEstTimeDisplay" class="text-sm font-semibold text-black">± 1 - 2 Jam</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="glass-card rounded-2xl p-6 border border-amber-500/30">
-                        <div class="flex items-center justify-between mb-6 border-b border-slate-700/70 pb-4">
+                    <div class="glass-card rounded-2xl p-5 border-2 border-black">
+                        <div class="flex items-center justify-between mb-6 border-b-2 border-black pb-4">
                             <div class="flex items-center gap-3">
-                                <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-bold flex items-center justify-center">2</span>
-                                <h2 class="text-lg font-bold text-white">Data Mabar (Tanpa Login Akun)</h2>
+                                <span class="w-8 h-8 rounded-lg bg-[#ffa500] text-black font-bold flex items-center justify-center">2</span>
+                                <h2 class="text-lg font-bold text-black">Data Mabar (Tanpa Login Akun)</h2>
                             </div>
-                            <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded-full border border-indigo-500/30 font-semibold">🔒 100% Tanpa Password</span>
+                            <span class="text-xs bg-[#DBEAFE] text-indigo-800 px-2.5 py-1 rounded-full border-2 border-black font-semibold">🔒 100% Tanpa Password</span>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="text-xs text-slate-300 font-medium">ID (Server) & Nickname Kamu <span class="text-red-400">*</span></label>
-                                <input type="text" id="gUserNick" placeholder="Cth: 12345678 (2123) - Lemon" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="sm:col-span-2">
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="text-xs text-black font-medium">User ID Kamu <span class="text-red-600">*</span></label>
+                                        <input type="text" id="gUserId" inputmode="numeric" placeholder="Cth: 12345678" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
+                                    </div>
+                                    <div>
+                                        <label class="text-xs text-black font-medium">Server Kamu <span class="text-red-600">*</span></label>
+                                        <input type="text" id="gUserServer" inputmode="numeric" placeholder="Cth: 2123" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
+                                    </div>
+                                </div>
+                                <p class="text-[11px] text-[#555555] mt-1.5">Lihat di profil ML: angka sebelum kurung adalah User ID, angka di dalam kurung adalah Server.</p>
+                                <div class="flex items-center gap-3 mt-2">
+                                    <button type="button" id="gBtnCheckNick" onclick="checkNickname('g')" class="bg-[#ffa500] hover:bg-[#ffb020] text-black font-bold px-4 py-2 rounded-lg border-2 border-black shadow-[3px_3px_0_#000] text-xs sm:text-sm flex-none">Cek Nickname</button>
+                                    <span id="gNickStatus" class="text-xs font-semibold text-[#555555]"></span>
+                                </div>
+                                <div class="mt-3">
+                                    <label class="text-xs text-black font-medium">Nickname Kamu <span class="text-red-600">*</span></label>
+                                    <input type="text" id="gUserNick" readonly placeholder="Nickname otomatis terisi setelah Cek Nickname" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
+                                </div>
                             </div>
                             <div>
-                                <label class="text-xs text-slate-300 font-medium">Role Kamu Saat Mabar</label>
-                                <select id="gUserRole" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+                                <label class="text-xs text-black font-medium">Role Kamu Saat Mabar</label>
+                                <select id="gUserRole" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black">
                                     <option value="Roamer">Roamer</option>
                                     <option value="Midlaner">Midlaner</option>
                                     <option value="EXP Laner">EXP Laner</option>
@@ -257,95 +292,77 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="text-xs text-slate-300 font-medium">Jadwal / Jam Main <span class="text-red-400">*</span></label>
-                                <input type="text" id="gSchedule" placeholder="Cth: Gas Sekarang / Malam ini jam 20:00" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+                                <label class="text-xs text-black font-medium">Jadwal / Jam Main <span class="text-red-600">*</span></label>
+                                <input type="text" id="gSchedule" placeholder="Cth: Gas Sekarang / Malam ini jam 20:00" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black">
                             </div>
                             <div>
-                                <label class="text-xs text-slate-300 font-medium">Catatan Tambahan Untuk Penjoki</label>
-                                <input type="text" id="gUserNote" placeholder="Cth: Penjokinya pakai hero Assassin/Hyper ya bang" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+                                <label class="text-xs text-black font-medium">Catatan Tambahan Untuk Penjoki</label>
+                                <input type="text" id="gUserNote" placeholder="Cth: Penjokinya pakai hero Assassin/Hyper ya bang" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black">
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- STEP 3: METODE PEMBAYARAN MANUAL -->
-                <div id="customerPaymentSection" class="glass-card rounded-2xl p-6">
-                    <div class="flex items-center justify-between mb-6 border-b border-slate-700/70 pb-4">
+                <div id="customerPaymentSection" class="glass-card rounded-2xl p-5">
+                    <div class="flex items-center justify-between mb-6 border-b-2 border-black pb-4">
                         <div class="flex items-center gap-3">
-                            <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-bold flex items-center justify-center">3</span>
-                            <h2 class="text-lg font-bold text-white">Pilih Pembayaran (Transfer Manual)</h2>
+                            <span class="w-8 h-8 rounded-lg bg-[#ffa500] text-black font-bold flex items-center justify-center">3</span>
+                            <h2 class="text-lg font-bold text-black">Pilih Pembayaran (Transfer Manual)</h2>
                         </div>
-                        <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-full border border-emerald-500/30 font-medium">Bebas Biaya Admin</span>
+                        <span class="text-xs bg-[#DCFCE7] text-emerald-600 px-2.5 py-1 rounded-full border-2 border-black font-medium">Bebas Biaya Admin</span>
                     </div>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="paymentMethodsContainer"></div>
-                    <div id="manualPaymentInfo" class="mt-5 bg-slate-900/95 border border-amber-500/40 rounded-xl p-4"></div>
+                    <div id="manualPaymentInfo" class="mt-5 bg-[#FFF8E1] border-2 border-black rounded-xl p-4"></div>
                 </div>
 
                 <!-- DAFTAR HARGA PER BINTANG -->
-                <div id="daftar-harga" class="glass-card rounded-2xl p-6 space-y-6">
+                <div id="daftar-harga" class="glass-card rounded-2xl p-5 space-y-6">
                     <div>
-                        <h3 class="text-base font-bold text-white mb-3 flex items-center gap-2"><i class="fa-solid fa-bolt text-amber-500"></i> Daftar Harga Joki Rank (Login) / Bintang</h3>
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center">
-                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800"><span class="text-xs text-yellow-500/90 block">Master</span><span class="text-sm font-bold text-white">Rp 1.000</span></div>
-                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800"><span class="text-xs text-slate-400 block">Grandmaster</span><span class="text-sm font-bold text-white">Rp 1.000</span></div>
-                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800"><span class="text-xs text-emerald-400 block">Epic</span><span class="text-sm font-bold text-white">Rp 2.000</span></div>
-                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800"><span class="text-xs text-amber-400 block">Legend</span><span class="text-sm font-bold text-white">Rp 3.000</span></div>
-                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800"><span class="text-xs text-purple-400 block">Mythic (1-24)</span><span class="text-sm font-bold text-white">Rp 5.000</span></div>
-                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800"><span class="text-xs text-sky-400 block">Honor (25-49)</span><span class="text-sm font-bold text-white">Rp 6.000</span></div>
-                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800"><span class="text-xs text-red-400 block">Glory (50-99)</span><span class="text-sm font-bold text-white">Rp 7.000</span></div>
-                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800"><span class="text-xs text-amber-300 font-semibold block">Immortal (100+)</span><span class="text-sm font-bold text-white">Rp 12.000</span></div>
-                        </div>
+                        <h3 class="text-base font-bold text-black mb-3 flex items-center gap-2"><i class="fa-solid fa-bolt text-[#e8890c]"></i> Daftar Harga Joki Rank (Login) / Bintang</h3>
+                                                <div id="priceGridRegular" class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center"></div>
                     </div>
-                    <div class="border-t border-slate-800 pt-5">
-                        <h3 class="text-base font-bold text-white mb-3 flex items-center gap-2"><i class="fa-solid fa-users text-amber-500"></i> Daftar Harga Joki Gendong (Mabar) / Bintang</h3>
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center">
-                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800"><span class="text-xs text-yellow-500/90 block">Master</span><span class="text-sm font-bold text-white">Rp 2.000</span></div>
-                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800"><span class="text-xs text-slate-400 block">Grandmaster</span><span class="text-sm font-bold text-white">Rp 2.000</span></div>
-                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800"><span class="text-xs text-emerald-400 block">Epic</span><span class="text-sm font-bold text-white">Rp 3.000</span></div>
-                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800"><span class="text-xs text-amber-400 block">Legend</span><span class="text-sm font-bold text-white">Rp 4.000</span></div>
-                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800"><span class="text-xs text-purple-400 block">Mythic (1-24)</span><span class="text-sm font-bold text-white">Rp 6.000</span></div>
-                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800"><span class="text-xs text-sky-400 block">Honor (25-49)</span><span class="text-sm font-bold text-white">Rp 7.000</span></div>
-                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800"><span class="text-xs text-red-400 block">Glory (50-99)</span><span class="text-sm font-bold text-white">Rp 8.000</span></div>
-                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800"><span class="text-xs text-amber-300 font-semibold block">Immortal (100+)</span><span class="text-sm font-bold text-white">Rp 13.000</span></div>
-                        </div>
+                    <div class="border-t-2 border-black pt-5">
+                        <h3 class="text-base font-bold text-black mb-3 flex items-center gap-2"><i class="fa-solid fa-users text-[#e8890c]"></i> Daftar Harga Joki Gendong (Mabar) / Bintang</h3>
+                                                <div id="priceGridGendong" class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center"></div>
                     </div>
                 </div>
 
             </div>
 
             <!-- KOLOM KANAN -->
-            <div class="lg:col-span-1">
+            <div>
                 <!-- BOX 1: RINGKASAN ORDER CUSTOMER -->
-                <div id="customerSummaryCard" class="glass-card rounded-2xl p-6 sticky top-24 border border-amber-500/30">
+                <div id="customerSummaryCard" class="glass-card rounded-2xl p-5 border-2 border-black">
                     <div class="flex items-center justify-between mb-4">
-                        <h2 class="text-lg font-bold text-white flex items-center gap-2"><i class="fa-solid fa-receipt text-amber-500"></i> Ringkasan Order</h2>
-                        <span id="summaryServiceBadge" class="text-[11px] font-bold bg-amber-500/20 text-amber-400 px-2.5 py-0.5 rounded-full border border-amber-500/30">Joki Rank</span>
+                        <h2 class="text-lg font-bold text-black flex items-center gap-2"><i class="fa-solid fa-receipt text-[#e8890c]"></i> Ringkasan Order</h2>
+                        <span id="summaryServiceBadge" class="text-[11px] font-bold bg-[#FFF3D1] text-[#e8890c] px-2.5 py-0.5 rounded-full border-2 border-black">Joki Rank</span>
                     </div>
 
                     <div class="mb-5">
-                        <label class="text-xs text-slate-300 font-medium">Nomor WhatsApp Aktif <span class="text-red-400">*</span></label>
+                        <label class="text-xs text-black font-medium">Nomor WhatsApp Aktif <span class="text-red-600">*</span></label>
                         <div class="relative mt-1">
-                            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400"><i class="fa-brands fa-whatsapp text-emerald-400"></i></span>
-                            <input type="number" id="buyerWa" placeholder="08123456789" class="w-full bg-slate-900 border border-slate-700 rounded-lg pl-9 pr-3 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-[#555555]"><i class="fa-brands fa-whatsapp text-emerald-600"></i></span>
+                            <input type="number" id="buyerWa" placeholder="08123456789" class="w-full bg-white border-2 border-black rounded-lg pl-9 pr-3 py-2.5 text-sm text-black focus:outline-none focus:border-black">
                         </div>
                     </div>
 
-                    <div class="bg-slate-900/90 rounded-xl p-4 space-y-3 text-sm border border-slate-800">
-                        <div class="flex justify-between"><span class="text-slate-400">Layanan:</span><span id="summaryServiceType" class="font-semibold text-white text-right">Joki Rank (Login)</span></div>
-                        <div class="flex justify-between"><span class="text-slate-400" id="summaryRow1Label">Rank Awal:</span><span id="summaryRow1Val" class="font-semibold text-white text-right">-</span></div>
-                        <div class="flex justify-between"><span class="text-slate-400" id="summaryRow2Label">Rank Tujuan:</span><span id="summaryRow2Val" class="font-semibold text-emerald-400 text-right">-</span></div>
-                        <div class="flex justify-between"><span class="text-slate-400">Jumlah Bintang:</span><span id="summaryStars" class="font-semibold text-amber-400">0 ⭐</span></div>
-                        <div class="flex justify-between"><span class="text-slate-400">Transfer Via:</span><span id="summaryPayment" class="font-semibold text-white">-</span></div>
-                        <div class="border-t border-slate-700 pt-3 flex justify-between items-center">
-                            <span class="font-bold text-slate-200">Total Transfer:</span>
-                            <span id="summaryTotal" class="font-gaming text-xl font-extrabold text-amber-400">Rp 0</span>
+                    <div class="bg-[#FFF8E1] rounded-xl p-4 space-y-3 text-sm border-2 border-black">
+                        <div class="flex justify-between"><span class="text-[#555555]">Layanan:</span><span id="summaryServiceType" class="font-semibold text-black text-right">Joki Rank (Login)</span></div>
+                        <div class="flex justify-between"><span class="text-[#555555]" id="summaryRow1Label">Rank Awal:</span><span id="summaryRow1Val" class="font-semibold text-black text-right">-</span></div>
+                        <div class="flex justify-between"><span class="text-[#555555]" id="summaryRow2Label">Rank Tujuan:</span><span id="summaryRow2Val" class="font-semibold text-emerald-600 text-right">-</span></div>
+                        <div class="flex justify-between"><span class="text-[#555555]">Jumlah Bintang:</span><span id="summaryStars" class="font-semibold text-[#e8890c]">0 ⭐</span></div>
+                        <div class="flex justify-between"><span class="text-[#555555]">Transfer Via:</span><span id="summaryPayment" class="font-semibold text-black">-</span></div>
+                        <div class="border-t-2 border-black pt-3 flex justify-between items-center">
+                            <span class="font-bold text-black">Total Transfer:</span>
+                            <span id="summaryTotal" class="font-gaming text-xl font-extrabold text-[#e8890c]">Rp 0</span>
                         </div>
                     </div>
 
-                    <button onclick="processOrder()" class="w-full mt-6 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-extrabold py-3.5 rounded-xl shadow-lg shadow-amber-500/20 transition transform active:scale-95 flex items-center justify-center gap-2">
+                    <button onclick="processOrder()" class="w-full mt-6 bg-[#ffa500] hover:bg-[#ffb020] text-black font-extrabold py-3.5 rounded-xl border-2 border-black shadow-[5px_5px_0_#000] transition transform active:scale-95 flex items-center justify-center gap-2">
                         <i class="fa-solid fa-bolt"></i> LANJUT PEMBAYARAN
                     </button>
-                    <p class="text-[11px] text-center text-slate-400 mt-3"><i class="fa-solid fa-shield-halved text-emerald-400 mr-1"></i> Garansi Amanah 100% Bersama Sean Joki</p>
+                    <p class="text-[11px] text-center text-[#555555] mt-3"><i class="fa-solid fa-shield-halved text-emerald-600 mr-1"></i> Garansi Amanah 100% Bersama Sean Joki</p>
                 </div>
 
             </div>
@@ -355,20 +372,20 @@
 
     <!-- MODAL INSTRUKSI TRANSFER MANUAL -->
     <div id="invoiceModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full p-6 shadow-2xl my-8">
-            <div class="text-center border-b border-slate-800 pb-3">
-                <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30">MENUNGGU PEMBAYARAN</span>
-                <h3 class="text-lg font-bold text-white mt-2">Instruksi Transfer Manual</h3>
-                <p id="modalInvNumber" class="text-xs text-slate-400 font-mono mt-0.5">#INV-SJ0001</p>
+        <div class="bg-white border-2 border-black rounded-2xl max-w-md w-full p-6 shadow-[6px_6px_0_#000] my-8">
+            <div class="text-center border-b-2 border-black pb-3">
+                <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-[#FFF3D1] text-[#e8890c] border-2 border-black">MENUNGGU PEMBAYARAN</span>
+                <h3 class="text-lg font-bold text-black mt-2">Instruksi Transfer Manual</h3>
+                <p id="modalInvNumber" class="text-xs text-[#555555] font-mono mt-0.5">#INV-SJ0001</p>
             </div>
-            <div id="modalPaymentBox" class="my-4 bg-slate-950 p-4 rounded-xl border border-amber-500/40 text-center"></div>
-            <div class="space-y-2 text-xs bg-slate-950/60 p-3.5 rounded-xl border border-slate-800" id="modalDetails"></div>
-            <div class="mt-4 p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-[11px] text-emerald-300 leading-relaxed">
+            <div id="modalPaymentBox" class="my-4 bg-white p-4 rounded-xl border-2 border-black text-center"></div>
+            <div class="space-y-2 text-xs bg-white p-3.5 rounded-xl border-2 border-black" id="modalDetails"></div>
+            <div class="mt-4 p-3 rounded-lg bg-[#DCFCE7] border-2 border-black text-[11px] text-emerald-700 leading-relaxed">
                 <i class="fa-solid fa-circle-check mr-1"></i> <strong>Langkah Terakhir:</strong> Silakan transfer sesuai nominal di atas, lalu klik tombol di bawah untuk mengirim <strong>Bukti Transfer (Screenshot)</strong> ke WhatsApp Admin Sean Joki.
             </div>
             <div class="flex gap-3 mt-5">
-                <button onclick="closeModal()" class="w-1/3 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300">Kembali</button>
-                <button onclick="sendToWhatsApp()" class="w-2/3 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-extrabold flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-500/20">
+                <button onclick="closeModal()" class="w-1/3 py-2.5 rounded-xl bg-white hover:bg-[#FFF8E1] text-xs font-semibold text-black border-2 border-black">Kembali</button>
+                <button onclick="sendToWhatsApp()" class="w-2/3 py-2.5 rounded-xl border-2 border-black bg-emerald-500 hover:bg-emerald-600 text-black text-xs font-extrabold flex items-center justify-center gap-1.5 shadow-[5px_5px_0_#000] ">
                     <i class="fa-brands fa-whatsapp text-base"></i> Kirim Bukti Transfer
                 </button>
             </div>
@@ -376,13 +393,14 @@
     </div>
 
     <!-- TOAST NOTIFIKASI -->
-    <div id="copyToast" class="fixed bottom-5 right-5 z-50 hidden bg-emerald-500 text-slate-950 px-4 py-2.5 rounded-xl font-bold text-xs shadow-lg flex items-center gap-2">
+    <div id="copyToast" class="fixed bottom-5 right-5 z-50 hidden bg-emerald-500 text-black border-2 border-black px-4 py-2.5 rounded-xl font-bold text-xs shadow-[5px_5px_0_#000] flex items-center gap-2">
         <i class="fa-solid fa-check-circle"></i> <span id="copyToastText">Berhasil disalin!</span>
     </div>
 
     <!-- FOOTER -->
-    <footer class="border-t border-slate-800/80 py-6 text-center text-xs text-slate-500 mt-12">
+    <footer class="border-t-2 border-black py-6 text-center text-xs text-[#555555] mt-8">
         <p>© 2026 SEAN JOKI — Layanan Joki Rank & Joki Gendong Mobile Legends Terpercaya.</p>
+        <p class="mt-2"><a href="admin.html" class="underline font-semibold text-black">Admin: Ubah Daftar Harga</a></p>
     </footer>
 
     <!-- JAVASCRIPT LOGIC -->
@@ -400,12 +418,55 @@
                 holder: 'RUJAK AREK RASA',
                 qrisImage: 'https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=00020101021126580013ID.CO.BRI.WWW01189360000200425958550208425958550303UMI51440014ID.CO.QRIS.WWW0215ID10264749958380303UMI5204581453033605802ID5915RUJAK AREK RASA6005DUMAI61052881162070703A0163049BFF',
                 badge: 'Semua Aplikasi',
-                color: 'text-amber-400'
+                color: 'text-[#e8890c]'
             }
         ];
 
-        const PRICE_REGULAR = { MASTER: 1000, GM: 1000, EPIC: 2000, LEGEND: 3000, MYTHIC: 5000, HONOR: 6000, GLORY: 7000, IMMORTAL: 12000 };
-        const PRICE_GENDONG = { MASTER: 2000, GM: 2000, EPIC: 3000, LEGEND: 4000, MYTHIC: 6000, HONOR: 7000, GLORY: 8000, IMMORTAL: 13000 };
+        const DEFAULT_PRICE_REGULAR = { MASTER: 1000, GM: 1000, EPIC: 2000, LEGEND: 3000, MYTHIC: 5000, HONOR: 6000, GLORY: 7000, IMMORTAL: 12000 };
+        const DEFAULT_PRICE_GENDONG = { MASTER: 2000, GM: 2000, EPIC: 3000, LEGEND: 4000, MYTHIC: 6000, HONOR: 7000, GLORY: 8000, IMMORTAL: 13000 };
+        let PRICE_REGULAR = { ...DEFAULT_PRICE_REGULAR };
+        let PRICE_GENDONG = { ...DEFAULT_PRICE_GENDONG };
+        // Harga bisa diubah dari admin.html; tersimpan di Firebase yang sama
+        // seperti dulu. Kalau gagal dimuat, harga awal di atas yang dipakai.
+        const CLOUD_DB_URL = "https://dolphinjoki-default-rtdb.asia-southeast1.firebasedatabase.app";
+        const PRICES_DB_PATH = 'seanjoki_prices';
+        const TIER_KEYS = ['MASTER', 'GM', 'EPIC', 'LEGEND', 'MYTHIC', 'HONOR', 'GLORY', 'IMMORTAL'];
+        const TILE_META = [{"label": "Master", "labelCls": "text-xs text-amber-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Grandmaster", "labelCls": "text-xs text-[#555555] block", "priceCls": "text-sm font-bold text-black"}, {"label": "Epic", "labelCls": "text-xs text-emerald-600 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Legend", "labelCls": "text-xs text-[#e8890c] block", "priceCls": "text-sm font-bold text-black"}, {"label": "Mythic (1-24)", "labelCls": "text-xs text-purple-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Honor (25-49)", "labelCls": "text-xs text-sky-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Glory (50-99)", "labelCls": "text-xs text-red-600 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Immortal (100+)", "labelCls": "text-xs text-[#e8890c] font-semibold block", "priceCls": "text-sm font-bold text-black"}];
+
+        function validPriceTable(t) {
+            return t && typeof t === 'object' && TIER_KEYS.every(k => Number.isInteger(t[k]) && t[k] > 0);
+        }
+
+        function renderPriceLists() {
+            const tables = [
+                { gridId: 'priceGridRegular', prices: PRICE_REGULAR },
+                { gridId: 'priceGridGendong', prices: PRICE_GENDONG }
+            ];
+            tables.forEach(({ gridId, prices }) => {
+                const grid = document.getElementById(gridId);
+                if (!grid) return;
+                grid.innerHTML = TIER_KEYS.map((key, i) => {
+                    const meta = TILE_META[i];
+                    const rp = 'Rp ' + prices[key].toLocaleString('id-ID');
+                    return '<div class="bg-[#FFF8E1] p-3 rounded-xl border-2 border-black"><span class="' + meta.labelCls + '">' + meta.label + '</span><span class="' + meta.priceCls + '">' + rp + '</span></div>';
+                }).join('');
+            });
+        }
+
+        async function loadPricesFromCloud() {
+            if (!CLOUD_DB_URL) return;
+            try {
+                const res = await fetch(CLOUD_DB_URL.replace(/\/+$/, '') + '/' + PRICES_DB_PATH + '.json', { cache: 'no-store' });
+                if (!res.ok) return;
+                const data = await res.json();
+                if (!data) return;
+                if (validPriceTable(data.regular)) PRICE_REGULAR = { ...data.regular };
+                if (validPriceTable(data.gendong)) PRICE_GENDONG = { ...data.gendong };
+                renderPriceLists();
+                calculateAll();
+            } catch (e) { /* tetap pakai harga awal */ }
+        }
+
 
         const TIER_LABELS = {
             MASTER: 'Master', GM: 'Grandmaster', EPIC: 'Epic', LEGEND: 'Legend',
@@ -476,6 +537,13 @@
 
             renderPaymentCards();
             selectPayment(0);
+            renderPriceLists();
+            loadPricesFromCloud();
+            ['', 'g'].forEach(prefix => {
+                const els = nickEls(prefix);
+                els.id.addEventListener('input', () => resetNickCheck(prefix));
+                els.server.addEventListener('input', () => resetNickCheck(prefix));
+            });
             calculateAll();
         };
 
@@ -491,18 +559,18 @@
             document.getElementById('tabBtnRegular').classList.toggle('active', page === 'regular');
             document.getElementById('tabBtnGendong').classList.toggle('active', page === 'gendong');
 
-            document.getElementById('navRegular').className = page === 'regular' ? "text-amber-400 font-bold transition" : "text-slate-300 hover:text-amber-400 transition";
-            document.getElementById('navGendong').className = page === 'gendong' ? "text-amber-400 font-bold transition flex items-center gap-1.5" : "text-slate-300 hover:text-amber-400 transition flex items-center gap-1.5";
+            document.getElementById('navRegular').className = page === 'regular' ? "text-[#e8890c] font-bold transition" : "text-black hover:text-[#e8890c] transition";
+            document.getElementById('navGendong').className = page === 'gendong' ? "text-[#e8890c] font-bold transition flex items-center gap-1.5" : "text-black hover:text-[#e8890c] transition flex items-center gap-1.5";
 
             if (page === 'gendong') {
                 document.getElementById('heroBadge').innerText = "🔥 MODE JOKI GENDONG — MABAR TANPA LOGIN AKUN";
-                document.getElementById('heroTitle').innerHTML = `MABAR PUSH RANK BARENG PENJOKI <span class="text-amber-400">SEAN JOKI</span>`;
+                document.getElementById('heroTitle').innerHTML = `MABAR PUSH RANK BARENG PENJOKI <span class="text-[#e8890c]">SEAN JOKI</span>`;
                 document.getElementById('heroDesc').innerText = "Tidak perlu kasih email & password! Pilih posisi rank awal hingga target rank tujuanmu dan main bareng penjoki Ex-Immortal kami.";
                 document.getElementById('summaryServiceBadge').innerText = "Joki Gendong";
                 document.getElementById('summaryServiceType').innerText = "Joki Gendong (Mabar)";
             } else {
                 document.getElementById('heroBadge').innerText = "⚡ SEAN JOKI PROSES CEPAT 1x24 JAM";
-                document.getElementById('heroTitle').innerHTML = `PUSH RANK TANPA PUSING BERSAMA TIM <span class="text-amber-400">SEAN JOKI</span>`;
+                document.getElementById('heroTitle').innerHTML = `PUSH RANK TANPA PUSING BERSAMA TIM <span class="text-[#e8890c]">SEAN JOKI</span>`;
                 document.getElementById('heroDesc').innerText = "Melayani dari tier Master hingga Mythical Immortal! 100% Amanah, Privasi Terjaga, Bonus Savage & Maniac, dan Winrate dijamin naik drastis.";
                 document.getElementById('summaryServiceBadge').innerText = "Joki Rank";
                 document.getElementById('summaryServiceType').innerText = "Joki Rank (Login)";
@@ -647,14 +715,14 @@
 
             MANUAL_PAYMENTS.forEach((pay, idx) => {
                 const card = document.createElement('div');
-                card.className = `payment-card ${idx === 0 ? 'active' : ''} cursor-pointer bg-slate-900 border border-slate-700 rounded-xl p-3.5 transition hover:border-amber-500/50`;
+                card.className = `payment-card ${idx === 0 ? 'active' : ''} cursor-pointer bg-white border-2 border-black rounded-xl p-3.5 transition hover:border-black`;
                 card.onclick = () => selectPayment(idx);
                 card.innerHTML = `
                     <div class="flex items-center justify-between mb-1">
                         <span class="font-bold text-sm ${pay.color}">${pay.name}</span>
-                        <span class="text-[10px] bg-slate-800 text-slate-300 px-1.5 py-0.5 rounded">${pay.badge}</span>
+                        <span class="text-[10px] bg-white text-black px-1.5 py-0.5 rounded">${pay.badge}</span>
                     </div>
-                    <p class="text-xs text-slate-400 truncate">${pay.type === 'qris' ? 'Scan QRIS Toko' : pay.number}</p>
+                    <p class="text-xs text-[#555555] truncate">${pay.type === 'qris' ? 'Scan QRIS Toko' : pay.number}</p>
                 `;
                 container.appendChild(card);
             });
@@ -670,9 +738,9 @@
                     <div class="flex flex-col sm:flex-row items-center gap-4">
                         <img src="${selectedPaymentObj.qrisImage}" alt="QRIS" class="w-28 h-28 rounded-lg bg-white p-1.5 object-contain">
                         <div>
-                            <span class="text-xs text-amber-400 font-bold uppercase">Pembayaran via ${selectedPaymentObj.name}</span>
-                            <p class="text-sm font-bold text-white mt-0.5">${selectedPaymentObj.holder}</p>
-                            <p class="text-xs text-slate-400 mt-1">Scan kode QR di samping menggunakan DANA, GoPay, OVO, ShopeePay, atau M-Banking Anda.</p>
+                            <span class="text-xs text-[#e8890c] font-bold uppercase">Pembayaran via ${selectedPaymentObj.name}</span>
+                            <p class="text-sm font-bold text-black mt-0.5">${selectedPaymentObj.holder}</p>
+                            <p class="text-xs text-[#555555] mt-1">Scan kode QR di samping menggunakan DANA, GoPay, OVO, ShopeePay, atau M-Banking Anda.</p>
                         </div>
                     </div>
                 `;
@@ -680,11 +748,11 @@
                 infoBox.innerHTML = `
                     <div class="flex flex-wrap items-center justify-between gap-3">
                         <div>
-                            <span class="text-xs text-slate-400 block">Transfer Manual ke ${selectedPaymentObj.name}:</span>
-                            <span class="text-lg font-mono font-extrabold text-amber-400 tracking-wide">${selectedPaymentObj.number}</span>
-                            <span class="text-xs text-slate-300 block font-medium mt-0.5">${selectedPaymentObj.holder}</span>
+                            <span class="text-xs text-[#555555] block">Transfer Manual ke ${selectedPaymentObj.name}:</span>
+                            <span class="text-lg font-mono font-extrabold text-[#e8890c] tracking-wide">${selectedPaymentObj.number}</span>
+                            <span class="text-xs text-black block font-medium mt-0.5">${selectedPaymentObj.holder}</span>
                         </div>
-                        <button type="button" onclick="copyText('${selectedPaymentObj.number}', 'Nomor Rekening')" class="bg-slate-800 hover:bg-slate-700 text-amber-400 border border-amber-500/30 px-3.5 py-2 rounded-lg text-xs font-bold flex items-center gap-1.5 transition">
+                        <button type="button" onclick="copyText('${selectedPaymentObj.number}', 'Nomor Rekening')" class="bg-white hover:bg-[#FFF8E1] text-[#e8890c] border-2 border-black px-3.5 py-2 rounded-lg text-xs font-bold flex items-center gap-1.5 transition">
                             <i class="fa-regular fa-copy"></i> Salin Nomor
                         </button>
                     </div>
@@ -692,6 +760,96 @@
             }
 
             calculateAll();
+        }
+
+
+        // =====================================================
+        // CEK ID + SERVER (nickname otomatis via /api/check-nick
+        // kalau provider sudah dikonfigurasi; kalau belum,
+        // nickname diisi manual setelah format ID/Server valid.)
+        // =====================================================
+        const nickState = {
+            '': { verified: false, id: '', server: '' },
+            'g': { verified: false, id: '', server: '' }
+        };
+
+        function isValidGameId(id, server) {
+            return /^\d{5,20}$/.test(id) && /^\d{3,6}$/.test(server);
+        }
+
+        function nickEls(prefix) {
+            const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+            const idFor = base => prefix ? prefix + cap(base) : base;
+            return {
+                id: document.getElementById(idFor('userId')),
+                server: document.getElementById(idFor('userServer')),
+                nick: document.getElementById(idFor('userNick')),
+                status: document.getElementById(idFor('nickStatus')),
+                btn: document.getElementById(idFor('btnCheckNick'))
+            };
+        }
+
+        function setNickStatus(prefix, text, kind) {
+            const el = nickEls(prefix).status;
+            el.innerText = text;
+            el.className = 'text-xs font-semibold ' + (kind === 'ok' ? 'text-emerald-600' : kind === 'err' ? 'text-red-600' : 'text-[#555555]');
+        }
+
+        function resetNickCheck(prefix) {
+            const st = nickState[prefix];
+            const els = nickEls(prefix);
+            const id = els.id.value.replace(/\D/g, '');
+            const server = els.server.value.replace(/\D/g, '');
+            if (st.verified && (id !== st.id || server !== st.server)) {
+                st.verified = false; st.id = ''; st.server = '';
+                els.nick.value = '';
+                els.nick.readOnly = true;
+                setNickStatus(prefix, 'ID/Server berubah, klik Cek Nickname lagi.', '');
+            }
+        }
+
+        function enableManualNick(prefix, msg) {
+            const els = nickEls(prefix);
+            els.nick.readOnly = false;
+            setNickStatus(prefix, msg, '');
+        }
+
+        async function checkNickname(prefix) {
+            const els = nickEls(prefix);
+            const id = els.id.value.replace(/\D/g, '');
+            const server = els.server.value.replace(/\D/g, '');
+            els.id.value = id; els.server.value = server;
+            if (!isValidGameId(id, server)) {
+                setNickStatus(prefix, 'ID harus 5-20 angka, Server 3-6 angka.', 'err');
+                return;
+            }
+            els.btn.disabled = true;
+            const oldLabel = els.btn.innerHTML;
+            els.btn.innerHTML = 'Mengecek…';
+            setNickStatus(prefix, 'Mengecek ID…', '');
+            try {
+                const res = await fetch('/api/check-nick', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ userId: id, zoneId: server })
+                });
+                const data = await res.json();
+                if (!data.available) {
+                    enableManualNick(prefix, 'Cek otomatis belum aktif. Isi nickname manual di bawah.');
+                } else if (data.found && data.nickname) {
+                    els.nick.value = data.nickname;
+                    els.nick.readOnly = true;
+                    nickState[prefix] = { verified: true, id, server };
+                    setNickStatus(prefix, 'ID valid: ' + data.nickname, 'ok');
+                } else {
+                    enableManualNick(prefix, 'ID/Server tidak ditemukan. Periksa lagi, atau isi nickname manual.');
+                }
+            } catch (e) {
+                enableManualNick(prefix, 'Cek otomatis gagal (butuh deploy + provider). Isi nickname manual.');
+            } finally {
+                els.btn.disabled = false;
+                els.btn.innerHTML = oldLabel;
+            }
         }
 
         function processOrder() {
@@ -703,18 +861,22 @@
             const buyerWa = document.getElementById('buyerWa').value.trim();
 
             if (activePage === 'regular') {
+                const userId = document.getElementById('userId').value.replace(/\D/g, '');
+                const userServer = document.getElementById('userServer').value.replace(/\D/g, '');
                 const userNick = document.getElementById('userNick').value.trim();
                 const userEmail = document.getElementById('userEmail').value.trim();
                 const userPass = document.getElementById('userPass').value.trim();
-                if (!userNick || !userEmail || !userPass || !buyerWa) {
-                    alert("Harap lengkapi semua data login akun yang wajib diisi (*) beserta Nomor WhatsApp Anda!");
+                if (!isValidGameId(userId, userServer) || !userNick || !userEmail || !userPass || !buyerWa) {
+                    alert("Harap lengkapi ID, Server, Nickname, semua data login akun yang wajib diisi (*) beserta Nomor WhatsApp Anda!");
                     return;
                 }
             } else {
+                const gUserId = document.getElementById('gUserId').value.replace(/\D/g, '');
+                const gUserServer = document.getElementById('gUserServer').value.replace(/\D/g, '');
                 const gUserNick = document.getElementById('gUserNick').value.trim();
                 const gSchedule = document.getElementById('gSchedule').value.trim();
-                if (!gUserNick || !gSchedule || !buyerWa) {
-                    alert("Harap lengkapi ID & Nickname, Jadwal Main, serta Nomor WhatsApp Anda!");
+                if (!isValidGameId(gUserId, gUserServer) || !gUserNick || !gSchedule || !buyerWa) {
+                    alert("Harap lengkapi ID, Server, Nickname, Jadwal Main, serta Nomor WhatsApp Anda!");
                     return;
                 }
             }
@@ -726,35 +888,35 @@
             const paymentBox = document.getElementById('modalPaymentBox');
             if (selectedPaymentObj.type === 'qris') {
                 paymentBox.innerHTML = `
-                    <span class="text-xs text-slate-400 block mb-2">Scan QRIS di bawah ini:</span>
+                    <span class="text-xs text-[#555555] block mb-2">Scan QRIS di bawah ini:</span>
                     <img src="${selectedPaymentObj.qrisImage}" alt="QRIS" class="w-44 h-44 mx-auto rounded-xl bg-white p-2 mb-2 object-contain">
-                    <span class="text-xs font-bold text-white block">${selectedPaymentObj.holder}</span>
-                    <div class="border-t border-slate-800 mt-3 pt-3 flex items-center justify-between">
+                    <span class="text-xs font-bold text-black block">${selectedPaymentObj.holder}</span>
+                    <div class="border-t-2 border-black mt-3 pt-3 flex items-center justify-between">
                         <div class="text-left">
-                            <span class="text-[11px] text-slate-400 block">Nominal Transfer:</span>
-                            <span class="text-base font-extrabold text-emerald-400">${formatRupiah(currentBasePrice)}</span>
+                            <span class="text-[11px] text-[#555555] block">Nominal Transfer:</span>
+                            <span class="text-base font-extrabold text-emerald-600">${formatRupiah(currentBasePrice)}</span>
                         </div>
-                        <button onclick="copyText('${currentBasePrice}', 'Nominal Transfer')" class="bg-slate-800 hover:bg-slate-700 text-xs text-slate-200 px-3 py-1.5 rounded-lg border border-slate-700">
+                        <button onclick="copyText('${currentBasePrice}', 'Nominal Transfer')" class="bg-white hover:bg-[#FFF8E1] text-xs text-black px-3 py-1.5 rounded-lg border-2 border-black">
                             <i class="fa-regular fa-copy mr-1"></i> Salin Nominal
                         </button>
                     </div>
                 `;
             } else {
                 paymentBox.innerHTML = `
-                    <span class="text-xs text-slate-400 block">Transfer ke ${selectedPaymentObj.name}:</span>
+                    <span class="text-xs text-[#555555] block">Transfer ke ${selectedPaymentObj.name}:</span>
                     <div class="flex items-center justify-center gap-2 my-1">
-                        <span class="text-xl font-mono font-extrabold text-amber-400">${selectedPaymentObj.number}</span>
-                        <button onclick="copyText('${selectedPaymentObj.number}', 'Nomor Rekening')" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 px-2.5 py-1 rounded text-xs font-bold">
+                        <span class="text-xl font-mono font-extrabold text-[#e8890c]">${selectedPaymentObj.number}</span>
+                        <button onclick="copyText('${selectedPaymentObj.number}', 'Nomor Rekening')" class="bg-[#FFF3D1] hover:bg-[#FFE4B3] text-[#e8890c] px-2.5 py-1 rounded text-xs font-bold">
                             <i class="fa-regular fa-copy"></i> Salin
                         </button>
                     </div>
-                    <span class="text-xs text-slate-300 font-semibold block">${selectedPaymentObj.holder}</span>
-                    <div class="border-t border-slate-800 mt-3 pt-3 flex items-center justify-between">
+                    <span class="text-xs text-black font-semibold block">${selectedPaymentObj.holder}</span>
+                    <div class="border-t-2 border-black mt-3 pt-3 flex items-center justify-between">
                         <div class="text-left">
-                            <span class="text-[11px] text-slate-400 block">Nominal Transfer:</span>
-                            <span class="text-base font-extrabold text-emerald-400">${formatRupiah(currentBasePrice)}</span>
+                            <span class="text-[11px] text-[#555555] block">Nominal Transfer:</span>
+                            <span class="text-base font-extrabold text-emerald-600">${formatRupiah(currentBasePrice)}</span>
                         </div>
-                        <button onclick="copyText('${currentBasePrice}', 'Nominal Transfer')" class="bg-slate-800 hover:bg-slate-700 text-xs text-slate-200 px-3 py-1.5 rounded-lg border border-slate-700">
+                        <button onclick="copyText('${currentBasePrice}', 'Nominal Transfer')" class="bg-white hover:bg-[#FFF8E1] text-xs text-black px-3 py-1.5 rounded-lg border-2 border-black">
                             <i class="fa-regular fa-copy mr-1"></i> Salin Nominal
                         </button>
                     </div>
@@ -765,22 +927,26 @@
             const row2Val = document.getElementById('summaryRow2Val').innerText;
 
             if (activePage === 'regular') {
+                const userId = document.getElementById('userId').value.replace(/\D/g, '');
+                const userServer = document.getElementById('userServer').value.replace(/\D/g, '');
                 const userNick = document.getElementById('userNick').value.trim();
                 document.getElementById('modalDetails').innerHTML = `
-                    <div class="flex justify-between"><span class="text-slate-400">Layanan:</span><span class="font-semibold text-white">Joki Rank (Login)</span></div>
-                    <div class="flex justify-between"><span class="text-slate-400">ID & Nickname:</span><span class="font-semibold text-white">${userNick}</span></div>
-                    <div class="flex justify-between"><span class="text-slate-400">Order Joki:</span><span class="font-semibold text-amber-400">${row1Val} ➔ ${row2Val}</span></div>
-                    <div class="flex justify-between"><span class="text-slate-400">Total Bintang:</span><span class="font-semibold text-white">${currentTotalStars} Bintang</span></div>
+                    <div class="flex justify-between"><span class="text-[#555555]">Layanan:</span><span class="font-semibold text-black">Joki Rank (Login)</span></div>
+                    <div class="flex justify-between"><span class="text-[#555555]">ID & Nickname:</span><span class="font-semibold text-black">${userId} (${userServer}) - ${userNick}</span></div>
+                    <div class="flex justify-between"><span class="text-[#555555]">Order Joki:</span><span class="font-semibold text-[#e8890c]">${row1Val} ➔ ${row2Val}</span></div>
+                    <div class="flex justify-between"><span class="text-[#555555]">Total Bintang:</span><span class="font-semibold text-black">${currentTotalStars} Bintang</span></div>
                 `;
             } else {
+                const gUserId = document.getElementById('gUserId').value.replace(/\D/g, '');
+                const gUserServer = document.getElementById('gUserServer').value.replace(/\D/g, '');
                 const gUserNick = document.getElementById('gUserNick').value.trim();
                 const gSchedule = document.getElementById('gSchedule').value.trim();
                 document.getElementById('modalDetails').innerHTML = `
-                    <div class="flex justify-between"><span class="text-slate-400">Layanan:</span><span class="font-semibold text-amber-400">Joki Gendong (Mabar)</span></div>
-                    <div class="flex justify-between"><span class="text-slate-400">ID & Nickname:</span><span class="font-semibold text-white">${gUserNick}</span></div>
-                    <div class="flex justify-between"><span class="text-slate-400">Order Gendong:</span><span class="font-semibold text-amber-400">${row1Val} ➔ ${row2Val}</span></div>
-                    <div class="flex justify-between"><span class="text-slate-400">Total Bintang:</span><span class="font-semibold text-white">${currentTotalStars} Bintang ⭐</span></div>
-                    <div class="flex justify-between"><span class="text-slate-400">Jadwal Main:</span><span class="font-semibold text-white">${gSchedule}</span></div>
+                    <div class="flex justify-between"><span class="text-[#555555]">Layanan:</span><span class="font-semibold text-[#e8890c]">Joki Gendong (Mabar)</span></div>
+                    <div class="flex justify-between"><span class="text-[#555555]">ID & Nickname:</span><span class="font-semibold text-black">${gUserId} (${gUserServer}) - ${gUserNick}</span></div>
+                    <div class="flex justify-between"><span class="text-[#555555]">Order Gendong:</span><span class="font-semibold text-[#e8890c]">${row1Val} ➔ ${row2Val}</span></div>
+                    <div class="flex justify-between"><span class="text-[#555555]">Total Bintang:</span><span class="font-semibold text-black">${currentTotalStars} Bintang ⭐</span></div>
+                    <div class="flex justify-between"><span class="text-[#555555]">Jadwal Main:</span><span class="font-semibold text-black">${gSchedule}</span></div>
                 `;
             }
 
@@ -805,6 +971,8 @@
 
             if (activePage === 'regular') {
                 const loginVia = document.getElementById('loginVia').value;
+                const userId = document.getElementById('userId').value.replace(/\D/g, '');
+                const userServer = document.getElementById('userServer').value.replace(/\D/g, '');
                 const userNick = document.getElementById('userNick').value.trim();
                 const userEmail = document.getElementById('userEmail').value.trim();
                 const userPass = document.getElementById('userPass').value.trim();
@@ -821,7 +989,7 @@ No. Invoice : *#${currentInvoice}*
 ----------------------------------------
 *DATA AKUN:*
 • Login Via : ${loginVia}
-• ID & Nick : ${userNick}
+• ID (Server) : ${userId} (${userServer})\n• Nickname : ${userNick}
 • Email/HP : ${userEmail}
 • Password : ${userPass}
 • Catatan : ${userNote}
@@ -833,6 +1001,8 @@ No. Invoice : *#${currentInvoice}*
 
 _Halo Admin Sean Joki, saya sudah melakukan pembayaran untuk pesanan Joki Rank di atas. Berikut saya lampirkan bukti transfernya:_`;
             } else {
+                const gUserId = document.getElementById('gUserId').value.replace(/\D/g, '');
+                const gUserServer = document.getElementById('gUserServer').value.replace(/\D/g, '');
                 const gUserNick = document.getElementById('gUserNick').value.trim();
                 const gUserRole = document.getElementById('gUserRole').value;
                 const gSchedule = document.getElementById('gSchedule').value.trim();
@@ -848,7 +1018,7 @@ No. Invoice : *#${currentInvoice}*
 • Total Bintang : ${currentTotalStars} Bintang ⭐
 ----------------------------------------
 *DATA MABAR PEMBELI:*
-• ID & Nick : ${gUserNick}
+• ID (Server) : ${gUserId} (${gUserServer})\n• Nickname : ${gUserNick}
 • Role Pembeli : ${gUserRole}
 • Jadwal Main : ${gSchedule}
 • Catatan : ${gUserNote}

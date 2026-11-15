@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Harga - Sean Joki</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FFF9EC; color: #000000; }
+        .font-gaming { font-family: 'Orbitron', sans-serif; }
+        .glass-card { background: #ffffff; border: 2px solid #000000; box-shadow: 5px 5px 0 #000000; }
+        nav.glass-card { box-shadow: 0 4px 0 #000000; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FFF9EC; }
+        ::-webkit-scrollbar-thumb { background: #000000; border-radius: 4px; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <nav class="sticky top-0 z-40 glass-card border-b-2 border-black">
+        <div class="max-w-xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-dragon text-[#e8890c] text-2xl"></i>
+                <span class="font-gaming text-xl font-extrabold tracking-wider text-black">
+                    SEAN <span class="text-[#e8890c]">JOKI</span>
+                </span>
+            </div>
+            <a href="index.html" class="text-sm font-bold text-black underline">Lihat Situs</a>
+        </div>
+    </nav>
+
+    <main class="max-w-xl mx-auto px-4 py-6 flex-grow w-full space-y-6">
+
+        <div class="glass-card rounded-2xl p-5">
+            <h1 class="font-gaming text-xl font-extrabold text-black">ADMIN HARGA</h1>
+            <p class="text-xs text-[#555555] mt-1">Ubah harga per bintang Joki Rank &amp; Joki Gendong. Harga tersimpan langsung tampil di situs setelah halaman dimuat ulang.</p>
+        </div>
+
+        <div id="loginCard" class="glass-card rounded-2xl p-5 space-y-3">
+            <h2 class="text-lg font-bold text-black">Login Admin</h2>
+            <div>
+                <label class="text-xs text-black font-medium">Password Admin</label>
+                <input type="password" id="adminPass" placeholder="Masukkan password admin" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black">
+            </div>
+            <p id="loginError" class="text-xs font-semibold text-red-600 hidden">Password salah.</p>
+            <button onclick="handleAdminLogin()" class="w-full bg-[#ffa500] hover:bg-[#ffb020] text-black font-extrabold py-3 rounded-xl border-2 border-black shadow-[5px_5px_0_#000] text-sm">Masuk</button>
+        </div>
+
+        <div id="editorCard" class="space-y-6 hidden">
+            <div class="glass-card rounded-2xl p-5">
+                <div class="flex items-center justify-between gap-3">
+                    <h2 class="text-lg font-bold text-black">Harga Joki Rank (Login) / Bintang</h2>
+                    <span id="loadBadge" class="text-[11px] font-bold px-2 py-1 rounded-full border-2 border-black bg-[#FFF3D1] text-black">Memuat…</span>
+                </div>
+                <div id="priceFormRegular" class="mt-4 space-y-3"></div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-5">
+                <h2 class="text-lg font-bold text-black">Harga Joki Gendong (Mabar) / Bintang</h2>
+                <div id="priceFormGendong" class="mt-4 space-y-3"></div>
+            </div>
+
+            <p id="saveStatus" class="text-xs font-semibold text-[#555555]"></p>
+
+            <div class="flex gap-3">
+                <button onclick="savePrices()" class="flex-1 bg-[#ffa500] hover:bg-[#ffb020] text-black font-extrabold py-3 rounded-xl border-2 border-black shadow-[5px_5px_0_#000] text-sm">Simpan Harga</button>
+                <button onclick="resetToDefaults()" class="flex-1 bg-white hover:bg-[#FFF8E1] text-black font-bold py-3 rounded-xl border-2 border-black shadow-[5px_5px_0_#000] text-sm">Harga Awal</button>
+            </div>
+            <button onclick="handleAdminLogout()" class="w-full text-xs font-semibold text-[#555555] underline">Keluar dari Admin</button>
+            <p class="text-[11px] text-[#555555] leading-relaxed">Catatan: halaman ini hanya penghalang ringan (password tersimpan di file, seperti panel admin lama). Jangan bagikan tautan halaman ini ke publik.</p>
+        </div>
+
+    </main>
+
+    <footer class="border-t-2 border-black py-6 text-center text-xs text-[#555555] mt-8">
+        <p>© 2026 SEAN JOKI — Admin Harga.</p>
+    </footer>
+
+    <script>
+        const CLOUD_DB_URL = "https://dolphinjoki-default-rtdb.asia-southeast1.firebasedatabase.app";
+        const PRICES_DB_PATH = 'seanjoki_prices';
+        const ADMIN_PASSWORD = "puputmasam";
+        const DEFAULT_PRICE_REGULAR = { MASTER: 1000, GM: 1000, EPIC: 2000, LEGEND: 3000, MYTHIC: 5000, HONOR: 6000, GLORY: 7000, IMMORTAL: 12000 };
+        const DEFAULT_PRICE_GENDONG = { MASTER: 2000, GM: 2000, EPIC: 3000, LEGEND: 4000, MYTHIC: 6000, HONOR: 7000, GLORY: 8000, IMMORTAL: 13000 };
+        const TIER_KEYS = ['MASTER', 'GM', 'EPIC', 'LEGEND', 'MYTHIC', 'HONOR', 'GLORY', 'IMMORTAL'];
+        const TILE_META = [{"label": "Master", "labelCls": "text-xs text-amber-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Grandmaster", "labelCls": "text-xs text-[#555555] block", "priceCls": "text-sm font-bold text-black"}, {"label": "Epic", "labelCls": "text-xs text-emerald-600 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Legend", "labelCls": "text-xs text-[#e8890c] block", "priceCls": "text-sm font-bold text-black"}, {"label": "Mythic (1-24)", "labelCls": "text-xs text-purple-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Honor (25-49)", "labelCls": "text-xs text-sky-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Glory (50-99)", "labelCls": "text-xs text-red-600 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Immortal (100+)", "labelCls": "text-xs text-[#e8890c] font-semibold block", "priceCls": "text-sm font-bold text-black"}];
+
+        function buildForm(containerId, prefix, values) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = TIER_KEYS.map((key, i) => {
+                const meta = TILE_META[i];
+                return '<div class="flex items-center justify-between gap-3">'
+                    + '<label class="text-sm font-semibold text-black">' + meta.label + '</label>'
+                    + '<span class="flex items-center gap-1.5"><span class="text-xs text-[#555555]">Rp</span>'
+                    + '<input type="number" min="1" step="1" inputmode="numeric" id="' + prefix + '-' + key + '" value="' + values[key] + '" class="w-32 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black text-right focus:outline-none focus:border-black">'
+                    + '</span></div>';
+            }).join('');
+        }
+
+        function readForm(prefix) {
+            const out = {};
+            for (const key of TIER_KEYS) {
+                const v = parseInt(document.getElementById(prefix + '-' + key).value, 10);
+                if (!Number.isInteger(v) || v <= 0) return null;
+                out[key] = v;
+            }
+            return out;
+        }
+
+        function fillForm(prefix, values) {
+            for (const key of TIER_KEYS) {
+                document.getElementById(prefix + '-' + key).value = values[key];
+            }
+        }
+
+        function validPriceTable(t) {
+            return t && typeof t === 'object' && TIER_KEYS.every(k => Number.isInteger(t[k]) && t[k] > 0);
+        }
+
+        async function loadPrices() {
+            const badge = document.getElementById('loadBadge');
+            buildForm('priceFormRegular', 'price-regular', DEFAULT_PRICE_REGULAR);
+            buildForm('priceFormGendong', 'price-gendong', DEFAULT_PRICE_GENDONG);
+            try {
+                const res = await fetch(CLOUD_DB_URL.replace(/\/+$/, '') + '/' + PRICES_DB_PATH + '.json', { cache: 'no-store' });
+                if (!res.ok) { badge.innerText = 'Harga awal (gagal memuat tersimpan)'; return; }
+                const data = await res.json();
+                if (data && validPriceTable(data.regular)) fillForm('price-regular', data.regular);
+                if (data && validPriceTable(data.gendong)) fillForm('price-gendong', data.gendong);
+                badge.innerText = data ? 'Harga tersimpan dimuat' : 'Harga awal (belum ada tersimpan)';
+            } catch (e) {
+                badge.innerText = 'Harga awal (gagal memuat tersimpan)';
+            }
+        }
+
+        async function savePrices() {
+            const status = document.getElementById('saveStatus');
+            const regular = readForm('price-regular');
+            const gendong = readForm('price-gendong');
+            if (!regular || !gendong) {
+                status.innerText = 'Semua harga harus diisi angka lebih dari 0.';
+                status.className = 'text-xs font-semibold text-red-600';
+                return;
+            }
+            status.innerText = 'Menyimpan…';
+            status.className = 'text-xs font-semibold text-[#555555]';
+            try {
+                const res = await fetch(CLOUD_DB_URL.replace(/\/+$/, '') + '/' + PRICES_DB_PATH + '.json', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ regular, gendong, updatedAt: Date.now() })
+                });
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                status.innerText = 'Harga tersimpan. Situs akan menampilkan harga baru setelah dimuat ulang.';
+                status.className = 'text-xs font-semibold text-emerald-600';
+                document.getElementById('loadBadge').innerText = 'Harga tersimpan dimuat';
+            } catch (e) {
+                status.innerText = 'Gagal menyimpan. Periksa koneksi / pengaturan Firebase, lalu coba lagi.';
+                status.className = 'text-xs font-semibold text-red-600';
+            }
+        }
+
+        function resetToDefaults() {
+            fillForm('price-regular', DEFAULT_PRICE_REGULAR);
+            fillForm('price-gendong', DEFAULT_PRICE_GENDONG);
+            const status = document.getElementById('saveStatus');
+            status.innerText = 'Form diisi harga awal. Klik Simpan Harga untuk menerapkan.';
+            status.className = 'text-xs font-semibold text-[#555555]';
+        }
+
+        function showEditor() {
+            document.getElementById('loginCard').classList.add('hidden');
+            document.getElementById('editorCard').classList.remove('hidden');
+            loadPrices();
+        }
+
+        function handleAdminLogin() {
+            const pass = document.getElementById('adminPass').value;
+            if (pass === ADMIN_PASSWORD) {
+                sessionStorage.setItem('sj_admin_ok', '1');
+                document.getElementById('loginError').classList.add('hidden');
+                showEditor();
+            } else {
+                document.getElementById('loginError').classList.remove('hidden');
+            }
+        }
+
+        function handleAdminLogout() {
+            sessionStorage.removeItem('sj_admin_ok');
+            document.getElementById('editorCard').classList.add('hidden');
+            document.getElementById('loginCard').classList.remove('hidden');
+            document.getElementById('adminPass').value = '';
+        }
+
+        document.getElementById('adminPass').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') handleAdminLogin();
+        });
+        if (sessionStorage.getItem('sj_admin_ok') === '1') showEditor();
+    </script>
+</body>
+</html>
