@@ -102,7 +102,7 @@
                                         <select id="startRank" onchange="handleRankChange('start')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black"></select>
                                     </div>
                                     <div>
-                                        <span class="text-xs text-[#555555]" id="startStarLabel">Jumlah Bintang Saat Ini (0&nbsp;-&nbsp;5)</span>
+                                        <span class="text-[11px] text-[#555555]" id="startStarLabel">Jumlah Bintang Saat Ini (0&nbsp;-&nbsp;5)</span>
                                         <input type="number" id="startStar" value="1" min="0" max="5" oninput="calculateAll()" onchange="clampStarInput('start')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
                                     </div>
                                 </div>
@@ -116,7 +116,7 @@
                                         <select id="targetRank" onchange="handleRankChange('target')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black"></select>
                                     </div>
                                     <div>
-                                        <span class="text-xs text-[#555555]" id="targetStarLabel">Target Bintang (0&nbsp;-&nbsp;5)</span>
+                                        <span class="text-[11px] text-[#555555]" id="targetStarLabel">Target Bintang (0&nbsp;-&nbsp;5)</span>
                                         <input type="number" id="targetStar" value="5" min="0" max="5" oninput="calculateAll()" onchange="clampStarInput('target')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
                                     </div>
                                 </div>
@@ -213,7 +213,7 @@
                                         <select id="gStartRank" onchange="handleRankChange('gStart')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black"></select>
                                     </div>
                                     <div>
-                                        <span class="text-xs text-[#555555]" id="gStartStarLabel">Jumlah Bintang Saat Ini (0&nbsp;-&nbsp;5)</span>
+                                        <span class="text-[11px] text-[#555555]" id="gStartStarLabel">Jumlah Bintang Saat Ini (0&nbsp;-&nbsp;5)</span>
                                         <input type="number" id="gStartStar" value="1" min="0" max="5" oninput="calculateAll()" onchange="clampStarInput('gStart')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
                                     </div>
                                 </div>
@@ -227,7 +227,7 @@
                                         <select id="gTargetRank" onchange="handleRankChange('gTarget')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black"></select>
                                     </div>
                                     <div>
-                                        <span class="text-xs text-[#555555]" id="gTargetStarLabel">Target Bintang (0&nbsp;-&nbsp;5)</span>
+                                        <span class="text-[11px] text-[#555555]" id="gTargetStarLabel">Target Bintang (0&nbsp;-&nbsp;5)</span>
                                         <input type="number" id="gTargetStar" value="5" min="0" max="5" oninput="calculateAll()" onchange="clampStarInput('gTarget')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
                                     </div>
                                 </div>
@@ -720,9 +720,9 @@
                 card.className = `payment-card ${idx === 0 ? 'active' : ''} cursor-pointer bg-white border-2 border-black rounded-xl p-3.5 transition hover:border-black`;
                 card.onclick = () => selectPayment(idx);
                 card.innerHTML = `
-                    <div class="flex items-center justify-between mb-1">
+                    <div class="flex flex-wrap items-center justify-between gap-1 mb-1">
                         <span class="font-bold text-sm ${pay.color}">${pay.name}</span>
-                        <span class="text-[10px] bg-white text-black px-1.5 py-0.5 rounded">${pay.badge}</span>
+                        <span class="text-[10px] bg-white text-black px-1.5 py-0.5 rounded whitespace-nowrap">${pay.badge}</span>
                     </div>
                     <p class="text-xs text-[#555555] truncate">${pay.type === 'qris' ? 'Scan QRIS Toko' : pay.number}</p>
                 `;
