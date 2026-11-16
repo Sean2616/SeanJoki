@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sean Joki - Joki Rank &amp; Joki Gendong</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -27,7 +28,7 @@
     <nav class="sticky top-0 z-40 glass-card border-b-2 border-black">
         <div class="max-w-xl mx-auto px-4 h-16 flex items-center justify-between">
             <div class="flex items-center gap-2.5 cursor-pointer" onclick="switchServicePage('regular')">
-                <i class="fa-solid fa-dragon text-[#e8890c] text-2xl"></i>
+                <img src="logo.png" alt="Logo Sean Joki" class="w-9 h-9 rounded-lg object-cover">
                 <span class="font-gaming text-xl font-extrabold tracking-wider text-black">
                     SEAN <span class="text-[#e8890c]">JOKI</span>
                 </span>
@@ -101,7 +102,7 @@
                                         <select id="startRank" onchange="handleRankChange('start')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black"></select>
                                     </div>
                                     <div>
-                                        <span class="text-xs text-[#555555]" id="startStarLabel">Jumlah Bintang Saat Ini (0 - 5)</span>
+                                        <span class="text-xs text-[#555555]" id="startStarLabel">Jumlah Bintang Saat Ini (0&nbsp;-&nbsp;5)</span>
                                         <input type="number" id="startStar" value="1" min="0" max="5" oninput="calculateAll()" onchange="clampStarInput('start')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
                                     </div>
                                 </div>
@@ -115,7 +116,7 @@
                                         <select id="targetRank" onchange="handleRankChange('target')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black"></select>
                                     </div>
                                     <div>
-                                        <span class="text-xs text-[#555555]" id="targetStarLabel">Target Bintang (0 - 5)</span>
+                                        <span class="text-xs text-[#555555]" id="targetStarLabel">Target Bintang (0&nbsp;-&nbsp;5)</span>
                                         <input type="number" id="targetStar" value="5" min="0" max="5" oninput="calculateAll()" onchange="clampStarInput('target')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
                                     </div>
                                 </div>
@@ -175,7 +176,7 @@
                             </div>
                             <div>
                                 <label class="text-xs text-black font-medium">Email / No. HP Akun <span class="text-red-600">*</span></label>
-                                <input type="text" id="userEmail" placeholder="Masukkan Email atau No. HP" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
+                                <input type="text" id="userEmail" placeholder="Email atau No. HP" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
                             </div>
                             <div>
                                 <label class="text-xs text-black font-medium">Password Akun <span class="text-red-600">*</span></label>
@@ -212,7 +213,7 @@
                                         <select id="gStartRank" onchange="handleRankChange('gStart')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black"></select>
                                     </div>
                                     <div>
-                                        <span class="text-xs text-[#555555]" id="gStartStarLabel">Jumlah Bintang Saat Ini (0 - 5)</span>
+                                        <span class="text-xs text-[#555555]" id="gStartStarLabel">Jumlah Bintang Saat Ini (0&nbsp;-&nbsp;5)</span>
                                         <input type="number" id="gStartStar" value="1" min="0" max="5" oninput="calculateAll()" onchange="clampStarInput('gStart')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
                                     </div>
                                 </div>
@@ -226,7 +227,7 @@
                                         <select id="gTargetRank" onchange="handleRankChange('gTarget')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black"></select>
                                     </div>
                                     <div>
-                                        <span class="text-xs text-[#555555]" id="gTargetStarLabel">Target Bintang (0 - 5)</span>
+                                        <span class="text-xs text-[#555555]" id="gTargetStarLabel">Target Bintang (0&nbsp;-&nbsp;5)</span>
                                         <input type="number" id="gTargetStar" value="5" min="0" max="5" oninput="calculateAll()" onchange="clampStarInput('gTarget')" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2 text-sm text-black focus:outline-none focus:border-black">
                                     </div>
                                 </div>
@@ -306,12 +307,12 @@
 
                 <!-- STEP 3: METODE PEMBAYARAN MANUAL -->
                 <div id="customerPaymentSection" class="glass-card rounded-2xl p-5">
-                    <div class="flex items-center justify-between mb-6 border-b-2 border-black pb-4">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-6 border-b-2 border-black pb-4">
                         <div class="flex items-center gap-3">
                             <span class="w-8 h-8 rounded-lg bg-[#ffa500] text-black font-bold flex items-center justify-center">3</span>
-                            <h2 class="text-lg font-bold text-black">Pilih Pembayaran (Transfer Manual)</h2>
+                            <h2 class="text-lg font-bold text-black whitespace-nowrap">Pilih Pembayaran (Transfer Manual)</h2>
                         </div>
-                        <span class="text-xs bg-[#DCFCE7] text-emerald-600 px-2.5 py-1 rounded-full border-2 border-black font-medium">Bebas Biaya Admin</span>
+                        <span class="text-xs bg-[#DCFCE7] text-emerald-600 px-2.5 py-1 rounded-full border-2 border-black font-medium whitespace-nowrap">Bebas Biaya Admin</span>
                     </div>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="paymentMethodsContainer"></div>
                     <div id="manualPaymentInfo" class="mt-5 bg-[#FFF8E1] border-2 border-black rounded-xl p-4"></div>
@@ -413,7 +414,7 @@
         const MANUAL_PAYMENTS = [
             {
                 id: 'qris',
-                name: 'QRIS (Scan Manual)',
+                name: 'QRIS',
                 type: 'qris',
                 number: 'SCAN BARCODE QRIS',
                 holder: 'RUJAK AREK RASA',
@@ -432,7 +433,7 @@
         const CLOUD_DB_URL = "https://dolphinjoki-default-rtdb.asia-southeast1.firebasedatabase.app";
         const PRICES_DB_PATH = 'seanjoki_prices';
         const TIER_KEYS = ['MASTER', 'GM', 'EPIC', 'LEGEND', 'MYTHIC', 'HONOR', 'GLORY', 'IMMORTAL'];
-        const TILE_META = [{"label": "Master", "labelCls": "text-xs text-amber-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Grandmaster", "labelCls": "text-xs text-[#555555] block", "priceCls": "text-sm font-bold text-black"}, {"label": "Epic", "labelCls": "text-xs text-emerald-600 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Legend", "labelCls": "text-xs text-[#e8890c] block", "priceCls": "text-sm font-bold text-black"}, {"label": "Mythic (1-24)", "labelCls": "text-xs text-purple-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Honor (25-49)", "labelCls": "text-xs text-sky-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Glory (50-99)", "labelCls": "text-xs text-red-600 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Immortal (100+)", "labelCls": "text-xs text-[#e8890c] font-semibold block", "priceCls": "text-sm font-bold text-black"}];
+        const TILE_META = [{"label": "Master", "labelCls": "text-[11px] whitespace-nowrap text-amber-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Grandmaster", "labelCls": "text-[11px] whitespace-nowrap text-[#555555] block", "priceCls": "text-sm font-bold text-black"}, {"label": "Epic", "labelCls": "text-[11px] whitespace-nowrap text-emerald-600 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Legend", "labelCls": "text-[11px] whitespace-nowrap text-[#e8890c] block", "priceCls": "text-sm font-bold text-black"}, {"label": "Mythic (1-24)", "labelCls": "text-[11px] whitespace-nowrap text-purple-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Honor (25-49)", "labelCls": "text-[11px] whitespace-nowrap text-sky-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Glory (50-99)", "labelCls": "text-[11px] whitespace-nowrap text-red-600 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Immortal (100+)", "labelCls": "text-[11px] whitespace-nowrap text-[#e8890c] font-semibold block", "priceCls": "text-sm font-bold text-black"}];
 
         function validPriceTable(t) {
             return t && typeof t === 'object' && TIER_KEYS.every(k => Number.isInteger(t[k]) && t[k] > 0);
@@ -449,7 +450,7 @@
                 grid.innerHTML = TIER_KEYS.map((key, i) => {
                     const meta = TILE_META[i];
                     const rp = 'Rp ' + prices[key].toLocaleString('id-ID');
-                    return '<div class="bg-[#FFF8E1] p-3 rounded-xl border-2 border-black"><span class="' + meta.labelCls + '">' + meta.label + '</span><span class="' + meta.priceCls + '">' + rp + '</span></div>';
+                    return '<div class="bg-[#FFF8E1] p-2 rounded-xl border-2 border-black"><span class="' + meta.labelCls + '">' + meta.label + '</span><span class="' + meta.priceCls + '">' + rp + '</span></div>';
                 }).join('');
             });
         }
@@ -475,29 +476,29 @@
         };
 
         const RANKS = [
-            { id: 'mas4', name: 'Master IV', base: 0, minStar: 0, maxStar: 4, defStart: 1, defTarget: 4, label: 'Jumlah Bintang Master (0 - 4)' },
-            { id: 'mas3', name: 'Master III', base: 4, minStar: 0, maxStar: 4, defStart: 1, defTarget: 4, label: 'Jumlah Bintang Master (0 - 4)' },
-            { id: 'mas2', name: 'Master II', base: 8, minStar: 0, maxStar: 4, defStart: 1, defTarget: 4, label: 'Jumlah Bintang Master (0 - 4)' },
-            { id: 'mas1', name: 'Master I', base: 12, minStar: 0, maxStar: 4, defStart: 1, defTarget: 4, label: 'Jumlah Bintang Master (0 - 4)' },
-            { id: 'gm5', name: 'Grandmaster V', base: 16, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang GM (0 - 5)' },
-            { id: 'gm4', name: 'Grandmaster IV', base: 21, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang GM (0 - 5)' },
-            { id: 'gm3', name: 'Grandmaster III', base: 26, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang GM (0 - 5)' },
-            { id: 'gm2', name: 'Grandmaster II', base: 31, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang GM (0 - 5)' },
-            { id: 'gm1', name: 'Grandmaster I', base: 36, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang GM (0 - 5)' },
-            { id: 'epic5', name: 'Epic V', base: 41, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Epic (0 - 5)' },
-            { id: 'epic4', name: 'Epic IV', base: 46, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Epic (0 - 5)' },
-            { id: 'epic3', name: 'Epic III', base: 51, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Epic (0 - 5)' },
-            { id: 'epic2', name: 'Epic II', base: 56, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Epic (0 - 5)' },
-            { id: 'epic1', name: 'Epic I', base: 61, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Epic (0 - 5)' },
-            { id: 'leg5', name: 'Legend V', base: 66, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Legend (0 - 5)' },
-            { id: 'leg4', name: 'Legend IV', base: 71, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Legend (0 - 5)' },
-            { id: 'leg3', name: 'Legend III', base: 76, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Legend (0 - 5)' },
-            { id: 'leg2', name: 'Legend II', base: 81, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Legend (0 - 5)' },
-            { id: 'leg1', name: 'Legend I', base: 86, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Legend (0 - 5)' },
-            { id: 'mythic', name: 'Mythic (1 - 24 ⭐)', base: 91, minStar: 1, maxStar: 24, defStart: 1, defTarget: 24, label: 'Jumlah Bintang Mythic (1 - 24)' },
-            { id: 'honor', name: 'Mythical Honor (25 - 49 ⭐)', base: 91, minStar: 25, maxStar: 49, defStart: 25, defTarget: 49, label: 'Jumlah Bintang Honor (25 - 49)' },
-            { id: 'glory', name: 'Mythical Glory (50 - 99 ⭐)', base: 91, minStar: 50, maxStar: 99, defStart: 50, defTarget: 99, label: 'Jumlah Bintang Glory (50 - 99)' },
-            { id: 'immortal', name: 'Mythical Immortal (100+ ⭐)', base: 91, minStar: 100, maxStar: 999, defStart: 100, defTarget: 110, label: 'Jumlah Bintang Immortal (100 - 999)' }
+            { id: 'mas4', name: 'Master IV', base: 0, minStar: 0, maxStar: 4, defStart: 1, defTarget: 4, label: 'Jumlah Bintang Master (0\u00A0-\u00A04)' },
+            { id: 'mas3', name: 'Master III', base: 4, minStar: 0, maxStar: 4, defStart: 1, defTarget: 4, label: 'Jumlah Bintang Master (0\u00A0-\u00A04)' },
+            { id: 'mas2', name: 'Master II', base: 8, minStar: 0, maxStar: 4, defStart: 1, defTarget: 4, label: 'Jumlah Bintang Master (0\u00A0-\u00A04)' },
+            { id: 'mas1', name: 'Master I', base: 12, minStar: 0, maxStar: 4, defStart: 1, defTarget: 4, label: 'Jumlah Bintang Master (0\u00A0-\u00A04)' },
+            { id: 'gm5', name: 'Grandmaster V', base: 16, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang GM (0\u00A0-\u00A05)' },
+            { id: 'gm4', name: 'Grandmaster IV', base: 21, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang GM (0\u00A0-\u00A05)' },
+            { id: 'gm3', name: 'Grandmaster III', base: 26, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang GM (0\u00A0-\u00A05)' },
+            { id: 'gm2', name: 'Grandmaster II', base: 31, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang GM (0\u00A0-\u00A05)' },
+            { id: 'gm1', name: 'Grandmaster I', base: 36, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang GM (0\u00A0-\u00A05)' },
+            { id: 'epic5', name: 'Epic V', base: 41, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Epic (0\u00A0-\u00A05)' },
+            { id: 'epic4', name: 'Epic IV', base: 46, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Epic (0\u00A0-\u00A05)' },
+            { id: 'epic3', name: 'Epic III', base: 51, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Epic (0\u00A0-\u00A05)' },
+            { id: 'epic2', name: 'Epic II', base: 56, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Epic (0\u00A0-\u00A05)' },
+            { id: 'epic1', name: 'Epic I', base: 61, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Epic (0\u00A0-\u00A05)' },
+            { id: 'leg5', name: 'Legend V', base: 66, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Legend (0\u00A0-\u00A05)' },
+            { id: 'leg4', name: 'Legend IV', base: 71, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Legend (0\u00A0-\u00A05)' },
+            { id: 'leg3', name: 'Legend III', base: 76, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Legend (0\u00A0-\u00A05)' },
+            { id: 'leg2', name: 'Legend II', base: 81, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Legend (0\u00A0-\u00A05)' },
+            { id: 'leg1', name: 'Legend I', base: 86, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang Legend (0\u00A0-\u00A05)' },
+            { id: 'mythic', name: 'Mythic (1 - 24 ⭐)', base: 91, minStar: 1, maxStar: 24, defStart: 1, defTarget: 24, label: 'Jumlah Bintang Mythic (1\u00A0-\u00A024)' },
+            { id: 'honor', name: 'Mythical Honor (25 - 49 ⭐)', base: 91, minStar: 25, maxStar: 49, defStart: 25, defTarget: 49, label: 'Jumlah Bintang Honor (25\u00A0-\u00A049)' },
+            { id: 'glory', name: 'Mythical Glory (50 - 99 ⭐)', base: 91, minStar: 50, maxStar: 99, defStart: 50, defTarget: 99, label: 'Jumlah Bintang Glory (50\u00A0-\u00A099)' },
+            { id: 'immortal', name: 'Mythical Immortal (100+ ⭐)', base: 91, minStar: 100, maxStar: 999, defStart: 100, defTarget: 110, label: 'Jumlah Bintang Immortal (100\u00A0-\u00A0999)' }
         ];
 
         let activePage = 'regular';
