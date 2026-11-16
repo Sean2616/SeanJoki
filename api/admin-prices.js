@@ -1,7 +1,7 @@
 'use strict';
 // /api/admin-prices — baca/tulis daftar harga lewat SERVER (butuh sesi admin).
 // GET  -> { success, stored: { regular, gendong } | null }
-// PUT  -> body { regular, gendong } (masing-masing 8 tier, angka > 0)
+// PUT  -> body { regular, gendong } (masing-masing 6 tier, angka > 0)
 // Browser tidak lagi membaca/menulis Firebase langsung untuk admin;
 // halaman utama situs tetap memuat harga publik langsung dari Firebase.
 

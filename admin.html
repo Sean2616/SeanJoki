@@ -103,10 +103,10 @@
         // harga, dan ganti password semuanya diperiksa DI SERVER lewat
         // endpoint /api/admin-*. Sesi disimpan sebagai cookie httpOnly yang
         // tidak bisa dibaca JavaScript di browser.
-        const DEFAULT_PRICE_REGULAR = { MASTER: 1000, GM: 1000, EPIC: 2000, LEGEND: 3000, MYTHIC: 5000, HONOR: 6000, GLORY: 7000, IMMORTAL: 12000 };
-        const DEFAULT_PRICE_GENDONG = { MASTER: 2000, GM: 2000, EPIC: 3000, LEGEND: 4000, MYTHIC: 6000, HONOR: 7000, GLORY: 8000, IMMORTAL: 13000 };
-        const TIER_KEYS = ['MASTER', 'GM', 'EPIC', 'LEGEND', 'MYTHIC', 'HONOR', 'GLORY', 'IMMORTAL'];
-        const TILE_META = [{"label": "Master", "labelCls": "text-xs text-amber-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Grandmaster", "labelCls": "text-xs text-[#555555] block", "priceCls": "text-sm font-bold text-black"}, {"label": "Epic", "labelCls": "text-xs text-emerald-600 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Legend", "labelCls": "text-xs text-[#e8890c] block", "priceCls": "text-sm font-bold text-black"}, {"label": "Mythic (1-24)", "labelCls": "text-xs text-purple-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Honor (25-49)", "labelCls": "text-xs text-sky-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Glory (50-99)", "labelCls": "text-xs text-red-600 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Immortal (100+)", "labelCls": "text-xs text-[#e8890c] font-semibold block", "priceCls": "text-sm font-bold text-black"}];
+        const DEFAULT_PRICE_REGULAR = { GM: 1000, EPIC: 2000, LEGEND: 3000, MYTHIC: 5000, HONOR: 6000, GLORY: 7000 };
+        const DEFAULT_PRICE_GENDONG = { GM: 2000, EPIC: 3000, LEGEND: 4000, MYTHIC: 6000, HONOR: 7000, GLORY: 8000 };
+        const TIER_KEYS = ['GM', 'EPIC', 'LEGEND', 'MYTHIC', 'HONOR', 'GLORY'];
+        const TILE_META = [{"label": "Grandmaster", "labelCls": "text-xs text-[#555555] block", "priceCls": "text-sm font-bold text-black"}, {"label": "Epic", "labelCls": "text-xs text-emerald-600 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Legend", "labelCls": "text-xs text-[#e8890c] block", "priceCls": "text-sm font-bold text-black"}, {"label": "Mythic (1-24)", "labelCls": "text-xs text-purple-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Honor (25-49)", "labelCls": "text-xs text-sky-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Glory (50-99)", "labelCls": "text-xs text-red-600 block", "priceCls": "text-sm font-bold text-black"}];
 
         function buildForm(containerId, prefix, values) {
             const container = document.getElementById(containerId);

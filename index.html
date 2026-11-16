@@ -55,7 +55,7 @@
                         PUSH RANK TANPA PUSING BERSAMA TIM <span class="text-[#e8890c]">SEAN JOKI</span>
                     </h1>
                     <p id="heroDesc" class="text-[#555555] text-sm md:text-base mt-2">
-                        Melayani dari tier Master hingga Mythical Immortal! 100% Amanah, Privasi Terjaga, Bonus Savage & Maniac, dan Winrate dijamin naik drastis.
+                        Melayani dari tier Grandmaster hingga Mythical Glory! 100% Amanah, Privasi Terjaga, Bonus Savage & Maniac, dan Winrate dijamin naik drastis.
                     </p>
                 </div>
                 <i class="fa-solid fa-trophy text-orange-200 text-9xl absolute -right-4 -bottom-4 transform -rotate-12"></i>
@@ -88,7 +88,7 @@
                         <div class="flex items-center gap-3 mb-6 border-b-2 border-black pb-4">
                             <span class="w-8 h-8 rounded-lg bg-[#ffa500] text-black font-bold flex items-center justify-center">1</span>
                             <div>
-                                <h2 class="text-lg font-bold text-black">Kalkulator Joki Rank (Master - Immortal)</h2>
+                                <h2 class="text-lg font-bold text-black">Kalkulator Joki Rank (Grandmaster - Glory)</h2>
                                 <p class="text-xs text-[#555555]">Akun kamu dimainkan oleh penjoki kami sampai mencapai target.</p>
                             </div>
                         </div>
@@ -199,7 +199,7 @@
                         <div class="flex items-center gap-3 mb-6 border-b-2 border-black pb-4">
                             <span class="w-8 h-8 rounded-lg bg-[#ffa500] text-black font-bold flex items-center justify-center">1</span>
                             <div>
-                                <h2 class="text-lg font-bold text-black">Kalkulator Joki Gendong (Master - Immortal)</h2>
+                                <h2 class="text-lg font-bold text-black">Kalkulator Joki Gendong (Grandmaster - Glory)</h2>
                                 <p class="text-xs text-[#555555]">Main bareng penjoki dari rank saat ini sampai mencapai target rank tujuan tanpa memberikan password akun.</p>
                             </div>
                         </div>
@@ -322,11 +322,11 @@
                 <div id="daftar-harga" class="glass-card rounded-2xl p-5 space-y-6">
                     <div>
                         <h3 class="text-base font-bold text-black mb-3 flex items-center gap-2"><i class="fa-solid fa-bolt text-[#e8890c]"></i> Daftar Harga Joki Rank (Login) / Bintang</h3>
-                                                <div id="priceGridRegular" class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center"></div>
+                                                <div id="priceGridRegular" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-center"></div>
                     </div>
                     <div class="border-t-2 border-black pt-5">
                         <h3 class="text-base font-bold text-black mb-3 flex items-center gap-2"><i class="fa-solid fa-users text-[#e8890c]"></i> Daftar Harga Joki Gendong (Mabar) / Bintang</h3>
-                                                <div id="priceGridGendong" class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center"></div>
+                                                <div id="priceGridGendong" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-center"></div>
                     </div>
                 </div>
 
@@ -402,7 +402,6 @@
     <!-- FOOTER -->
     <footer class="border-t-2 border-black py-6 text-center text-xs text-[#555555] mt-8">
         <p>© 2026 SEAN JOKI — Layanan Joki Rank & Joki Gendong Mobile Legends Terpercaya.</p>
-        <p class="mt-2"><a href="admin.html" class="underline font-semibold text-black">Admin: Ubah Daftar Harga</a></p>
     </footer>
 
     <!-- JAVASCRIPT LOGIC -->
@@ -424,16 +423,16 @@
             }
         ];
 
-        const DEFAULT_PRICE_REGULAR = { MASTER: 1000, GM: 1000, EPIC: 2000, LEGEND: 3000, MYTHIC: 5000, HONOR: 6000, GLORY: 7000, IMMORTAL: 12000 };
-        const DEFAULT_PRICE_GENDONG = { MASTER: 2000, GM: 2000, EPIC: 3000, LEGEND: 4000, MYTHIC: 6000, HONOR: 7000, GLORY: 8000, IMMORTAL: 13000 };
+        const DEFAULT_PRICE_REGULAR = { GM: 1000, EPIC: 2000, LEGEND: 3000, MYTHIC: 5000, HONOR: 6000, GLORY: 7000 };
+        const DEFAULT_PRICE_GENDONG = { GM: 2000, EPIC: 3000, LEGEND: 4000, MYTHIC: 6000, HONOR: 7000, GLORY: 8000 };
         let PRICE_REGULAR = { ...DEFAULT_PRICE_REGULAR };
         let PRICE_GENDONG = { ...DEFAULT_PRICE_GENDONG };
         // Harga bisa diubah dari admin.html; tersimpan di Firebase yang sama
         // seperti dulu. Kalau gagal dimuat, harga awal di atas yang dipakai.
         const CLOUD_DB_URL = "https://dolphinjoki-default-rtdb.asia-southeast1.firebasedatabase.app";
         const PRICES_DB_PATH = 'seanjoki_prices';
-        const TIER_KEYS = ['MASTER', 'GM', 'EPIC', 'LEGEND', 'MYTHIC', 'HONOR', 'GLORY', 'IMMORTAL'];
-        const TILE_META = [{"label": "Master", "labelCls": "text-[11px] whitespace-nowrap text-amber-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Grandmaster", "labelCls": "text-[11px] whitespace-nowrap text-[#555555] block", "priceCls": "text-sm font-bold text-black"}, {"label": "Epic", "labelCls": "text-[11px] whitespace-nowrap text-emerald-600 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Legend", "labelCls": "text-[11px] whitespace-nowrap text-[#e8890c] block", "priceCls": "text-sm font-bold text-black"}, {"label": "Mythic (1-24)", "labelCls": "text-[11px] whitespace-nowrap text-purple-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Honor (25-49)", "labelCls": "text-[11px] whitespace-nowrap text-sky-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Glory (50-99)", "labelCls": "text-[11px] whitespace-nowrap text-red-600 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Immortal (100+)", "labelCls": "text-[11px] whitespace-nowrap text-[#e8890c] font-semibold block", "priceCls": "text-sm font-bold text-black"}];
+        const TIER_KEYS = ['GM', 'EPIC', 'LEGEND', 'MYTHIC', 'HONOR', 'GLORY'];
+        const TILE_META = [{"label": "Grandmaster", "labelCls": "text-[11px] whitespace-nowrap text-[#555555] block", "priceCls": "text-sm font-bold text-black"}, {"label": "Epic", "labelCls": "text-[11px] whitespace-nowrap text-emerald-600 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Legend", "labelCls": "text-[11px] whitespace-nowrap text-[#e8890c] block", "priceCls": "text-sm font-bold text-black"}, {"label": "Mythic (1-24)", "labelCls": "text-[11px] whitespace-nowrap text-purple-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Honor (25-49)", "labelCls": "text-[11px] whitespace-nowrap text-sky-700 block", "priceCls": "text-sm font-bold text-black"}, {"label": "Glory (50-99)", "labelCls": "text-[11px] whitespace-nowrap text-red-600 block", "priceCls": "text-sm font-bold text-black"}];
 
         function validPriceTable(t) {
             return t && typeof t === 'object' && TIER_KEYS.every(k => Number.isInteger(t[k]) && t[k] > 0);
@@ -471,15 +470,11 @@
 
 
         const TIER_LABELS = {
-            MASTER: 'Master', GM: 'Grandmaster', EPIC: 'Epic', LEGEND: 'Legend',
-            MYTHIC: 'Mythic (1-24)', HONOR: 'Mythical Honor (25-49)', GLORY: 'Mythical Glory (50-99)', IMMORTAL: 'Mythical Immortal (100+)'
+            GM: 'Grandmaster', EPIC: 'Epic', LEGEND: 'Legend',
+            MYTHIC: 'Mythic (1-24)', HONOR: 'Mythical Honor (25-49)', GLORY: 'Mythical Glory (50-99)'
         };
 
         const RANKS = [
-            { id: 'mas4', name: 'Master IV', base: 0, minStar: 0, maxStar: 4, defStart: 1, defTarget: 4, label: 'Jumlah Bintang Master (0\u2060-\u20604)' },
-            { id: 'mas3', name: 'Master III', base: 4, minStar: 0, maxStar: 4, defStart: 1, defTarget: 4, label: 'Jumlah Bintang Master (0\u2060-\u20604)' },
-            { id: 'mas2', name: 'Master II', base: 8, minStar: 0, maxStar: 4, defStart: 1, defTarget: 4, label: 'Jumlah Bintang Master (0\u2060-\u20604)' },
-            { id: 'mas1', name: 'Master I', base: 12, minStar: 0, maxStar: 4, defStart: 1, defTarget: 4, label: 'Jumlah Bintang Master (0\u2060-\u20604)' },
             { id: 'gm5', name: 'Grandmaster V', base: 16, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang GM (0\u2060-\u20605)' },
             { id: 'gm4', name: 'Grandmaster IV', base: 21, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang GM (0\u2060-\u20605)' },
             { id: 'gm3', name: 'Grandmaster III', base: 26, minStar: 0, maxStar: 5, defStart: 1, defTarget: 5, label: 'Jumlah Bintang GM (0\u2060-\u20605)' },
@@ -498,7 +493,6 @@
             { id: 'mythic', name: 'Mythic (1 - 24 ⭐)', base: 91, minStar: 1, maxStar: 24, defStart: 1, defTarget: 24, label: 'Jumlah Bintang Mythic (1\u2060-\u206024)' },
             { id: 'honor', name: 'Mythical Honor (25 - 49 ⭐)', base: 91, minStar: 25, maxStar: 49, defStart: 25, defTarget: 49, label: 'Jumlah Bintang Honor (25\u2060-\u206049)' },
             { id: 'glory', name: 'Mythical Glory (50 - 99 ⭐)', base: 91, minStar: 50, maxStar: 99, defStart: 50, defTarget: 99, label: 'Jumlah Bintang Glory (50\u2060-\u206099)' },
-            { id: 'immortal', name: 'Mythical Immortal (100+ ⭐)', base: 91, minStar: 100, maxStar: 999, defStart: 100, defTarget: 110, label: 'Jumlah Bintang Immortal (100\u2060-\u2060999)' }
         ];
 
         let activePage = 'regular';
@@ -532,10 +526,10 @@
                 RANKS.forEach((rank, index) => el.add(new Option(rank.name, index)));
             });
 
-            document.getElementById('startRank').value = 9;
-            document.getElementById('targetRank').value = 14;
-            document.getElementById('gStartRank').value = 9;
-            document.getElementById('gTargetRank').value = 14;
+            document.getElementById('startRank').value = 5;
+            document.getElementById('targetRank').value = 10;
+            document.getElementById('gStartRank').value = 5;
+            document.getElementById('gTargetRank').value = 10;
 
             renderPaymentCards();
             selectPayment(0);
@@ -573,7 +567,7 @@
             } else {
                 document.getElementById('heroBadge').innerText = "⚡ SEAN JOKI PROSES CEPAT 1x24 JAM";
                 document.getElementById('heroTitle').innerHTML = `PUSH RANK TANPA PUSING BERSAMA TIM <span class="text-[#e8890c]">SEAN JOKI</span>`;
-                document.getElementById('heroDesc').innerText = "Melayani dari tier Master hingga Mythical Immortal! 100% Amanah, Privasi Terjaga, Bonus Savage & Maniac, dan Winrate dijamin naik drastis.";
+                document.getElementById('heroDesc').innerText = "Melayani dari tier Grandmaster hingga Mythical Glory! 100% Amanah, Privasi Terjaga, Bonus Savage & Maniac, dan Winrate dijamin naik drastis.";
                 document.getElementById('summaryServiceBadge').innerText = "Joki Rank";
                 document.getElementById('summaryServiceType').innerText = "Joki Rank (Login)";
             }
@@ -626,14 +620,12 @@
 
             for (let s = startCumulative + 1; s <= targetCumulative; s++) {
                 let tierKey = '';
-                if (s <= 16) tierKey = 'MASTER';
-                else if (s <= 41) tierKey = 'GM';
+                if (s <= 41) tierKey = 'GM';
                 else if (s <= 66) tierKey = 'EPIC';
                 else if (s <= 91) tierKey = 'LEGEND';
                 else if (s <= 115) tierKey = 'MYTHIC';
                 else if (s <= 140) tierKey = 'HONOR';
-                else if (s <= 190) tierKey = 'GLORY';
-                else tierKey = 'IMMORTAL';
+                else tierKey = 'GLORY';
 
                 const starPrice = priceTable[tierKey];
                 cost += starPrice;

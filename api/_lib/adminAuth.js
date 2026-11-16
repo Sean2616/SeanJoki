@@ -26,7 +26,7 @@ const PRICES_DB_PATH = 'seanjoki_prices';
 const CONFIG_DB_PATH = 'seanjoki_config';
 const SESSION_COOKIE = 'sj_admin';
 const SESSION_MAX_AGE = 12 * 60 * 60; // 12 jam, dalam detik
-const TIER_KEYS = ['MASTER', 'GM', 'EPIC', 'LEGEND', 'MYTHIC', 'HONOR', 'GLORY', 'IMMORTAL'];
+const TIER_KEYS = ['GM', 'EPIC', 'LEGEND', 'MYTHIC', 'HONOR', 'GLORY'];
 
 // ---------- Rahasia & perbandingan aman ----------
 
