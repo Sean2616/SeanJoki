@@ -7,11 +7,13 @@
     <link rel="icon" type="image/png" href="logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Space Mono', monospace; background-color: #FFF9EC; color: #000000; }
         .font-gaming { font-family: 'Space Mono', monospace; }
         .font-space-mono { font-family: 'Space Mono', monospace; }
+        .font-navbar { font-family: 'Plus Jakarta Sans', sans-serif; }
+        html, body { overflow-x: hidden; overflow-x: clip; }
         .glass-card { background: #ffffff; border: 2px solid #000000; box-shadow: 5px 5px 0 #000000; }
         nav.glass-card { box-shadow: 0 4px 0 #000000; }
         .payment-card.active { border-color: #000000; background: #FFF3D1; box-shadow: 4px 4px 0 #000000; }
@@ -25,21 +27,24 @@
 <body class="min-h-screen flex flex-col">
 
     <!-- NAVBAR -->
-    <nav class="sticky top-0 z-40 glass-card border-b-2 border-black">
-        <div class="max-w-xl mx-auto px-4 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-2.5 cursor-pointer" onclick="switchServicePage('regular')">
-                <img src="logo.png" alt="Logo Sean Joki" class="w-9 h-9 rounded-lg object-cover">
-                <span class="font-gaming text-xl font-extrabold tracking-wider text-black">
-                    SEAN <span class="text-[#e8890c]">JOKI</span>
+    <nav class="max-w-xl w-full mx-auto px-4 pt-5">
+        <div class="bg-[#fff9eb] border-2 border-black rounded-2xl px-5 py-3.5 flex items-center justify-between shadow-[4px_4px_0_#000]">
+            <div class="flex items-center gap-3 cursor-pointer min-w-0" onclick="switchServicePage('regular')">
+                <img src="logo.png" alt="Logo Sean Joki" class="w-11 h-11 object-cover bg-white border-2 border-black rounded-lg shadow-[2px_2px_0_#000] shrink-0">
+                <div class="min-w-0">
+                    <span class="font-navbar text-xl font-extrabold tracking-tight text-black block leading-none">
+                        Sean <span class="bg-[#faae2b] px-1 border border-black rounded">Joki</span>
+                    </span>
+                    <span class="font-space-mono text-[11px] text-gray-600">Joki Rank &amp; Joki Gendong</span>
+                </div>
+            </div>
+            <span class="font-navbar bg-[#8bd3dd] border-2 border-black px-3 py-1.5 rounded-lg text-xs font-extrabold shadow-[2px_2px_0_#000] flex items-center gap-1.5 whitespace-nowrap shrink-0">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-600 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
                 </span>
-            </div>
-            <div class="hidden md:flex items-center space-x-5 text-sm font-medium">
-                <button onclick="switchServicePage('regular')" id="navRegular" class="text-[#e8890c] font-bold transition">Joki Rank</button>
-                <button onclick="switchServicePage('gendong')" id="navGendong" class="text-black hover:text-[#e8890c] transition flex items-center gap-1.5">
-                    <span>Joki Gendong</span>
-                    <span class="text-[10px] bg-red-500 text-white px-1.5 py-0.5 rounded font-bold border-2 border-black">HOT</span>
-                </button>
-            </div>
+                Online 24 Jam
+            </span>
         </div>
     </nav>
 
@@ -310,7 +315,7 @@
                     <div class="flex flex-wrap items-center justify-between gap-2 mb-6 border-b-2 border-black pb-4">
                         <div class="flex items-center gap-3">
                             <span class="w-8 h-8 rounded-lg bg-[#ffa500] text-black font-bold flex items-center justify-center">3</span>
-                            <h2 class="text-lg font-bold text-black whitespace-nowrap">Pilih Pembayaran (Transfer Manual)</h2>
+                            <h2 class="text-lg font-bold text-black">Pilih Pembayaran (Transfer Manual)</h2>
                         </div>
                         <span class="text-xs bg-[#DCFCE7] text-emerald-600 px-2.5 py-1 rounded-full border-2 border-black font-medium whitespace-nowrap">Bebas Biaya Admin</span>
                     </div>
@@ -555,8 +560,8 @@
             document.getElementById('tabBtnRegular').classList.toggle('active', page === 'regular');
             document.getElementById('tabBtnGendong').classList.toggle('active', page === 'gendong');
 
-            document.getElementById('navRegular').className = page === 'regular' ? "text-[#e8890c] font-bold transition" : "text-black hover:text-[#e8890c] transition";
-            document.getElementById('navGendong').className = page === 'gendong' ? "text-[#e8890c] font-bold transition flex items-center gap-1.5" : "text-black hover:text-[#e8890c] transition flex items-center gap-1.5";
+            const _nr = document.getElementById('navRegular'); if (_nr) _nr.className = page === 'regular' ? "text-[#e8890c] font-bold transition" : "text-black hover:text-[#e8890c] transition";
+            const _ng = document.getElementById('navGendong'); if (_ng) _ng.className = page === 'gendong' ? "text-[#e8890c] font-bold transition flex items-center gap-1.5" : "text-black hover:text-[#e8890c] transition flex items-center gap-1.5";
 
             if (page === 'gendong') {
                 document.getElementById('heroBadge').innerText = "🔥 MODE JOKI GENDONG — MABAR TANPA LOGIN AKUN";
