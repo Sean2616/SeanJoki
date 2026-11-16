@@ -35,7 +35,7 @@
 
         <div class="glass-card rounded-2xl p-5">
             <h1 class="font-gaming text-xl font-extrabold text-black">ADMIN HARGA</h1>
-            <p class="text-xs text-[#555555] mt-1">Ubah harga per bintang Joki Rank &amp; Joki Gendong. Harga tersimpan langsung tampil di situs setelah halaman dimuat ulang.</p>
+            <p class="text-xs text-[#555555] mt-1">Ubah harga per bintang Joki Rank &amp; Joki Gendong, serta password admin. Harga tersimpan langsung tampil di situs setelah halaman dimuat ulang.</p>
         </div>
 
         <div id="loginCard" class="glass-card rounded-2xl p-5 space-y-3">
@@ -68,8 +68,27 @@
                 <button onclick="savePrices()" class="flex-1 bg-[#ffa500] hover:bg-[#ffb020] text-black font-extrabold py-3 rounded-xl border-2 border-black shadow-[5px_5px_0_#000] text-sm">Simpan Harga</button>
                 <button onclick="resetToDefaults()" class="flex-1 bg-white hover:bg-[#FFF8E1] text-black font-bold py-3 rounded-xl border-2 border-black shadow-[5px_5px_0_#000] text-sm">Harga Awal</button>
             </div>
+            <div class="glass-card rounded-2xl p-5 space-y-3">
+                <h2 class="text-lg font-bold text-black">Ubah Password Admin</h2>
+                <div>
+                    <label class="text-xs text-black font-medium">Password Lama</label>
+                    <input type="password" id="oldPass" placeholder="Masukkan password lama" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black">
+                </div>
+                <div>
+                    <label class="text-xs text-black font-medium">Password Baru (minimal 6 karakter)</label>
+                    <input type="password" id="newPass" placeholder="Masukkan password baru" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black">
+                </div>
+                <div>
+                    <label class="text-xs text-black font-medium">Ulangi Password Baru</label>
+                    <input type="password" id="newPassConfirm" placeholder="Ulangi password baru" class="w-full mt-1 bg-white border-2 border-black rounded-lg px-3 py-2.5 text-sm text-black focus:outline-none focus:border-black">
+                </div>
+                <p id="passStatus" class="text-xs font-semibold text-[#555555]"></p>
+                <button onclick="changeAdminPassword()" class="w-full bg-[#ffa500] hover:bg-[#ffb020] text-black font-extrabold py-3 rounded-xl border-2 border-black shadow-[5px_5px_0_#000] text-sm">Ubah Password</button>
+                <p class="text-[11px] text-[#555555] leading-relaxed">Password baru tersimpan sebagai hash di Firebase dan langsung berlaku untuk login berikutnya. Kalau lupa password baru, hapus data seanjoki_config di Firebase Console untuk kembali ke password dari pengaturan server.</p>
+            </div>
+
             <button onclick="handleAdminLogout()" class="w-full text-xs font-semibold text-[#555555] underline">Keluar dari Admin</button>
-            <p class="text-[11px] text-[#555555] leading-relaxed">Catatan: halaman ini hanya penghalang ringan (password tersimpan di file, seperti panel admin lama). Jangan bagikan tautan halaman ini ke publik.</p>
+            <p class="text-[11px] text-[#555555] leading-relaxed">Catatan: login dan semua perubahan di halaman ini diperiksa di server. Jangan bagikan tautan halaman ini ke publik.</p>
         </div>
 
     </main>
@@ -79,9 +98,10 @@
     </footer>
 
     <script>
-        const CLOUD_DB_URL = "https://dolphinjoki-default-rtdb.asia-southeast1.firebasedatabase.app";
-        const PRICES_DB_PATH = 'seanjoki_prices';
-        const ADMIN_PASSWORD = "puputmasam";
+        // Halaman admin v4: password TIDAK ada di file ini. Login, baca/tulis
+        // harga, dan ganti password semuanya diperiksa DI SERVER lewat
+        // endpoint /api/admin-*. Sesi disimpan sebagai cookie httpOnly yang
+        // tidak bisa dibaca JavaScript di browser.
         const DEFAULT_PRICE_REGULAR = { MASTER: 1000, GM: 1000, EPIC: 2000, LEGEND: 3000, MYTHIC: 5000, HONOR: 6000, GLORY: 7000, IMMORTAL: 12000 };
         const DEFAULT_PRICE_GENDONG = { MASTER: 2000, GM: 2000, EPIC: 3000, LEGEND: 4000, MYTHIC: 6000, HONOR: 7000, GLORY: 8000, IMMORTAL: 13000 };
         const TIER_KEYS = ['MASTER', 'GM', 'EPIC', 'LEGEND', 'MYTHIC', 'HONOR', 'GLORY', 'IMMORTAL'];
@@ -119,17 +139,38 @@
             return t && typeof t === 'object' && TIER_KEYS.every(k => Number.isInteger(t[k]) && t[k] > 0);
         }
 
+        async function apiFetch(url, options) {
+            return fetch(url, Object.assign({ credentials: 'same-origin' }, options || {}));
+        }
+
+        function showLogin() {
+            document.getElementById('editorCard').classList.add('hidden');
+            document.getElementById('loginCard').classList.remove('hidden');
+            document.getElementById('adminPass').value = '';
+        }
+
+        function showEditor() {
+            document.getElementById('loginCard').classList.add('hidden');
+            document.getElementById('editorCard').classList.remove('hidden');
+            loadPrices();
+        }
+
         async function loadPrices() {
             const badge = document.getElementById('loadBadge');
             buildForm('priceFormRegular', 'price-regular', DEFAULT_PRICE_REGULAR);
             buildForm('priceFormGendong', 'price-gendong', DEFAULT_PRICE_GENDONG);
             try {
-                const res = await fetch(CLOUD_DB_URL.replace(/\/+$/, '') + '/' + PRICES_DB_PATH + '.json', { cache: 'no-store' });
+                const res = await apiFetch('/api/admin-prices', { cache: 'no-store' });
+                if (res.status === 401) { showLogin(); return; }
                 if (!res.ok) { badge.innerText = 'Harga awal (gagal memuat tersimpan)'; return; }
                 const data = await res.json();
-                if (data && validPriceTable(data.regular)) fillForm('price-regular', data.regular);
-                if (data && validPriceTable(data.gendong)) fillForm('price-gendong', data.gendong);
-                badge.innerText = data ? 'Harga tersimpan dimuat' : 'Harga awal (belum ada tersimpan)';
+                if (data && data.stored) {
+                    if (validPriceTable(data.stored.regular)) fillForm('price-regular', data.stored.regular);
+                    if (validPriceTable(data.stored.gendong)) fillForm('price-gendong', data.stored.gendong);
+                    badge.innerText = 'Harga tersimpan dimuat';
+                } else {
+                    badge.innerText = 'Harga awal (belum ada tersimpan)';
+                }
             } catch (e) {
                 badge.innerText = 'Harga awal (gagal memuat tersimpan)';
             }
@@ -147,17 +188,26 @@
             status.innerText = 'Menyimpan…';
             status.className = 'text-xs font-semibold text-[#555555]';
             try {
-                const res = await fetch(CLOUD_DB_URL.replace(/\/+$/, '') + '/' + PRICES_DB_PATH + '.json', {
+                const res = await apiFetch('/api/admin-prices', {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ regular, gendong, updatedAt: Date.now() })
+                    body: JSON.stringify({ regular, gendong })
                 });
-                if (!res.ok) throw new Error('HTTP ' + res.status);
+                if (res.status === 401) {
+                    showLogin();
+                    return;
+                }
+                if (!res.ok) {
+                    const data = await res.json().catch(() => null);
+                    status.innerText = (data && data.message) ? data.message : 'Gagal menyimpan. Coba lagi.';
+                    status.className = 'text-xs font-semibold text-red-600';
+                    return;
+                }
                 status.innerText = 'Harga tersimpan. Situs akan menampilkan harga baru setelah dimuat ulang.';
                 status.className = 'text-xs font-semibold text-emerald-600';
                 document.getElementById('loadBadge').innerText = 'Harga tersimpan dimuat';
             } catch (e) {
-                status.innerText = 'Gagal menyimpan. Periksa koneksi / pengaturan Firebase, lalu coba lagi.';
+                status.innerText = 'Gagal menyimpan. Periksa koneksi, lalu coba lagi.';
                 status.className = 'text-xs font-semibold text-red-600';
             }
         }
@@ -170,34 +220,106 @@
             status.className = 'text-xs font-semibold text-[#555555]';
         }
 
-        function showEditor() {
-            document.getElementById('loginCard').classList.add('hidden');
-            document.getElementById('editorCard').classList.remove('hidden');
-            loadPrices();
-        }
-
-        function handleAdminLogin() {
+        async function handleAdminLogin() {
+            const errorEl = document.getElementById('loginError');
+            errorEl.classList.add('hidden');
             const pass = document.getElementById('adminPass').value;
-            if (pass === ADMIN_PASSWORD) {
-                sessionStorage.setItem('sj_admin_ok', '1');
-                document.getElementById('loginError').classList.add('hidden');
-                showEditor();
-            } else {
-                document.getElementById('loginError').classList.remove('hidden');
+            try {
+                const res = await apiFetch('/api/admin-login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password: pass })
+                });
+                if (res.ok) {
+                    document.getElementById('adminPass').value = '';
+                    showEditor();
+                    return;
+                }
+                const data = await res.json().catch(() => null);
+                errorEl.innerText = (data && data.message) ? data.message : 'Password salah.';
+                errorEl.classList.remove('hidden');
+            } catch (e) {
+                errorEl.innerText = 'Tidak bisa terhubung ke server. Coba lagi.';
+                errorEl.classList.remove('hidden');
             }
         }
 
-        function handleAdminLogout() {
-            sessionStorage.removeItem('sj_admin_ok');
-            document.getElementById('editorCard').classList.add('hidden');
-            document.getElementById('loginCard').classList.remove('hidden');
-            document.getElementById('adminPass').value = '';
+        async function changeAdminPassword() {
+            const status = document.getElementById('passStatus');
+            const oldPass = document.getElementById('oldPass').value;
+            const newPass = document.getElementById('newPass').value;
+            const confirmPass = document.getElementById('newPassConfirm').value;
+            if (newPass.length < 6) {
+                status.innerText = 'Password baru minimal 6 karakter.';
+                status.className = 'text-xs font-semibold text-red-600';
+                return;
+            }
+            if (newPass !== confirmPass) {
+                status.innerText = 'Ulangi password baru tidak cocok.';
+                status.className = 'text-xs font-semibold text-red-600';
+                return;
+            }
+            if (newPass === oldPass) {
+                status.innerText = 'Password baru sama dengan password lama.';
+                status.className = 'text-xs font-semibold text-red-600';
+                return;
+            }
+            status.innerText = 'Menyimpan…';
+            status.className = 'text-xs font-semibold text-[#555555]';
+            try {
+                const res = await apiFetch('/api/admin-password', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ oldPassword: oldPass, newPassword: newPass })
+                });
+                if (res.status === 401) {
+                    showLogin();
+                    return;
+                }
+                if (!res.ok) {
+                    const data = await res.json().catch(() => null);
+                    status.innerText = (data && data.message) ? data.message : 'Gagal mengubah password. Coba lagi.';
+                    status.className = 'text-xs font-semibold text-red-600';
+                    return;
+                }
+                document.getElementById('oldPass').value = '';
+                document.getElementById('newPass').value = '';
+                document.getElementById('newPassConfirm').value = '';
+                status.innerText = 'Password berhasil diubah. Login berikutnya memakai password baru.';
+                status.className = 'text-xs font-semibold text-emerald-600';
+            } catch (e) {
+                status.innerText = 'Gagal menyimpan password baru. Periksa koneksi, lalu coba lagi.';
+                status.className = 'text-xs font-semibold text-red-600';
+            }
+        }
+
+        async function handleAdminLogout() {
+            try {
+                await apiFetch('/api/admin-logout', { method: 'POST' });
+            } catch (e) {
+                // Abaikan: tampilkan login walau pemanggilan gagal.
+            }
+            showLogin();
+        }
+
+        async function checkSession() {
+            try {
+                const res = await apiFetch('/api/admin-session');
+                if (res.ok) showEditor();
+            } catch (e) {
+                // Tetap tampilkan form login.
+            }
         }
 
         document.getElementById('adminPass').addEventListener('keydown', (e) => {
             if (e.key === 'Enter') handleAdminLogin();
         });
-        if (sessionStorage.getItem('sj_admin_ok') === '1') showEditor();
+        ['oldPass', 'newPass', 'newPassConfirm'].forEach((id) => {
+            document.getElementById(id).addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') changeAdminPassword();
+            });
+        });
+        checkSession();
     </script>
 </body>
 </html>
